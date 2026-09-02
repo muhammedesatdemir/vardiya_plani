@@ -6,6 +6,10 @@ Bu dokümanın İngilizce versiyonu için [README.md](README.md)
 
 # Vardiya Planı
 
+> Vardiyalı çalışanlar için yerel-öncelikli bir vardiya planlayıcı —
+> **Demrivo** markası altında yayınlanır. React Native, Expo ve TypeScript
+> ile geliştirilmiştir.
+
 Vardiyalı çalışanlar için yerel-öncelikli (local-first) bir React Native /
 Expo mobil uygulaması. Uygulama; tek bir kullanıcının kendi vardiya
 rotasyonunu aylık bir takvim üzerinde görmesini, planlamasını ve
@@ -672,7 +676,18 @@ depolamada daima **başlangıç** tarihine sabitlenir; arayüz,
 - Store hidrasyonu bilinçli olarak senkrondur: store, dosyayı modül
   yüklemesinde okur, böylece ilk render zaten doludur ve native splash, ilk
   ekran çizilir çizilmez kapatılabilir.
-- `android-sdk-setup-note.md` dosyası `react-native-mmkv`'den bahseder;
-  uygulama artık MMKV kullanmıyor — kalıcılık, yukarıda anlatılan tek-JSON
-  dosyalı `FileRepository`'dir. Notun SDK kurulum adımları yerel native
-  build'ler için hâlâ geçerlidir.
+- Eski referans: `android-sdk-setup-note.md` dosyası
+  `react-native-mmkv`'den bahseder; uygulama artık MMKV kullanmıyor —
+  kalıcılık, yukarıda anlatılan tek-JSON dosyalı `FileRepository`'dir.
+  Notun SDK kurulum adımları yerel native build'ler için hâlâ geçerlidir.
+
+---
+
+## Yazar
+
+Tasarlayan ve geliştiren: **Muhammed Esat Demir**. **Demrivo** markası
+altında yayınlanır.
+
+- Ürün adı: **Vardiya Planı**
+- Geliştirici markası: **Demrivo**
+- Paket / bundle kimliği: `com.demrivo.vardiyaplani`

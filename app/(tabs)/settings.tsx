@@ -369,17 +369,6 @@ export default function SettingsScreen() {
             <Text style={[styles.aboutMaker, { color: colors.textMuted }]}>
               Demrivo tarafından geliştirildi
             </Text>
-
-            <View style={[styles.aboutDivider, { backgroundColor: colors.border }]} />
-
-            <Text style={[styles.aboutLine, styles.aboutLinePrimary, { color: colors.text }]}>
-              <Text style={styles.aboutLineLabel}>Geliştirici: </Text>
-              Muhammed Esat Demir
-            </Text>
-            <Text style={[styles.aboutLine, { color: colors.textSecondary }]}>
-              <Text style={styles.aboutLineLabel}>Fikir katkısı: </Text>
-              Muhammet Mustafa Demir
-            </Text>
           </View>
         </View>
 
@@ -757,25 +746,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     marginTop: 3,
     opacity: 0.85,
-  },
-  aboutDivider: {
-    height: 1,
-    marginTop: 10,
-    marginBottom: 10,
-    opacity: 0.5,
-  },
-  aboutLine: {
-    fontSize: 13,
-    lineHeight: 20,
-    opacity: 0.85,
-  },
-  aboutLinePrimary: {
-    fontSize: 14,
-    fontWeight: '600',
-    opacity: 1,
-  },
-  aboutLineLabel: {
-    opacity: 0.7,
   },
 
   // Footer (imza)

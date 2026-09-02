@@ -6,6 +6,9 @@ For the Turkish version of this document, see [README.tr.md](README.tr.md)
 
 # Vardiya Planı
 
+> A local-first shift planner for shift workers — published under the
+> **Demrivo** brand. Built with React Native, Expo, and TypeScript.
+
 A local-first React Native / Expo mobile application for shift workers.
 The app helps a single user see, plan and edit their personal shift rotation
 on a monthly calendar. All data is stored locally on the device; there is no
@@ -663,7 +666,18 @@ A shift is overnight iff its `startHour > endHour` (checked by
 - Store hydration is synchronous on purpose: the store reads the file
   at module load so that the first render is already populated and the
   native splash can be dismissed as soon as the first screen paints.
-- The `android-sdk-setup-note.md` file mentions `react-native-mmkv`; the
-  app no longer uses MMKV — persistence is the single-JSON-file
-  `FileRepository` described above. The note's SDK-setup steps still
-  apply for local native builds.
+- Legacy reference: `android-sdk-setup-note.md` mentions
+  `react-native-mmkv`; the app no longer uses MMKV — persistence is the
+  single-JSON-file `FileRepository` described above. The note's SDK-setup
+  steps still apply for local native builds.
+
+---
+
+## Author
+
+Designed and developed by **Muhammed Esat Demir**, published under the
+**Demrivo** brand.
+
+- Product name: **Vardiya Planı**
+- Developer brand: **Demrivo**
+- Package / bundle id: `com.demrivo.vardiyaplani`
