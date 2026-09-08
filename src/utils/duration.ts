@@ -9,6 +9,7 @@
  */
 
 import type { PlannedDay } from '../types';
+import i18n from '../i18n';
 
 /**
  * Toplam dakikayı saat ve dakikaya ayrıştır.
@@ -31,14 +32,29 @@ export function hmToMinutes(hours: number, minutes: number): number {
 }
 
 /**
- * Türkçe okunur format: "2 saat 30 dakika", "45 dakika", "3 saat", "0 dakika"
+ * Human-readable duration in the active UI language, e.g. "2 saat 30 dakika"
+ * (tr) / "2 hours 30 minutes" (en). Uses i18next plural forms so languages
+ * with hour/minute pluralization (unlike Turkish) render correctly.
+ * Falls back to the Turkish text if called before i18next is initialized.
  */
 export function formatDurationTR(total: number): string {
   const { h, m } = minutesToHM(total);
-  if (h === 0 && m === 0) return '0 dakika';
-  if (h === 0) return `${m} dakika`;
-  if (m === 0) return `${h} saat`;
-  return `${h} saat ${m} dakika`;
+  if (h === 0 && m === 0) {
+    return i18n.isInitialized ? i18n.t('duration:zero') : '0 dakika';
+  }
+  if (h === 0) {
+    return i18n.isInitialized ? i18n.t('duration:minutesOnly', { count: m }) : `${m} dakika`;
+  }
+  if (m === 0) {
+    return i18n.isInitialized ? i18n.t('duration:hoursOnly', { count: h }) : `${h} saat`;
+  }
+  if (!i18n.isInitialized) {
+    return `${h} saat ${m} dakika`;
+  }
+  return i18n.t('duration:hoursAndMinutes', {
+    hours: i18n.t('duration:hoursOnly', { count: h }),
+    minutes: i18n.t('duration:minutesOnly', { count: m }),
+  });
 }
 
 /**

@@ -1,0 +1,33 @@
+{
+  "tabTitle": "تنظیمات",
+  "appearance": "ظاهر",
+  "theme": "پوسته",
+  "themeLight": "روشن",
+  "themeDark": "تیره",
+  "program": "برنامه",
+  "activeTemplate": "الگوی فعال",
+  "notSelected": "انتخاب نشده",
+  "shiftTimes": "ساعات شیفت",
+  "shiftTimesSubtitle": "ساعات شیفت‌های صبح، عصر و شب را سفارشی کنید",
+  "language": "زبان",
+  "data": "داده‌ها",
+  "exporting": "در حال آماده‌سازی...",
+  "exportData": "خروجی گرفتن از داده‌ها",
+  "deleteAllData": "حذف همه داده‌ها",
+  "about": "درباره",
+  "appName": "Vardiya Planı",
+  "version": "نسخه {{version}}",
+  "madeBy": "توسعه‌یافته توسط Demrivo",
+  "footerSignature": "برنامه‌ریزی کاربردی برای کارکنان شیفتی",
+  "exportReadyTitle": "خروجی آماده است",
+  "exportReadyMessage": "برنامه شیفت شما به‌صورت فایلی سازگار با اکسل آماده شده است. می‌توانید آن را به اشتراک بگذارید یا در دستگاه خود ذخیره کنید.",
+  "shareDialogTitle": "اشتراک‌گذاری برنامه شیفت",
+  "exportErrorTitle": "خطا",
+  "exportErrorMessage": "هنگام ایجاد فایل خطایی رخ داد.",
+  "shareNotSupported": "اشتراک‌گذاری در این دستگاه پشتیبانی نمی‌شود.",
+  "deleteAllConfirmTitle": "همه داده‌ها حذف شوند؟",
+  "deleteAllConfirmBody": "این عملیات قابل بازگشت نیست. تمام برنامه‌های شیفت، یادداشت‌ها و تنظیمات شما برای همیشه حذف خواهند شد.",
+  "csv": {
+    "header": "تاریخ,روز,شیفت,ساعت شروع,ساعت پایان,یادداشت,قفل‌شده"
+  }
+}

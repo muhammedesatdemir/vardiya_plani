@@ -6,6 +6,7 @@
 
 import { Tabs } from 'expo-router';
 import { Text, View, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../src/context';
 
 // Simple icon component (will be replaced with proper icons later)
@@ -27,6 +28,7 @@ function TabIcon({ name, focused }: { name: string; focused: boolean }) {
 
 export default function TabLayout() {
   const { colors } = useTheme();
+  const { t } = useTranslation(['home', 'calendar', 'settings']);
 
   return (
     <Tabs
@@ -49,12 +51,12 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Ana Sayfa',
+          title: t('home:tabTitle'),
           tabBarIcon: ({ focused }) => <TabIcon name="home" focused={focused} />,
           headerTitle: () => (
             <View style={styles.brandHeader}>
-              <Text style={styles.brandName}>Vardiya Planı</Text>
-              <Text style={styles.brandProduct}>Demrivo</Text>
+              <Text style={styles.brandName}>{t('home:brandName')}</Text>
+              <Text style={styles.brandProduct}>{t('home:brandProduct')}</Text>
             </View>
           ),
           headerTitleAlign: 'center',
@@ -63,7 +65,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="calendar"
         options={{
-          title: 'Takvim',
+          title: t('calendar:tabTitle'),
           tabBarIcon: ({ focused }) => (
             <TabIcon name="calendar" focused={focused} />
           ),
@@ -72,7 +74,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: 'Ayarlar',
+          title: t('settings:tabTitle'),
           tabBarIcon: ({ focused }) => (
             <TabIcon name="settings" focused={focused} />
           ),

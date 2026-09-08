@@ -1,0 +1,33 @@
+{
+  "tabTitle": "सेटिंग्स",
+  "appearance": "दिखावट",
+  "theme": "थीम",
+  "themeLight": "लाइट",
+  "themeDark": "डार्क",
+  "program": "प्रोग्राम",
+  "activeTemplate": "सक्रिय टेम्पलेट",
+  "notSelected": "चयनित नहीं",
+  "shiftTimes": "शिफ्ट समय",
+  "shiftTimesSubtitle": "सुबह, दोपहर और रात के समय को कस्टमाइज़ करें",
+  "language": "भाषा",
+  "data": "डेटा",
+  "exporting": "तैयार हो रहा है...",
+  "exportData": "डेटा एक्सपोर्ट करें",
+  "deleteAllData": "सभी डेटा हटाएं",
+  "about": "जानकारी",
+  "appName": "Vardiya Planı",
+  "version": "वर्शन {{version}}",
+  "madeBy": "Demrivo द्वारा विकसित",
+  "footerSignature": "शिफ्ट कर्मचारियों के लिए व्यावहारिक प्लानिंग",
+  "exportReadyTitle": "एक्सपोर्ट तैयार है",
+  "exportReadyMessage": "आपका शिफ्ट प्लान Excel-संगत फ़ाइल के रूप में तैयार है। आप इसे शेयर कर सकते हैं या अपने डिवाइस में सेव कर सकते हैं।",
+  "shareDialogTitle": "शिफ्ट प्लान शेयर करें",
+  "exportErrorTitle": "त्रुटि",
+  "exportErrorMessage": "फ़ाइल बनाते समय एक त्रुटि हुई।",
+  "shareNotSupported": "इस डिवाइस पर शेयरिंग समर्थित नहीं है।",
+  "deleteAllConfirmTitle": "सारा डेटा हटाएं?",
+  "deleteAllConfirmBody": "यह कार्रवाई वापस नहीं ली जा सकती। आपके सभी शिफ्ट प्लान, नोट्स और सेटिंग्स स्थायी रूप से हटा दिए जाएंगे।",
+  "csv": {
+    "header": "तिथि,दिन,शिफ्ट,शुरुआत समय,समाप्ति समय,नोट,लॉक्ड"
+  }
+}

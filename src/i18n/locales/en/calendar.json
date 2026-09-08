@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Calendar",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "weekdays": {
+    "monday_short3": "Mon",
+    "tuesday_short3": "Tue",
+    "wednesday_short3": "Wed",
+    "thursday_short3": "Thu",
+    "friday_short3": "Fri",
+    "saturday_short3": "Sat",
+    "sunday_short3": "Sun",
+    "monday_short2": "Mo",
+    "tuesday_short2": "Tu",
+    "wednesday_short2": "We",
+    "thursday_short2": "Th",
+    "friday_short2": "Fr",
+    "saturday_short2": "Sa",
+    "sunday_short2": "Su",
+    "sunday_full": "Sunday",
+    "monday_full": "Monday",
+    "tuesday_full": "Tuesday",
+    "wednesday_full": "Wednesday",
+    "thursday_full": "Thursday",
+    "friday_full": "Friday",
+    "saturday_full": "Saturday"
+  },
+  "holidayOfficial": "🇹🇷 Official Holiday — {{name}}",
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  }
+}

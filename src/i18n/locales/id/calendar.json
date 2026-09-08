@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Kalender",
+  "today": "Hari Ini",
+  "tomorrow": "Besok",
+  "weekdays": {
+    "monday_short3": "Sen",
+    "tuesday_short3": "Sel",
+    "wednesday_short3": "Rab",
+    "thursday_short3": "Kam",
+    "friday_short3": "Jum",
+    "saturday_short3": "Sab",
+    "sunday_short3": "Min",
+    "monday_short2": "Sn",
+    "tuesday_short2": "Sl",
+    "wednesday_short2": "Rb",
+    "thursday_short2": "Km",
+    "friday_short2": "Jm",
+    "saturday_short2": "Sb",
+    "sunday_short2": "Mg",
+    "sunday_full": "Minggu",
+    "monday_full": "Senin",
+    "tuesday_full": "Selasa",
+    "wednesday_full": "Rabu",
+    "thursday_full": "Kamis",
+    "friday_full": "Jumat",
+    "saturday_full": "Sabtu"
+  },
+  "holidayOfficial": "🇹🇷 Hari Libur Resmi — {{name}}",
+  "months": {
+    "january": "Januari",
+    "february": "Februari",
+    "march": "Maret",
+    "april": "April",
+    "may": "Mei",
+    "june": "Juni",
+    "july": "Juli",
+    "august": "Agustus",
+    "september": "September",
+    "october": "Oktober",
+    "november": "November",
+    "december": "Desember"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Gün Düzenle",
+  "invalidDate": "Geçersiz tarih",
+  "selectShift": "Vardiya Seçin",
+  "customTimeForDay": "Bu Güne Özel Saat",
+  "customTimeHint": "Sadece bu gün için geçerli",
+  "start": "Başlangıç",
+  "end": "Bitiş",
+  "resetToDefault": "Varsayılana döndür",
+  "overtime": "Fazla Mesai",
+  "shortage": "Eksik Saat",
+  "hours": "Saat",
+  "minutes": "Dakika",
+  "protectThisDay": "Bu Günü Koru",
+  "protectHint": "Plan oluştururken bu gün otomatik değişmesin",
+  "note": "📝 Not",
+  "notePlaceholder": "Bugüne özel not ekle...",
+  "noteHint": "Örn: İzin değişti, nöbet kaydırıldı...",
+  "clearDay": "Günü Temizle"
+}

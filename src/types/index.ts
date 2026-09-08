@@ -64,6 +64,12 @@ export interface AppSettings {
   theme: 'light' | 'dark';
   showOffVariants: boolean;  // show OFF1/OFF2 separately in UI
   onboardingDone: boolean;
+  // UI display language — does not affect scheduling logic. Keep in sync with
+  // SUPPORTED_LANGUAGES in src/i18n/index.ts (the source of truth for which
+  // languages are actually registered with i18next).
+  language:
+    | 'tr' | 'en' | 'pt' | 'es' | 'id' | 'hi' | 'ar'
+    | 'ru' | 'vi' | 'fil' | 'ja' | 'ko' | 'de' | 'fr' | 'th' | 'pl' | 'it' | 'ms' | 'fa' | 'uk';
 }
 
 // ============================================

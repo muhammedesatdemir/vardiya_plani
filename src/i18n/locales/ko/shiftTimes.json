@@ -1,0 +1,11 @@
+{
+  "screenTitle": "근무 시간",
+  "heroSubtitle": "오전, 오후, 야간 근무 시간을 원하는 대로 설정하세요. 이 시간은 모든 일정에 자동으로 적용됩니다.",
+  "footerHint": "특정 날짜에 사용자 지정 시간이 입력된 경우, 해당 시간이 우선 적용됩니다.",
+  "editorSubtitle": "시작 및 종료 시간 편집",
+  "resetToDefault": "↺  기본값으로",
+  "errorInvalidTime": "시간은 00–23, 분은 00–59 범위로 입력해 주세요.",
+  "errorSameTime": "시작 시간과 종료 시간은 같을 수 없습니다.",
+  "hourHint": "시",
+  "minuteHint": "분"
+}

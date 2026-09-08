@@ -19,7 +19,68 @@ import {
   getMonth,
   getDate,
 } from 'date-fns';
-import { tr } from 'date-fns/locale';
+import {
+  tr,
+  enUS,
+  pt,
+  es,
+  id as idLocale,
+  hi,
+  ar,
+  ru,
+  vi,
+  ja,
+  ko,
+  de,
+  fr,
+  th,
+  pl,
+  it,
+  ms,
+  faIR,
+  uk,
+} from 'date-fns/locale';
+import type { Locale } from 'date-fns';
+import i18n from '../i18n';
+
+// Maps the active UI language to its date-fns locale object. Adding a new
+// supported language means adding one entry here (plus its date-fns locale
+// package) — no changes needed in the formatting functions below.
+//
+// NOTE on 'fil' (Filipino): date-fns has no official `fil` locale package
+// (verified against the installed version's node_modules/date-fns/locale
+// directory listing — no fil/tl export exists). Filipino date conventions
+// (Gregorian calendar, Latin month/weekday names, similar day-order habits)
+// are closest to US English among the locales date-fns ships, so 'fil' falls
+// back to `enUS` here rather than to Turkish — this only affects date-fns
+// generated strings (e.g. calendar month/weekday names via `format()`);
+// UI text itself is fully translated via the fil/*.json i18n resources.
+const DATE_FNS_LOCALES: Record<string, Locale> = {
+  tr,
+  en: enUS,
+  pt,
+  es,
+  id: idLocale,
+  hi,
+  ar,
+  ru,
+  vi,
+  fil: enUS, // documented fallback — see NOTE above
+  ja,
+  ko,
+  de,
+  fr,
+  th,
+  pl,
+  it,
+  ms,
+  fa: faIR,
+  uk,
+};
+
+function getActiveDateLocale(): Locale {
+  return DATE_FNS_LOCALES[i18n.language] ?? tr;
+}
 
 // ============================================
 // DATE FORMAT CONSTANTS
@@ -69,31 +130,43 @@ export function isValidISODate(dateStr: string): boolean {
 // ============================================
 
 /**
- * Format date in Turkish: "22 Mart 2026, Pazar"
+ * Format date in the active UI language: "22 Mart 2026, Pazar" (tr) /
+ * "March 22, 2026, Sunday" pattern (en). Locale is resolved dynamically from
+ * i18n.language so this keeps following the user's language selection.
  */
 export function formatDateTR(date: Date): string {
-  return format(date, 'd MMMM yyyy, EEEE', { locale: tr });
+  return format(date, 'd MMMM yyyy, EEEE', { locale: getActiveDateLocale() });
 }
 
 /**
- * Format date short in Turkish: "22 Mart"
+ * Format date short in the active UI language: "22 Mart" / "March 22"
  */
 export function formatDateShortTR(date: Date): string {
-  return format(date, 'd MMMM', { locale: tr });
+  return format(date, 'd MMMM', { locale: getActiveDateLocale() });
 }
 
 /**
- * Format month and year in Turkish: "Mart 2026"
+ * Format month and year in the active UI language: "Mart 2026" / "March 2026"
  */
 export function formatMonthYearTR(date: Date): string {
-  return format(date, 'MMMM yyyy', { locale: tr });
+  return format(date, 'MMMM yyyy', { locale: getActiveDateLocale() });
 }
 
 /**
- * Format weekday in Turkish: "Pazar"
+ * Format weekday in the active UI language: "Pazar" / "Sunday"
  */
 export function formatWeekdayTR(date: Date): string {
-  return format(date, 'EEEE', { locale: tr });
+  return format(date, 'EEEE', { locale: getActiveDateLocale() });
+}
+
+/**
+ * Format weekday short name in the active UI language: "Paz" / "Sun".
+ * Equivalent to what Intl.DateTimeFormat(locale, { weekday: 'short' }) used
+ * to produce, but resolved from the active i18n language instead of a
+ * hardcoded locale string.
+ */
+export function formatWeekdayShort(date: Date): string {
+  return format(date, 'EEE', { locale: getActiveDateLocale() });
 }
 
 // ============================================

@@ -1,0 +1,19 @@
+{
+  "morning": "Mattina",
+  "afternoon": "Pomeriggio",
+  "evening": "Sera",
+  "night": "Notte",
+  "off": "Riposo",
+  "leave": "Riposo",
+  "dayOff": "Giorno di riposo",
+  "crossesMidnight": "Supera la mezzanotte",
+  "nextDayHint": "(giorno successivo)",
+  "custom": "personalizzato",
+  "untilTime": "{{shift}} (fino alle {{time}})",
+  "defaultRangeFor": "Orario predefinito per il turno {{shift}}",
+  "systemTemplate": "Modello di sistema",
+  "customTemplate": "Modello personalizzato",
+  "customPattern": "Schema personalizzato",
+  "customPatternNamed": "{{name}} (Schema personalizzato)",
+  "standardCycle": "Ciclo standard di {{count}} giorni"
+}

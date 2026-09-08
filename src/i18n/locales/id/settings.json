@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Pengaturan",
+  "appearance": "TAMPILAN",
+  "theme": "Tema",
+  "themeLight": "Terang",
+  "themeDark": "Gelap",
+  "program": "PROGRAM",
+  "activeTemplate": "Templat Aktif",
+  "notSelected": "Belum dipilih",
+  "shiftTimes": "Jam Shift",
+  "shiftTimesSubtitle": "Sesuaikan jam pagi, siang, dan malam",
+  "language": "Bahasa",
+  "data": "DATA",
+  "exporting": "Menyiapkan...",
+  "exportData": "Ekspor Data",
+  "deleteAllData": "Hapus Semua Data",
+  "about": "TENTANG",
+  "appName": "Vardiya Planı",
+  "version": "Versi {{version}}",
+  "madeBy": "Dikembangkan oleh Demrivo",
+  "footerSignature": "Perencanaan praktis untuk pekerja shift",
+  "exportReadyTitle": "Ekspor Siap",
+  "exportReadyMessage": "Jadwal shift Anda sudah siap sebagai file yang kompatibel dengan Excel. Anda dapat membagikannya atau menyimpannya di perangkat Anda.",
+  "shareDialogTitle": "Bagikan Jadwal Shift",
+  "exportErrorTitle": "Kesalahan",
+  "exportErrorMessage": "Terjadi kesalahan saat membuat file.",
+  "shareNotSupported": "Berbagi tidak didukung di perangkat ini.",
+  "deleteAllConfirmTitle": "Hapus semua data?",
+  "deleteAllConfirmBody": "Tindakan ini tidak dapat dibatalkan. Semua jadwal shift, catatan, dan pengaturan Anda akan dihapus secara permanen.",
+  "csv": {
+    "header": "Tanggal,Hari,Shift,Jam Mulai,Jam Selesai,Catatan,Terkunci"
+  }
+}

@@ -8,6 +8,7 @@
 
 import { View, Text, StyleSheet, ScrollView, Pressable, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { getEffectiveShiftTime } from '../../utils/shiftTime';
 import type { PlannedDay, ShiftType } from '../../types';
@@ -29,11 +30,12 @@ interface UpcomingDaysProps {
 export function UpcomingDays({ days }: UpcomingDaysProps) {
   const router = useRouter();
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation(['home', 'calendar']);
 
   return (
     <View style={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-        Önümüzdeki 7 Gün
+        {t('home:upcoming7Days')}
       </Text>
       <ScrollView
         horizontal
@@ -69,7 +71,7 @@ export function UpcomingDays({ days }: UpcomingDaysProps) {
                   item.isToday ? styles.dayLabelToday : styles.dayLabelTomorrow,
                 ]}>
                   <Text style={styles.dayLabelText}>
-                    {item.isToday ? 'Bugün' : 'Yarın'}
+                    {item.isToday ? t('calendar:today') : t('calendar:tomorrow')}
                   </Text>
                 </View>
               ) : (

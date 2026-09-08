@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Chỉnh Sửa Ngày",
+  "invalidDate": "Ngày không hợp lệ",
+  "selectShift": "Chọn Ca Làm",
+  "customTimeForDay": "Giờ Riêng Cho Ngày Này",
+  "customTimeHint": "Chỉ áp dụng cho ngày này",
+  "start": "Bắt Đầu",
+  "end": "Kết Thúc",
+  "resetToDefault": "Đặt lại mặc định",
+  "overtime": "Tăng Ca",
+  "shortage": "Thiếu Giờ",
+  "hours": "Giờ",
+  "minutes": "Phút",
+  "protectThisDay": "Khóa Ngày Này",
+  "protectHint": "Không tự động thay đổi ngày này khi tạo lịch",
+  "note": "📝 Ghi Chú",
+  "notePlaceholder": "Thêm ghi chú cho ngày này...",
+  "noteHint": "Ví dụ: Đổi ca nghỉ, chuyển ca trực...",
+  "clearDay": "Xóa Ngày"
+}

@@ -1,0 +1,43 @@
+{
+  "tabTitle": "कैलेंडर",
+  "today": "आज",
+  "tomorrow": "कल",
+  "weekdays": {
+    "monday_short3": "सोम",
+    "tuesday_short3": "मंगल",
+    "wednesday_short3": "बुध",
+    "thursday_short3": "गुरु",
+    "friday_short3": "शुक्र",
+    "saturday_short3": "शनि",
+    "sunday_short3": "रवि",
+    "monday_short2": "सो",
+    "tuesday_short2": "मं",
+    "wednesday_short2": "बु",
+    "thursday_short2": "गु",
+    "friday_short2": "शु",
+    "saturday_short2": "श",
+    "sunday_short2": "र",
+    "sunday_full": "रविवार",
+    "monday_full": "सोमवार",
+    "tuesday_full": "मंगलवार",
+    "wednesday_full": "बुधवार",
+    "thursday_full": "गुरुवार",
+    "friday_full": "शुक्रवार",
+    "saturday_full": "शनिवार"
+  },
+  "holidayOfficial": "🇹🇷 आधिकारिक अवकाश — {{name}}",
+  "months": {
+    "january": "जनवरी",
+    "february": "फ़रवरी",
+    "march": "मार्च",
+    "april": "अप्रैल",
+    "may": "मई",
+    "june": "जून",
+    "july": "जुलाई",
+    "august": "अगस्त",
+    "september": "सितंबर",
+    "october": "अक्टूबर",
+    "november": "नवंबर",
+    "december": "दिसंबर"
+  }
+}

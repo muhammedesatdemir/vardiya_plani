@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Kalendar",
+  "today": "Hari Ini",
+  "tomorrow": "Esok",
+  "weekdays": {
+    "monday_short3": "Isn",
+    "tuesday_short3": "Sel",
+    "wednesday_short3": "Rab",
+    "thursday_short3": "Kha",
+    "friday_short3": "Jum",
+    "saturday_short3": "Sab",
+    "sunday_short3": "Ahd",
+    "monday_short2": "Is",
+    "tuesday_short2": "Se",
+    "wednesday_short2": "Ra",
+    "thursday_short2": "Kh",
+    "friday_short2": "Ju",
+    "saturday_short2": "Sa",
+    "sunday_short2": "Ah",
+    "sunday_full": "Ahad",
+    "monday_full": "Isnin",
+    "tuesday_full": "Selasa",
+    "wednesday_full": "Rabu",
+    "thursday_full": "Khamis",
+    "friday_full": "Jumaat",
+    "saturday_full": "Sabtu"
+  },
+  "holidayOfficial": "Cuti Rasmi — {{name}}",
+  "months": {
+    "january": "Januari",
+    "february": "Februari",
+    "march": "Mac",
+    "april": "April",
+    "may": "Mei",
+    "june": "Jun",
+    "july": "Julai",
+    "august": "Ogos",
+    "september": "September",
+    "october": "Oktober",
+    "november": "November",
+    "december": "Disember"
+  }
+}

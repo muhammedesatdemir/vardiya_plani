@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Edit Day",
+  "invalidDate": "Invalid date",
+  "selectShift": "Select Shift",
+  "customTimeForDay": "Custom Time for This Day",
+  "customTimeHint": "Applies only to this day",
+  "start": "Start",
+  "end": "End",
+  "resetToDefault": "Reset to default",
+  "overtime": "Overtime",
+  "shortage": "Shortage",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "protectThisDay": "Protect This Day",
+  "protectHint": "Don't change this day automatically when generating a plan",
+  "note": "📝 Note",
+  "notePlaceholder": "Add a note for this day...",
+  "noteHint": "E.g.: Leave changed, shift swapped...",
+  "clearDay": "Clear Day"
+}

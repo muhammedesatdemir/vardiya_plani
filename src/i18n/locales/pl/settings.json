@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Ustawienia",
+  "appearance": "WYGLĄD",
+  "theme": "Motyw",
+  "themeLight": "Jasny",
+  "themeDark": "Ciemny",
+  "program": "PROGRAM",
+  "activeTemplate": "Aktywny szablon",
+  "notSelected": "Nie wybrano",
+  "shiftTimes": "Godziny zmian",
+  "shiftTimesSubtitle": "Dostosuj godziny zmiany porannej, popołudniowej i nocnej",
+  "language": "Język",
+  "data": "DANE",
+  "exporting": "Przygotowywanie...",
+  "exportData": "Eksportuj dane",
+  "deleteAllData": "Usuń wszystkie dane",
+  "about": "O APLIKACJI",
+  "appName": "Vardiya Planı",
+  "version": "Wersja {{version}}",
+  "madeBy": "Stworzone przez Demrivo",
+  "footerSignature": "Praktyczne planowanie dla pracowników zmianowych",
+  "exportReadyTitle": "Eksport gotowy",
+  "exportReadyMessage": "Twój plan zmian został przygotowany jako plik zgodny z Excel. Możesz go udostępnić lub zapisać na urządzeniu.",
+  "shareDialogTitle": "Udostępnij plan zmian",
+  "exportErrorTitle": "Błąd",
+  "exportErrorMessage": "Wystąpił błąd podczas tworzenia pliku.",
+  "shareNotSupported": "Udostępnianie nie jest obsługiwane na tym urządzeniu.",
+  "deleteAllConfirmTitle": "Usunąć wszystkie dane?",
+  "deleteAllConfirmBody": "Tej operacji nie można cofnąć. Wszystkie Twoje plany zmian, notatki i ustawienia zostaną trwale usunięte.",
+  "csv": {
+    "header": "Data,Dzień,Zmiana,Godzina rozpoczęcia,Godzina zakończenia,Notatka,Zablokowane"
+  }
+}

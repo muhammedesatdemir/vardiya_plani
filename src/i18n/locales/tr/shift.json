@@ -1,0 +1,19 @@
+{
+  "morning": "Sabah",
+  "afternoon": "Öğle",
+  "evening": "Akşam",
+  "night": "Gece",
+  "off": "Off",
+  "leave": "İzin",
+  "dayOff": "İzin günü",
+  "crossesMidnight": "Gece geçer",
+  "nextDayHint": "(ertesi gün)",
+  "custom": "özel",
+  "untilTime": "{{shift}} ({{time}}'e kadar)",
+  "defaultRangeFor": "{{shift}} vardiyası için varsayılan saat aralığı",
+  "systemTemplate": "Sistem şablonu",
+  "customTemplate": "Özel şablon",
+  "customPattern": "Özel Düzen",
+  "customPatternNamed": "{{name}} (Özel Düzen)",
+  "standardCycle": "Standart {{count}} Gün Döngü"
+}

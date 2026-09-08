@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Réglages",
+  "appearance": "APPARENCE",
+  "theme": "Thème",
+  "themeLight": "Clair",
+  "themeDark": "Sombre",
+  "program": "PROGRAMME",
+  "activeTemplate": "Modèle actif",
+  "notSelected": "Non sélectionné",
+  "shiftTimes": "Horaires d'équipe",
+  "shiftTimesSubtitle": "Personnalisez les horaires des équipes du matin, de l'après-midi et de nuit",
+  "language": "Langue",
+  "data": "DONNÉES",
+  "exporting": "Préparation...",
+  "exportData": "Exporter les données",
+  "deleteAllData": "Supprimer toutes les données",
+  "about": "À PROPOS",
+  "appName": "Vardiya Planı",
+  "version": "Version {{version}}",
+  "madeBy": "Développé par Demrivo",
+  "footerSignature": "Une planification pratique pour les travailleurs postés",
+  "exportReadyTitle": "Export prêt",
+  "exportReadyMessage": "Votre planning est prêt sous forme de fichier compatible Excel. Vous pouvez le partager ou l'enregistrer sur votre appareil.",
+  "shareDialogTitle": "Partager le planning",
+  "exportErrorTitle": "Erreur",
+  "exportErrorMessage": "Une erreur s'est produite lors de la création du fichier.",
+  "shareNotSupported": "Le partage n'est pas pris en charge sur cet appareil.",
+  "deleteAllConfirmTitle": "Supprimer toutes les données ?",
+  "deleteAllConfirmBody": "Cette action est irréversible. Tous vos plannings, notes et réglages seront définitivement supprimés.",
+  "csv": {
+    "header": "Date,Jour,Équipe,Heure de début,Heure de fin,Note,Verrouillé"
+  }
+}

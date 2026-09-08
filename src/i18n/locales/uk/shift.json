@@ -1,0 +1,19 @@
+{
+  "morning": "Ранок",
+  "afternoon": "День",
+  "evening": "Вечір",
+  "night": "Ніч",
+  "off": "Вихідний",
+  "leave": "Вихідний",
+  "dayOff": "Вихідний день",
+  "crossesMidnight": "Переходить через північ",
+  "nextDayHint": "(наступний день)",
+  "custom": "особлива",
+  "untilTime": "{{shift}} (до {{time}})",
+  "defaultRangeFor": "Стандартний час зміни «{{shift}}»",
+  "systemTemplate": "Системний шаблон",
+  "customTemplate": "Користувацький шаблон",
+  "customPattern": "Власний графік",
+  "customPatternNamed": "{{name}} (власний графік)",
+  "standardCycle": "Стандартний цикл на {{count}} днів"
+}

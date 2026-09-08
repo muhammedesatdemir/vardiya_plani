@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Calendário",
+  "today": "Hoje",
+  "tomorrow": "Amanhã",
+  "weekdays": {
+    "monday_short3": "Seg",
+    "tuesday_short3": "Ter",
+    "wednesday_short3": "Qua",
+    "thursday_short3": "Qui",
+    "friday_short3": "Sex",
+    "saturday_short3": "Sáb",
+    "sunday_short3": "Dom",
+    "monday_short2": "Se",
+    "tuesday_short2": "Te",
+    "wednesday_short2": "Qu",
+    "thursday_short2": "Qi",
+    "friday_short2": "Sx",
+    "saturday_short2": "Sá",
+    "sunday_short2": "Do",
+    "sunday_full": "Domingo",
+    "monday_full": "Segunda-feira",
+    "tuesday_full": "Terça-feira",
+    "wednesday_full": "Quarta-feira",
+    "thursday_full": "Quinta-feira",
+    "friday_full": "Sexta-feira",
+    "saturday_full": "Sábado"
+  },
+  "holidayOfficial": "🇹🇷 Feriado Oficial — {{name}}",
+  "months": {
+    "january": "Janeiro",
+    "february": "Fevereiro",
+    "march": "Março",
+    "april": "Abril",
+    "may": "Maio",
+    "june": "Junho",
+    "july": "Julho",
+    "august": "Agosto",
+    "september": "Setembro",
+    "october": "Outubro",
+    "november": "Novembro",
+    "december": "Dezembro"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "morning": "Manhã",
+  "afternoon": "Tarde",
+  "evening": "Noite",
+  "night": "Madrugada",
+  "off": "Off",
+  "leave": "Folga",
+  "dayOff": "Dia de folga",
+  "crossesMidnight": "Passa da meia-noite",
+  "nextDayHint": "(dia seguinte)",
+  "custom": "personalizado",
+  "untilTime": "{{shift}} (até {{time}})",
+  "defaultRangeFor": "Horário padrão do turno {{shift}}",
+  "systemTemplate": "Modelo do sistema",
+  "customTemplate": "Modelo personalizado",
+  "customPattern": "Padrão Personalizado",
+  "customPatternNamed": "{{name}} (Padrão Personalizado)",
+  "standardCycle": "Ciclo Padrão de {{count}} Dias"
+}

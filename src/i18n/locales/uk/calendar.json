@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Календар",
+  "today": "Сьогодні",
+  "tomorrow": "Завтра",
+  "weekdays": {
+    "monday_short3": "Пн",
+    "tuesday_short3": "Вт",
+    "wednesday_short3": "Ср",
+    "thursday_short3": "Чт",
+    "friday_short3": "Пт",
+    "saturday_short3": "Сб",
+    "sunday_short3": "Нд",
+    "monday_short2": "Пн",
+    "tuesday_short2": "Вт",
+    "wednesday_short2": "Ср",
+    "thursday_short2": "Чт",
+    "friday_short2": "Пт",
+    "saturday_short2": "Сб",
+    "sunday_short2": "Нд",
+    "sunday_full": "Неділя",
+    "monday_full": "Понеділок",
+    "tuesday_full": "Вівторок",
+    "wednesday_full": "Середа",
+    "thursday_full": "Четвер",
+    "friday_full": "П'ятниця",
+    "saturday_full": "Субота"
+  },
+  "holidayOfficial": "Офіційне свято — {{name}}",
+  "months": {
+    "january": "Січень",
+    "february": "Лютий",
+    "march": "Березень",
+    "april": "Квітень",
+    "may": "Травень",
+    "june": "Червень",
+    "july": "Липень",
+    "august": "Серпень",
+    "september": "Вересень",
+    "october": "Жовтень",
+    "november": "Листопад",
+    "december": "Грудень"
+  }
+}

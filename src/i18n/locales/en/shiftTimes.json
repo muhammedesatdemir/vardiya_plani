@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Shift Times",
+  "heroSubtitle": "Customize the hours for the morning, afternoon and night shifts. These hours are used automatically in every plan.",
+  "footerHint": "If a custom time is set for a specific day, that time takes priority for that day.",
+  "editorSubtitle": "Edit the start and end time",
+  "resetToDefault": "↺  Reset to default",
+  "errorInvalidTime": "Enter hours between 00–23 and minutes between 00–59.",
+  "errorSameTime": "Start and end time cannot be the same.",
+  "hourHint": "HH",
+  "minuteHint": "MM"
+}

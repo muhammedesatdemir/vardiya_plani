@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Edit Hari",
+  "invalidDate": "Tarikh tidak sah",
+  "selectShift": "Pilih Syif",
+  "customTimeForDay": "Waktu Tersuai untuk Hari Ini",
+  "customTimeHint": "Hanya berkuat kuasa untuk hari ini",
+  "start": "Mula",
+  "end": "Tamat",
+  "resetToDefault": "Set semula ke lalai",
+  "overtime": "Kerja Lebih Masa",
+  "shortage": "Waktu Kurang",
+  "hours": "Jam",
+  "minutes": "Minit",
+  "protectThisDay": "Kunci Hari Ini",
+  "protectHint": "Hari ini tidak akan diubah secara automatik semasa membuat jadual",
+  "note": "📝 Nota",
+  "notePlaceholder": "Tambah nota untuk hari ini...",
+  "noteHint": "Cth: cuti ditukar, tugasan dipindah...",
+  "clearDay": "Kosongkan Hari"
+}

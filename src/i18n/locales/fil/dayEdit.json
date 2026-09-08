@@ -1,0 +1,20 @@
+{
+  "screenTitle": "I-edit ang Araw",
+  "invalidDate": "Hindi wastong petsa",
+  "selectShift": "Pumili ng Shift",
+  "customTimeForDay": "Custom na Oras para sa Araw na Ito",
+  "customTimeHint": "Para lamang sa araw na ito",
+  "start": "Simula",
+  "end": "Tapos",
+  "resetToDefault": "Ibalik sa default",
+  "overtime": "Overtime",
+  "shortage": "Kulang na Oras",
+  "hours": "Oras",
+  "minutes": "Minuto",
+  "protectThisDay": "Protektahan ang Araw na Ito",
+  "protectHint": "Huwag awtomatikong baguhin ang araw na ito sa paggawa ng plano",
+  "note": "📝 Tala",
+  "notePlaceholder": "Magdagdag ng tala para sa araw na ito...",
+  "noteHint": "Hal: Napalitan ang day off, na-shift ang duty...",
+  "clearDay": "I-clear ang Araw"
+}

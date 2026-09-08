@@ -1,0 +1,19 @@
+{
+  "morning": "सुबह",
+  "afternoon": "दोपहर",
+  "evening": "शाम",
+  "night": "रात",
+  "off": "ऑफ",
+  "leave": "छुट्टी",
+  "dayOff": "छुट्टी का दिन",
+  "crossesMidnight": "आधी रात के बाद तक",
+  "nextDayHint": "(अगला दिन)",
+  "custom": "कस्टम",
+  "untilTime": "{{shift}} ({{time}} तक)",
+  "defaultRangeFor": "{{shift}} शिफ्ट के लिए डिफ़ॉल्ट समय",
+  "systemTemplate": "सिस्टम टेम्पलेट",
+  "customTemplate": "कस्टम टेम्पलेट",
+  "customPattern": "कस्टम पैटर्न",
+  "customPatternNamed": "{{name}} (कस्टम पैटर्न)",
+  "standardCycle": "मानक {{count}} दिन चक्र"
+}

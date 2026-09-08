@@ -29,6 +29,7 @@ import {
   LEGACY_OFF_COLOR,
 } from '../constants/shifts';
 import { getDaysInRange, getDaysInMonthRange } from '../utils/date';
+import { detectDeviceLanguage } from '../i18n';
 
 // ============================================
 // CONSTANTS
@@ -70,6 +71,11 @@ export class FileRepository implements IScheduleRepository {
       const file = getStorageFile();
 
       if (!file.exists) {
+        // True first launch — no persisted settings at all. Seed the
+        // language preference from the device locale (falls back to
+        // Turkish for anything unsupported); every other default is
+        // untouched. Subsequent launches always read the saved value.
+        this.settings = { ...this.settings, language: detectDeviceLanguage() };
         return;
       }
 

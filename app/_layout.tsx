@@ -28,18 +28,30 @@ import { useEffect, useRef } from 'react';
 import { View } from 'react-native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { useTranslation } from 'react-i18next';
 import { ThemeProvider, useTheme } from '../src/context';
+import { useScheduleStore } from '../src/stores';
 import { mark as startupMark } from '../src/utils/startupTimer';
 import {
   preventAutoHide,
   startSplashWatchdog,
 } from '../src/utils/splashController';
+import { initI18n, changeLanguage } from '../src/i18n';
 
 startupMark('root layout: module evaluated');
 preventAutoHide();
 
+// i18next must be initialized before the first render — the store is already
+// hydrated synchronously from disk at module load (see scheduleStore.ts), so
+// the persisted language preference is available here without an async wait.
+// On a true first launch (no settings file yet), fileRepository.load() seeds
+// `language` from the device locale before we ever read it here; on every
+// later launch it's simply the user's saved choice.
+initI18n(useScheduleStore.getState().settings.language);
+
 function NavigationContent() {
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation(['dayEdit', 'generate', 'revise', 'templates', 'shiftTimes']);
   const shellLaidOutRef = useRef(false);
 
   startupMark('root layout: render');
@@ -84,40 +96,40 @@ function NavigationContent() {
         <Stack.Screen
           name="day/[date]"
           options={{
-            title: 'Gün Düzenle',
+            title: t('dayEdit:screenTitle'),
             presentation: 'modal',
           }}
         />
         <Stack.Screen
           name="generate"
           options={{
-            title: 'Ay Oluştur',
+            title: t('generate:screenTitle'),
             presentation: 'modal',
           }}
         />
         <Stack.Screen
           name="revise"
           options={{
-            title: 'Revize Et',
+            title: t('revise:screenTitle'),
             presentation: 'modal',
           }}
         />
         <Stack.Screen
           name="templates/index"
           options={{
-            title: 'Şablonlar',
+            title: t('templates:listScreenTitle'),
           }}
         />
         <Stack.Screen
           name="templates/[id]"
           options={{
-            title: 'Şablon Düzenle',
+            title: t('templates:detailScreenTitle'),
           }}
         />
         <Stack.Screen
           name="shift-times"
           options={{
-            title: 'Vardiya Saatleri',
+            title: t('shiftTimes:screenTitle'),
           }}
         />
       </Stack>
@@ -127,6 +139,15 @@ function NavigationContent() {
 
 export default function RootLayout() {
   useEffect(() => startSplashWatchdog(4000), []);
+
+  // Keep i18next in sync with the persisted language preference. Settings
+  // screen updates AppSettings.language through the existing store action;
+  // this effect is the single place that reacts to that change and swaps the
+  // active i18next language — no other component needs to know about it.
+  const language = useScheduleStore((state) => state.settings.language);
+  useEffect(() => {
+    changeLanguage(language);
+  }, [language]);
 
   return (
     <ThemeProvider>

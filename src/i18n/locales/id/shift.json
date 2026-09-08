@@ -1,0 +1,19 @@
+{
+  "morning": "Pagi",
+  "afternoon": "Siang",
+  "evening": "Sore",
+  "night": "Malam",
+  "off": "Off",
+  "leave": "Libur",
+  "dayOff": "Hari libur",
+  "crossesMidnight": "Melewati tengah malam",
+  "nextDayHint": "(hari berikutnya)",
+  "custom": "khusus",
+  "untilTime": "{{shift}} (sampai {{time}})",
+  "defaultRangeFor": "Jam default untuk shift {{shift}}",
+  "systemTemplate": "Templat sistem",
+  "customTemplate": "Templat khusus",
+  "customPattern": "Pola Khusus",
+  "customPatternNamed": "{{name}} (Pola Khusus)",
+  "standardCycle": "Siklus Standar {{count}} Hari"
+}

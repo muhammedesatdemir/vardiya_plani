@@ -14,9 +14,18 @@
 import { View, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore, selectTodayShift } from '../../src/stores';
-import { formatDateTR, getTodayISO, addDaysToDate, parseISODate } from '../../src/utils/date';
+import {
+  formatDateTR,
+  formatWeekdayShort,
+  formatWeekdayTR,
+  getTodayISO,
+  addDaysToDate,
+  parseISODate,
+} from '../../src/utils/date';
 import { useTheme } from '../../src/context';
+import { getShiftDisplayName } from '../../src/utils/shiftDisplay';
 import { mark as startupMark } from '../../src/utils/startupTimer';
 import { notifyFirstScreenReady } from '../../src/utils/splashController';
 import {
@@ -33,6 +42,7 @@ export default function HomeScreen() {
   startupMark('home screen: mount');
   const router = useRouter();
   const { colors } = useTheme();
+  const { t } = useTranslation(['home', 'calendar']);
   const today = getTodayISO();
   const [summaryVisible, setSummaryVisible] = useState(false);
   const [notesVisible, setNotesVisible] = useState(false);
@@ -54,7 +64,7 @@ export default function HomeScreen() {
       const day = plannedDays[dateStr];
       const st = day ? shiftTypes.find((s) => s.code === day.shiftCode) : null;
       const dateObj = parseISODate(dateStr);
-      const dayName = new Intl.DateTimeFormat('tr-TR', { weekday: 'short' }).format(dateObj);
+      const dayName = formatWeekdayShort(dateObj);
 
       days.push({
         date: dateStr,
@@ -80,11 +90,11 @@ export default function HomeScreen() {
         if (st?.isWorking) {
           const dateObj = parseISODate(dateStr);
           const dayLabel = i === 1
-            ? 'Yarın'
-            : new Intl.DateTimeFormat('tr-TR', { weekday: 'long' }).format(dateObj);
+            ? t('calendar:tomorrow')
+            : formatWeekdayTR(dateObj);
           return {
             dayLabel,
-            shiftName: st.name,
+            shiftName: getShiftDisplayName(st),
             time: st.startTime ?? undefined,
             daysAway: i,
           };
@@ -158,12 +168,12 @@ export default function HomeScreen() {
     // map (rare — most rotations are <= 6 working days), fall back to a
     // generic line so we don't repeat the "son gün" message inappropriately.
     const motivationByDay: Record<number, string> = {
-      1: 'Hadi başlayalım, tempo bizde.',
-      2: 'Aynı ciddiyetle devam.',
-      3: 'Yarıyı gördük, bozmadan ilerle.',
-      4: 'Biraz daha sabır, iş rayında.',
-      5: 'Az kaldı, bugün de bitsin.',
-      6: 'Son gün, tatil kokusu geldi.',
+      1: t('home:motivation.day1'),
+      2: t('home:motivation.day2'),
+      3: t('home:motivation.day3'),
+      4: t('home:motivation.day4'),
+      5: t('home:motivation.day5'),
+      6: t('home:motivation.lastDay'),
     };
     // Special case: today is the last working day of the streak (next day
     // is off). Override with the "son gün" line regardless of day index,
@@ -173,49 +183,51 @@ export default function HomeScreen() {
     const motivation =
       todaySt?.isWorking && dayInStreak > 0
         ? isLastDayOfStreak && dayInStreak >= 2
-          ? 'Son gün, tatil kokusu geldi.'
-          : motivationByDay[dayInStreak] ?? 'İyi gidiyorsun, ritmi koru.'
+          ? t('home:motivation.lastDay')
+          : motivationByDay[dayInStreak] ?? t('home:motivation.fallback')
         : undefined;
 
     // Decide which insight to show
     if (consecutiveWork >= 3) {
       return {
-        message: `${consecutiveWork} gün üst üste çalışıyorsun`,
+        message: t('home:consecutiveWorkDays', { count: consecutiveWork }),
         icon: '💪',
         subMessage: motivation,
       };
     } else if (nextOffDays > 0 && nextOffDays <= 7) {
-      const label = nextOffDays === 1 ? 'Yarın' : `${nextOffDays} gün sonra`;
+      const label = nextOffDays === 1
+        ? t('calendar:tomorrow')
+        : t('home:daysUntilOff', { count: nextOffDays });
       return {
-        message: `Sonraki izin: ${label}`,
+        message: t('home:nextOffTomorrow', { label }),
         icon: '🌴',
         subMessage: motivation,
       };
     } else if (todaySt && !todaySt.isWorking && nextWorkingShift) {
       return {
-        message: `Sonraki mesai: ${nextWorkingShift.dayLabel}`,
+        message: t('home:nextShiftLabel', { day: nextWorkingShift.dayLabel }),
         icon: '📅',
         subMessage: undefined,
       };
     }
 
     return null;
-  }, [today, todayShift, plannedDays, shiftTypes, nextWorkingShift]);
+  }, [today, todayShift, plannedDays, shiftTypes, nextWorkingShift, t]);
 
   // Quick actions - only 2 essential actions
   const quickActions = [
     {
       id: 'calendar',
       icon: '📅',
-      label: 'Takvim',
-      subtitle: 'Aylık görünüm',
+      label: t('home:calendarAction'),
+      subtitle: t('home:calendarActionSubtitle'),
       onPress: () => router.push('/calendar'),
     },
     {
       id: 'generate',
       icon: '✨',
-      label: 'Plan Oluştur',
-      subtitle: 'Yeni ay ekle',
+      label: t('home:generateAction'),
+      subtitle: t('home:generateActionSubtitle'),
       onPress: () => router.push('/generate'),
     },
   ];

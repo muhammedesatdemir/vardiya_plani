@@ -8,8 +8,10 @@
 
 import { View, Text, StyleSheet, Pressable, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { getEffectiveShiftTime } from '../../utils/shiftTime';
+import { getShiftDisplayName } from '../../utils/shiftDisplay';
 import type { PlannedDay, ShiftType } from '../../types';
 
 interface NextShiftInfo {
@@ -37,6 +39,7 @@ export function TodayShiftCard({
 }: TodayShiftCardProps) {
   const router = useRouter();
   const { isDark } = useTheme();
+  const { t } = useTranslation(['home', 'shift']);
 
   const hasShift = plannedDay && shiftType;
   const hasNote = plannedDay?.note;
@@ -69,7 +72,7 @@ export function TodayShiftCard({
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <View style={styles.todayBadge}>
-            <Text style={styles.todayBadgeText}>BUGÜN</Text>
+            <Text style={styles.todayBadgeText}>{t('home:today')}</Text>
           </View>
           <Text style={styles.dateText}>{formattedDate}</Text>
         </View>
@@ -83,7 +86,7 @@ export function TodayShiftCard({
       {/* Main Content */}
       {hasShift ? (
         <View style={styles.content}>
-          <Text style={styles.shiftName}>{shiftType.name}</Text>
+          <Text style={styles.shiftName}>{getShiftDisplayName(shiftType)}</Text>
 
           {shiftType.isWorking && effectiveTime.startTime && effectiveTime.endTime ? (
             <View style={styles.timeContainer}>
@@ -92,23 +95,31 @@ export function TodayShiftCard({
               </Text>
               {effectiveTime.isCustom && (
                 <View style={styles.customBadge}>
-                  <Text style={styles.customBadgeText}>özel</Text>
+                  <Text style={styles.customBadgeText}>{t('shift:custom')}</Text>
                 </View>
               )}
               {shiftType.isOvernight && (
-                <Text style={styles.overnightHint}>(ertesi gün)</Text>
+                <Text style={styles.overnightHint}>{t('shift:nextDayHint')}</Text>
               )}
             </View>
           ) : (
-            <Text style={styles.statusText}>Bugün izinlisiniz</Text>
+            <Text style={styles.statusText}>{t('home:todayOff')}</Text>
           )}
 
           {/* Context Line - Next shift info (especially useful for Off days) */}
           {nextWorkingShift && (
             <View style={styles.contextLine}>
               <Text style={styles.contextText}>
-                Sonraki: {nextWorkingShift.dayLabel} {nextWorkingShift.shiftName}
-                {nextWorkingShift.time ? ` ${nextWorkingShift.time}` : ''}
+                {nextWorkingShift.time
+                  ? t('home:nextWithTime', {
+                      day: nextWorkingShift.dayLabel,
+                      shift: nextWorkingShift.shiftName,
+                      time: nextWorkingShift.time,
+                    })
+                  : t('home:next', {
+                      day: nextWorkingShift.dayLabel,
+                      shift: nextWorkingShift.shiftName,
+                    })}
               </Text>
             </View>
           )}
@@ -126,8 +137,8 @@ export function TodayShiftCard({
       ) : (
         /* No Plan State */
         <View style={styles.noPlanContent}>
-          <Text style={styles.noPlanTitle}>Plan Yok</Text>
-          <Text style={styles.noPlanSubtitle}>Henüz plan oluşturulmamış</Text>
+          <Text style={styles.noPlanTitle}>{t('home:noPlan')}</Text>
+          <Text style={styles.noPlanSubtitle}>{t('home:noPlanSubtitle')}</Text>
           {onCreatePlan && (
             <Pressable
               style={({ pressed }) => [
@@ -136,7 +147,7 @@ export function TodayShiftCard({
               ]}
               onPress={onCreatePlan}
             >
-              <Text style={styles.createButtonText}>Plan Oluştur</Text>
+              <Text style={styles.createButtonText}>{t('home:createPlan')}</Text>
             </Pressable>
           )}
         </View>

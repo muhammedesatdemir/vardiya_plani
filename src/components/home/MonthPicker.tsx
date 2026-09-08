@@ -11,18 +11,15 @@ import { View, Text, StyleSheet, Platform } from 'react-native';
 import { useScheduleStore } from '../../stores';
 import { useTheme } from '../../context';
 import { PressableScale } from '../ui';
-
-const MONTH_NAMES_TR = [
-  'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-  'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık',
-];
+import { getMonthNameTR } from '../../utils/turkish';
 
 /**
  * `2026-05` veya benzer state'ten "Mayıs 2026" string'i üretir.
  * Sheet başlıklarında ve paylaşım mesajlarında ortak format için.
+ * Ay adı aktif UI diline göre (i18next üzerinden) çözümlenir.
  */
 export function formatSummaryMonthLabel(year: number, month: number): string {
-  return `${MONTH_NAMES_TR[month - 1]} ${year}`;
+  return `${getMonthNameTR(month)} ${year}`;
 }
 
 export function MonthPicker() {

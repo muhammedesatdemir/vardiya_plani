@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Налаштування",
+  "appearance": "ВИГЛЯД",
+  "theme": "Тема",
+  "themeLight": "Світла",
+  "themeDark": "Темна",
+  "program": "ПРОГРАМА",
+  "activeTemplate": "Активний шаблон",
+  "notSelected": "Не вибрано",
+  "shiftTimes": "Час змін",
+  "shiftTimesSubtitle": "Налаштуйте час ранкової, денної та нічної змін",
+  "language": "Мова",
+  "data": "ДАНІ",
+  "exporting": "Підготовка...",
+  "exportData": "Експортувати дані",
+  "deleteAllData": "Видалити всі дані",
+  "about": "ПРО ЗАСТОСУНОК",
+  "appName": "Vardiya Planı",
+  "version": "Версія {{version}}",
+  "madeBy": "Розроблено Demrivo",
+  "footerSignature": "Зручне планування для змінних працівників",
+  "exportReadyTitle": "Експорт готовий",
+  "exportReadyMessage": "Ваш графік змін підготовлено у форматі, сумісному з Excel. Ви можете поділитися файлом або зберегти його на пристрої.",
+  "shareDialogTitle": "Поділитися графіком змін",
+  "exportErrorTitle": "Помилка",
+  "exportErrorMessage": "Під час створення файлу сталася помилка.",
+  "shareNotSupported": "Обмін не підтримується на цьому пристрої.",
+  "deleteAllConfirmTitle": "Видалити всі дані?",
+  "deleteAllConfirmBody": "Цю дію неможливо скасувати. Усі ваші графіки змін, нотатки та налаштування буде видалено остаточно.",
+  "csv": {
+    "header": "Дата,День,Зміна,Час початку,Час завершення,Нотатка,Захищено"
+  }
+}

@@ -12,6 +12,8 @@
  * Also handles: ç/Ç, ğ/Ğ, ö/Ö, ş/Ş, ü/Ü
  */
 
+import i18n from '../i18n';
+
 const TR_LOCALE = 'tr-TR';
 
 /**
@@ -94,12 +96,28 @@ export const TURKISH_WEEKDAYS_MONDAY_START = [
   'Pazar',
 ] as const;
 
+// i18next keys for calendar.months.* (Ocak=1 .. Aralık=12) — used to resolve
+// the display name in the active UI language while month indexing (1-12)
+// stays exactly as before.
+const MONTH_KEYS = [
+  '',
+  'january', 'february', 'march', 'april', 'may', 'june',
+  'july', 'august', 'september', 'october', 'november', 'december',
+] as const;
+
 /**
- * Get Turkish month name (1-12)
+ * Get the month name (1-12) in the active UI language.
+ * Falls back to the Turkish name if the translation resource isn't ready
+ * (e.g. called before i18n init) so existing callers never see an empty string.
  */
 export function getMonthNameTR(month: number): string {
   if (month < 1 || month > 12) {
     throw new Error(`Invalid month: ${month}`);
+  }
+  const key = MONTH_KEYS[month];
+  if (i18n.isInitialized && key) {
+    const translated = i18n.t(`calendar:months.${key}`, { defaultValue: '' });
+    if (translated) return translated;
   }
   return TURKISH_MONTHS[month] ?? '';
 }

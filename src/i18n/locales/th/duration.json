@@ -1,0 +1,13 @@
+{
+  "zero": "0 นาที",
+  "minutesOnly": "{{count}} นาที",
+  "hoursOnly": "{{count}} ชั่วโมง",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "สรุปชั่วโมงทำงาน",
+  "totalOvertime": "รวมชั่วโมงล่วงเวลา",
+  "totalShortage": "รวมชั่วโมงขาด",
+  "monthlyNotesTitle": "บันทึกเดือน {{month}}",
+  "noNotesForMonth": "ไม่มีบันทึกสำหรับเดือนนี้",
+  "monthlySummaryShare": "สรุปชั่วโมงทำงานเดือน {{month}}:\nรวมชั่วโมงล่วงเวลา: {{overtime}}\nรวมชั่วโมงขาด: {{shortage}}",
+  "monthlyNotesShare": "บันทึกเดือน {{month}}\n\n{{body}}"
+}

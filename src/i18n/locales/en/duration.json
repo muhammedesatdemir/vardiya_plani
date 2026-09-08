@@ -1,0 +1,15 @@
+{
+  "zero": "0 minutes",
+  "minutesOnly_one": "{{count}} minute",
+  "minutesOnly_other": "{{count}} minutes",
+  "hoursOnly_one": "{{count}} hour",
+  "hoursOnly_other": "{{count}} hours",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Hours Summary",
+  "totalOvertime": "Total Overtime",
+  "totalShortage": "Total Shortage",
+  "monthlyNotesTitle": "{{month}} Notes",
+  "noNotesForMonth": "No notes saved for this month.",
+  "monthlySummaryShare": "{{month}} Hours Summary:\nTotal overtime: {{overtime}}\nTotal shortage: {{shortage}}",
+  "monthlyNotesShare": "{{month}} Notes\n\n{{body}}"
+}

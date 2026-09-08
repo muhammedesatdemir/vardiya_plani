@@ -1,0 +1,33 @@
+{
+  "tabTitle": "設定",
+  "appearance": "外観",
+  "theme": "テーマ",
+  "themeLight": "ライト",
+  "themeDark": "ダーク",
+  "program": "プログラム",
+  "activeTemplate": "使用中のテンプレート",
+  "notSelected": "未選択",
+  "shiftTimes": "シフト時間",
+  "shiftTimesSubtitle": "朝勤・昼勤・夜勤の時間をカスタマイズ",
+  "language": "言語",
+  "data": "データ",
+  "exporting": "準備中...",
+  "exportData": "データをエクスポート",
+  "deleteAllData": "すべてのデータを削除",
+  "about": "アプリについて",
+  "appName": "Vardiya Planı",
+  "version": "バージョン {{version}}",
+  "madeBy": "Demrivo 開発",
+  "footerSignature": "交代勤務者のための実用的なスケジュール管理",
+  "exportReadyTitle": "エクスポート準備完了",
+  "exportReadyMessage": "シフト予定がExcel対応ファイルとして準備できました。共有するか、デバイスに保存できます。",
+  "shareDialogTitle": "シフト予定を共有",
+  "exportErrorTitle": "エラー",
+  "exportErrorMessage": "ファイルの作成中にエラーが発生しました。",
+  "shareNotSupported": "このデバイスでは共有がサポートされていません。",
+  "deleteAllConfirmTitle": "すべてのデータを削除しますか？",
+  "deleteAllConfirmBody": "この操作は元に戻せません。すべてのシフト予定、メモ、設定が完全に削除されます。",
+  "csv": {
+    "header": "日付,曜日,シフト,開始時刻,終了時刻,メモ,ロック"
+  }
+}

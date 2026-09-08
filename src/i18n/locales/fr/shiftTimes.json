@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Horaires d'équipe",
+  "heroSubtitle": "Personnalisez à votre convenance les horaires des équipes du matin, de l'après-midi et de nuit. Ces horaires seront utilisés automatiquement dans tous les plannings.",
+  "footerHint": "Si un horaire spécifique est défini pour un jour, il est utilisé en priorité pour ce jour-là.",
+  "editorSubtitle": "Modifier l'heure de début et de fin",
+  "resetToDefault": "↺  Revenir par défaut",
+  "errorInvalidTime": "Saisissez des heures entre 00 et 23, des minutes entre 00 et 59.",
+  "errorSameTime": "L'heure de début et de fin ne peuvent pas être identiques.",
+  "hourHint": "HH",
+  "minuteHint": "MM"
+}

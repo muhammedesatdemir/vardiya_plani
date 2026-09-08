@@ -1,0 +1,23 @@
+{
+  "zero": "0 دقيقة",
+  "minutesOnly_zero": "{{count}} دقيقة",
+  "minutesOnly_one": "دقيقة واحدة",
+  "minutesOnly_two": "دقيقتان",
+  "minutesOnly_few": "{{count}} دقائق",
+  "minutesOnly_many": "{{count}} دقيقة",
+  "minutesOnly_other": "{{count}} دقيقة",
+  "hoursOnly_zero": "{{count}} ساعة",
+  "hoursOnly_one": "ساعة واحدة",
+  "hoursOnly_two": "ساعتان",
+  "hoursOnly_few": "{{count}} ساعات",
+  "hoursOnly_many": "{{count}} ساعة",
+  "hoursOnly_other": "{{count}} ساعة",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "ملخص الساعات",
+  "totalOvertime": "إجمالي الساعات الإضافية",
+  "totalShortage": "إجمالي الساعات الناقصة",
+  "monthlyNotesTitle": "ملاحظات {{month}}",
+  "noNotesForMonth": "لا توجد ملاحظات محفوظة لهذا الشهر.",
+  "monthlySummaryShare": "ملخص ساعات {{month}}:\nإجمالي الساعات الإضافية: {{overtime}}\nإجمالي الساعات الناقصة: {{shortage}}",
+  "monthlyNotesShare": "ملاحظات {{month}}\n\n{{body}}"
+}

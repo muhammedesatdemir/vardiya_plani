@@ -15,11 +15,13 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore, selectActiveTemplate } from '../src/stores';
 import { getMonthNameTR } from '../src/utils/turkish';
 import { getDayCount } from '../src/utils/date';
 import { useTheme } from '../src/context';
 import { isOffCode } from '../src/constants/shifts';
+import { getShiftDisplayName } from '../src/utils/shiftDisplay';
 
 type RevisionMode = 'single_shift' | 'from_template';
 
@@ -31,6 +33,7 @@ function formatISODate(year: number, month: number, day: number): string {
 export default function ReviseScreen() {
   const router = useRouter();
   const { colors } = useTheme();
+  const { t } = useTranslation(['revise', 'common', 'calendar', 'shift']);
   const insets = useSafeAreaInsets();
 
   const shiftTypes = useScheduleStore((state) => state.shiftTypes);
@@ -72,7 +75,7 @@ export default function ReviseScreen() {
   // Helper to display shift pattern nicely
   const getShiftPatternDisplay = (steps: string[]): string => {
     return steps.slice(0, 8).map(code => {
-      if (isOffCode(code)) return 'Off';
+      if (isOffCode(code)) return t('shift:off');
       const shift = shiftTypes.find(s => s.code === code);
       return shift?.shortName ?? code;
     }).join(' → ');
@@ -133,17 +136,17 @@ export default function ReviseScreen() {
 
   const handleRevise = () => {
     if (!startDate || !endDate) {
-      Alert.alert('Hata', 'Lütfen bir tarih aralığı seçin.');
+      Alert.alert(t('common:error'), t('revise:errorSelectDateRange'));
       return;
     }
 
     if (mode === 'single_shift' && !selectedShiftCode) {
-      Alert.alert('Hata', 'Lütfen bir vardiya seçin.');
+      Alert.alert(t('common:error'), t('revise:errorSelectShift'));
       return;
     }
 
     if (mode === 'from_template' && !selectedTemplateId) {
-      Alert.alert('Hata', 'Lütfen bir şablon seçin.');
+      Alert.alert(t('common:error'), t('revise:errorSelectTemplate'));
       return;
     }
 
@@ -158,15 +161,20 @@ export default function ReviseScreen() {
       overrideManual,
     });
 
+    const revisedMessage = t('revise:resultRevised', { count: result.revised });
+    const skippedMessage = result.skipped > 0
+      ? t('revise:resultSkipped', { count: result.skipped })
+      : '';
+
     Alert.alert(
-      'Tamamlandı',
-      `${result.revised} gün güncellendi${result.skipped > 0 ? `, ${result.skipped} gün atlandı` : ''}.`,
-      [{ text: 'Tamam', onPress: () => router.back() }]
+      t('revise:resultTitle'),
+      `${revisedMessage}${skippedMessage}.`,
+      [{ text: t('common:ok'), onPress: () => router.back() }]
     );
   };
 
   const formatSelectedRange = (): string => {
-    if (!startDate) return 'Tarih seçin';
+    if (!startDate) return t('revise:selectDate');
     if (!endDate) return startDate;
     return `${startDate} → ${endDate}`;
   };
@@ -194,7 +202,7 @@ export default function ReviseScreen() {
       contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 16) + 12 }}
     >
       {/* Date Range Selection */}
-      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>Tarih Aralığı</Text>
+      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>{t('revise:dateRangeSection')}</Text>
       <View style={[styles.section, dynamicStyles.section]}>
         <Text style={[styles.selectedRange, dynamicStyles.selectedRange]}>{formatSelectedRange()}</Text>
 
@@ -219,8 +227,16 @@ export default function ReviseScreen() {
 
         {/* Day Headers */}
         <View style={styles.dayHeaders}>
-          {['Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct', 'Pz'].map((d) => (
-            <Text key={d} style={[styles.dayHeader, dynamicStyles.dayHeader]}>
+          {[
+            t('calendar:weekdays.monday_short2'),
+            t('calendar:weekdays.tuesday_short2'),
+            t('calendar:weekdays.wednesday_short2'),
+            t('calendar:weekdays.thursday_short2'),
+            t('calendar:weekdays.friday_short2'),
+            t('calendar:weekdays.saturday_short2'),
+            t('calendar:weekdays.sunday_short2'),
+          ].map((d, i) => (
+            <Text key={`${d}-${i}`} style={[styles.dayHeader, dynamicStyles.dayHeader]}>
               {d}
             </Text>
           ))}
@@ -265,7 +281,7 @@ export default function ReviseScreen() {
       </View>
 
       {/* Mode Selection */}
-      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>Değişiklik Türü</Text>
+      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>{t('revise:changeTypeSection')}</Text>
       <View style={[styles.section, dynamicStyles.section]}>
         <Pressable
           style={[
@@ -275,7 +291,7 @@ export default function ReviseScreen() {
           ]}
           onPress={() => setMode('single_shift')}
         >
-          <Text style={[styles.modeLabel, dynamicStyles.modeLabel]}>Tek vardiya ata</Text>
+          <Text style={[styles.modeLabel, dynamicStyles.modeLabel]}>{t('revise:assignSingleShift')}</Text>
           {mode === 'single_shift' && <Text style={styles.checkmark}>✓</Text>}
         </Pressable>
         <Pressable
@@ -286,7 +302,7 @@ export default function ReviseScreen() {
           ]}
           onPress={() => setMode('from_template')}
         >
-          <Text style={[styles.modeLabel, dynamicStyles.modeLabel]}>Şablondan oluştur</Text>
+          <Text style={[styles.modeLabel, dynamicStyles.modeLabel]}>{t('revise:createFromTemplate')}</Text>
           {mode === 'from_template' && <Text style={styles.checkmark}>✓</Text>}
         </Pressable>
       </View>
@@ -294,7 +310,7 @@ export default function ReviseScreen() {
       {/* Shift Selection (single_shift mode) */}
       {mode === 'single_shift' && (
         <>
-          <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>Vardiya</Text>
+          <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>{t('revise:shiftSection')}</Text>
           <View style={styles.shiftGrid}>
             {visibleShiftTypes.map((shift) => (
               <Pressable
@@ -322,7 +338,7 @@ export default function ReviseScreen() {
                     selectedShiftCode === shift.code && styles.shiftNameSelected,
                   ]}
                 >
-                  {shift.name}
+                  {getShiftDisplayName(shift)}
                 </Text>
               </Pressable>
             ))}
@@ -333,7 +349,7 @@ export default function ReviseScreen() {
       {/* Template Selection (from_template mode) */}
       {mode === 'from_template' && (
         <>
-          <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>Şablon</Text>
+          <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>{t('revise:templateSection')}</Text>
           <View style={[styles.section, dynamicStyles.section]}>
             {templates.map((template) => (
               <Pressable
@@ -351,7 +367,7 @@ export default function ReviseScreen() {
                     {template.name}
                   </Text>
                   <Text style={[styles.templateCycle, dynamicStyles.templateCycle]}>
-                    {template.cycleLength} günlük döngü
+                    {t('revise:cycleLength', { count: template.cycleLength })}
                   </Text>
                   <Text style={[styles.templatePattern, dynamicStyles.templatePattern]}>
                     {getShiftPatternDisplay(template.steps)}
@@ -368,21 +384,21 @@ export default function ReviseScreen() {
               style={[styles.addTemplateRow, { borderBottomColor: colors.borderLight }]}
               onPress={handleCreateTemplate}
             >
-              <Text style={styles.addTemplateText}>+ Yeni Şablon Oluştur</Text>
+              <Text style={styles.addTemplateText}>{t('revise:addNewTemplate')}</Text>
             </Pressable>
           </View>
         </>
       )}
 
       {/* Options */}
-      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>Seçenekler</Text>
+      <Text style={[styles.sectionTitle, dynamicStyles.sectionTitle]}>{t('revise:optionsSection')}</Text>
       <View style={[styles.section, dynamicStyles.section]}>
         <Pressable
           style={[styles.optionRow, { borderBottomColor: colors.borderLight }]}
           onPress={() => setOverrideLocked(!overrideLocked)}
         >
           <Text style={[styles.optionLabel, dynamicStyles.optionLabel]}>
-            Kilitli günlerin üzerine yaz
+            {t('revise:overrideLocked')}
           </Text>
           <View
             style={[styles.checkbox, overrideLocked && styles.checkboxChecked]}
@@ -395,7 +411,7 @@ export default function ReviseScreen() {
           onPress={() => setOverrideManual(!overrideManual)}
         >
           <Text style={[styles.optionLabel, dynamicStyles.optionLabel]}>
-            Manuel günlerin üzerine yaz
+            {t('revise:overrideManual')}
           </Text>
           <View
             style={[styles.checkbox, overrideManual && styles.checkboxChecked]}
@@ -408,9 +424,9 @@ export default function ReviseScreen() {
       {/* Warning */}
       <View style={[styles.warning, { backgroundColor: colors.warning }]}>
         <Text style={[styles.warningText, { color: colors.warningText }]}>
-          Seçili aralıktaki mevcut planlar{' '}
-          {overrideLocked ? '' : '(kilitli olanlar hariç) '}
-          üzerine yazılacaktır
+          {t('revise:overwriteWarning', {
+            lockedNote: overrideLocked ? '' : t('revise:overwriteWarningLockedNote'),
+          })}
         </Text>
       </View>
 
@@ -421,7 +437,7 @@ export default function ReviseScreen() {
           onPress={() => router.back()}
         >
           <Text style={[styles.cancelButtonText, dynamicStyles.cancelButtonText]}>
-            İptal
+            {t('common:cancel')}
           </Text>
         </Pressable>
         <Pressable
@@ -432,7 +448,7 @@ export default function ReviseScreen() {
           onPress={handleRevise}
           disabled={!startDate || !endDate}
         >
-          <Text style={styles.reviseButtonText}>Uygula</Text>
+          <Text style={styles.reviseButtonText}>{t('common:apply')}</Text>
         </Pressable>
       </View>
     </ScrollView>

@@ -1,0 +1,20 @@
+{
+  "screenTitle": "날짜 편집",
+  "invalidDate": "잘못된 날짜",
+  "selectShift": "근무 선택",
+  "customTimeForDay": "이 날의 사용자 지정 시간",
+  "customTimeHint": "이 날에만 적용됩니다",
+  "start": "시작",
+  "end": "종료",
+  "resetToDefault": "기본값으로 재설정",
+  "overtime": "초과 근무",
+  "shortage": "부족 시간",
+  "hours": "시간",
+  "minutes": "분",
+  "protectThisDay": "이 날 잠금",
+  "protectHint": "일정 생성 시 이 날짜는 자동으로 변경되지 않습니다",
+  "note": "📝 메모",
+  "notePlaceholder": "이 날의 메모 추가...",
+  "noteHint": "예: 휴무 변경, 근무 조정...",
+  "clearDay": "날짜 지우기"
+}

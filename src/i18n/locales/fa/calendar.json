@@ -1,0 +1,43 @@
+{
+  "tabTitle": "تقویم",
+  "today": "امروز",
+  "tomorrow": "فردا",
+  "weekdays": {
+    "monday_short3": "دوش",
+    "tuesday_short3": "سه‌ش",
+    "wednesday_short3": "چهار",
+    "thursday_short3": "پنج",
+    "friday_short3": "جمعه",
+    "saturday_short3": "شنبه",
+    "sunday_short3": "یک‌ش",
+    "monday_short2": "دو",
+    "tuesday_short2": "سه",
+    "wednesday_short2": "چه",
+    "thursday_short2": "پن",
+    "friday_short2": "جم",
+    "saturday_short2": "شن",
+    "sunday_short2": "یک",
+    "sunday_full": "یکشنبه",
+    "monday_full": "دوشنبه",
+    "tuesday_full": "سه‌شنبه",
+    "wednesday_full": "چهارشنبه",
+    "thursday_full": "پنجشنبه",
+    "friday_full": "جمعه",
+    "saturday_full": "شنبه"
+  },
+  "holidayOfficial": "تعطیل رسمی — {{name}}",
+  "months": {
+    "january": "ژانویه",
+    "february": "فوریه",
+    "march": "مارس",
+    "april": "آوریل",
+    "may": "مه",
+    "june": "ژوئن",
+    "july": "ژوئیه",
+    "august": "اوت",
+    "september": "سپتامبر",
+    "october": "اکتبر",
+    "november": "نوامبر",
+    "december": "دسامبر"
+  }
+}

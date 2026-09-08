@@ -1,0 +1,43 @@
+{
+  "tabTitle": "ปฏิทิน",
+  "today": "วันนี้",
+  "tomorrow": "พรุ่งนี้",
+  "weekdays": {
+    "monday_short3": "จ.",
+    "tuesday_short3": "อ.",
+    "wednesday_short3": "พ.",
+    "thursday_short3": "พฤ.",
+    "friday_short3": "ศ.",
+    "saturday_short3": "ส.",
+    "sunday_short3": "อา.",
+    "monday_short2": "จ",
+    "tuesday_short2": "อ",
+    "wednesday_short2": "พ",
+    "thursday_short2": "พฤ",
+    "friday_short2": "ศ",
+    "saturday_short2": "ส",
+    "sunday_short2": "อา",
+    "sunday_full": "วันอาทิตย์",
+    "monday_full": "วันจันทร์",
+    "tuesday_full": "วันอังคาร",
+    "wednesday_full": "วันพุธ",
+    "thursday_full": "วันพฤหัสบดี",
+    "friday_full": "วันศุกร์",
+    "saturday_full": "วันเสาร์"
+  },
+  "holidayOfficial": "วันหยุดราชการ — {{name}}",
+  "months": {
+    "january": "มกราคม",
+    "february": "กุมภาพันธ์",
+    "march": "มีนาคม",
+    "april": "เมษายน",
+    "may": "พฤษภาคม",
+    "june": "มิถุนายน",
+    "july": "กรกฎาคม",
+    "august": "สิงหาคม",
+    "september": "กันยายน",
+    "october": "ตุลาคม",
+    "november": "พฤศจิกายน",
+    "december": "ธันวาคม"
+  }
+}

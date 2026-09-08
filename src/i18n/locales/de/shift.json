@@ -1,0 +1,19 @@
+{
+  "morning": "Frühschicht",
+  "afternoon": "Spätschicht",
+  "evening": "Abendschicht",
+  "night": "Nachtschicht",
+  "off": "Frei",
+  "leave": "Frei",
+  "dayOff": "Freier Tag",
+  "crossesMidnight": "Geht über Mitternacht",
+  "nextDayHint": "(nächster Tag)",
+  "custom": "individuell",
+  "untilTime": "{{shift}} (bis {{time}})",
+  "defaultRangeFor": "Standardzeit für die Schicht {{shift}}",
+  "systemTemplate": "Systemvorlage",
+  "customTemplate": "Eigene Vorlage",
+  "customPattern": "Eigenes Muster",
+  "customPatternNamed": "{{name}} (Eigenes Muster)",
+  "standardCycle": "Standardzyklus über {{count}} Tage"
+}

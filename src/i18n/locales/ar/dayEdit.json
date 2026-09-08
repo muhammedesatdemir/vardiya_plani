@@ -1,0 +1,20 @@
+{
+  "screenTitle": "تعديل اليوم",
+  "invalidDate": "تاريخ غير صالح",
+  "selectShift": "اختر الوردية",
+  "customTimeForDay": "وقت مخصص لهذا اليوم",
+  "customTimeHint": "ينطبق على هذا اليوم فقط",
+  "start": "البداية",
+  "end": "النهاية",
+  "resetToDefault": "إعادة إلى الافتراضي",
+  "overtime": "ساعات إضافية",
+  "shortage": "ساعات ناقصة",
+  "hours": "ساعات",
+  "minutes": "دقائق",
+  "protectThisDay": "حماية هذا اليوم",
+  "protectHint": "لا تغيّر هذا اليوم تلقائيًا عند إنشاء خطة",
+  "note": "📝 ملاحظة",
+  "notePlaceholder": "أضف ملاحظة لهذا اليوم...",
+  "noteHint": "مثال: تغيّرت الإجازة، تبديل وردية...",
+  "clearDay": "مسح اليوم"
+}

@@ -1,0 +1,19 @@
+{
+  "morning": "Morning",
+  "afternoon": "Afternoon",
+  "evening": "Evening",
+  "night": "Night",
+  "off": "Off",
+  "leave": "Off",
+  "dayOff": "Day off",
+  "crossesMidnight": "Crosses midnight",
+  "nextDayHint": "(next day)",
+  "custom": "custom",
+  "untilTime": "{{shift}} (until {{time}})",
+  "defaultRangeFor": "Default hours for the {{shift}} shift",
+  "systemTemplate": "System template",
+  "customTemplate": "Custom template",
+  "customPattern": "Custom Pattern",
+  "customPatternNamed": "{{name}} (Custom Pattern)",
+  "standardCycle": "Standard {{count}}-Day Cycle"
+}

@@ -18,12 +18,14 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../src/stores';
-import { formatDateTR, parseISODate, isValidISODate } from '../../src/utils/date';
+import { formatDateTR, formatWeekdayTR, parseISODate, isValidISODate } from '../../src/utils/date';
 import { getHolidayName } from '../../src/constants/holidays';
 import { normalizeCustomTime } from '../../src/utils/shiftTime';
 import { hmToMinutes, minutesToHM } from '../../src/utils/duration';
 import { useTheme } from '../../src/context';
+import { getShiftDisplayName } from '../../src/utils/shiftDisplay';
 import { TimeInput, normalizeTimeString } from '../../src/components/ui';
 import type { PlannedDay } from '../../src/types';
 
@@ -34,6 +36,7 @@ export default function DayEditScreen() {
   const date = rawDate && isValidISODate(rawDate) ? rawDate : null;
   const router = useRouter();
   const { colors } = useTheme();
+  const { t } = useTranslation(['dayEdit', 'shift', 'common', 'calendar']);
   const insets = useSafeAreaInsets();
   const scrollRef = useRef<ScrollView>(null);
 
@@ -82,7 +85,7 @@ export default function DayEditScreen() {
   // Parse date for display
   const dateObj = date ? parseISODate(date) : new Date();
   const formattedDate = date ? formatDateTR(dateObj) : '';
-  const dayName = new Intl.DateTimeFormat('tr-TR', { weekday: 'long' }).format(dateObj);
+  const dayName = formatWeekdayTR(dateObj);
   const holidayName = date ? getHolidayName(date) : null;
 
   // Get existing shift type for summary
@@ -93,7 +96,7 @@ export default function DayEditScreen() {
   if (!date) {
     return (
       <View style={[styles.container, styles.errorContainer, { backgroundColor: colors.background }]}>
-        <Text style={[styles.errorText, { color: colors.text }]}>Geçersiz tarih</Text>
+        <Text style={[styles.errorText, { color: colors.text }]}>{t('dayEdit:invalidDate')}</Text>
         <Pressable
           style={({ pressed }) => [
             styles.cancelButton,
@@ -103,7 +106,7 @@ export default function DayEditScreen() {
           onPress={() => router.back()}
         >
           <Text style={[styles.cancelButtonText, { color: colors.textSecondary }]}>
-            Geri
+            {t('common:back')}
           </Text>
         </Pressable>
       </View>
@@ -215,13 +218,13 @@ export default function DayEditScreen() {
             </Text>
             {holidayName && (
               <Text style={styles.summaryHoliday}>
-                🇹🇷 Resmi Tatil — {holidayName}
+                {t('calendar:holidayOfficial', { name: holidayName })}
               </Text>
             )}
           </View>
           {existingShiftType && (
             <View style={[styles.summaryBadge, { backgroundColor: existingShiftType.color }]}>
-              <Text style={styles.summaryBadgeText}>{existingShiftType.name}</Text>
+              <Text style={styles.summaryBadgeText}>{getShiftDisplayName(existingShiftType)}</Text>
             </View>
           )}
           {existingDay?.isLocked && (
@@ -231,7 +234,7 @@ export default function DayEditScreen() {
 
         {/* Shift Selection */}
         <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-          Vardiya Seçin
+          {t('dayEdit:selectShift')}
         </Text>
         <View style={styles.shiftGrid}>
           {visibleShiftTypes.map((st) => {
@@ -248,14 +251,14 @@ export default function DayEditScreen() {
                 onPress={() => handleShiftSelect(st.code)}
               >
                 <View style={styles.shiftCardContent}>
-                  <Text style={styles.shiftName}>{st.name}</Text>
+                  <Text style={styles.shiftName}>{getShiftDisplayName(st)}</Text>
                   {st.startTime && st.endTime && (
                     <Text style={styles.shiftTime}>
                       {st.startTime} – {st.endTime}
                     </Text>
                   )}
                   {!st.isWorking && (
-                    <Text style={styles.shiftOffLabel}>İzin günü</Text>
+                    <Text style={styles.shiftOffLabel}>{t('shift:dayOff')}</Text>
                   )}
                 </View>
                 {isSelected && (
@@ -273,16 +276,16 @@ export default function DayEditScreen() {
           <View style={[styles.timeSection, { backgroundColor: colors.surface }]}>
             <View style={styles.timeSectionHeader}>
               <Text style={[styles.timeSectionTitle, { color: colors.text }]}>
-                Bu Güne Özel Saat
+                {t('dayEdit:customTimeForDay')}
               </Text>
               <Text style={[styles.timeSectionHint, { color: colors.textMuted }]}>
-                Sadece bu gün için geçerli
+                {t('dayEdit:customTimeHint')}
               </Text>
             </View>
             <View style={styles.timeInputs}>
               <View style={styles.timeInputGroup}>
                 <Text style={[styles.timeLabel, { color: colors.textSecondary }]}>
-                  Başlangıç
+                  {t('dayEdit:start')}
                 </Text>
                 <TimeInput
                   value={customStartTime}
@@ -300,7 +303,7 @@ export default function DayEditScreen() {
               <Text style={[styles.timeSeparator, { color: colors.textMuted }]}>–</Text>
               <View style={styles.timeInputGroup}>
                 <Text style={[styles.timeLabel, { color: colors.textSecondary }]}>
-                  Bitiş
+                  {t('dayEdit:end')}
                 </Text>
                 <TimeInput
                   value={customEndTime}
@@ -325,7 +328,7 @@ export default function DayEditScreen() {
                 }}
               >
                 <Text style={[styles.resetTimesText, { color: colors.primary }]}>
-                  Varsayılana döndür
+                  {t('dayEdit:resetToDefault')}
                 </Text>
               </Pressable>
             )}
@@ -336,7 +339,7 @@ export default function DayEditScreen() {
         {selectedShiftType?.isWorking && (
           <>
             <DurationCard
-              title="Fazla Mesai"
+              title={t('dayEdit:overtime')}
               icon="⏫"
               accentColor="#10B981"
               hours={overtimeHours}
@@ -346,7 +349,7 @@ export default function DayEditScreen() {
               colors={colors}
             />
             <DurationCard
-              title="Eksik Saat"
+              title={t('dayEdit:shortage')}
               icon="⏬"
               accentColor="#F59E0B"
               hours={shortageHours}
@@ -367,11 +370,11 @@ export default function DayEditScreen() {
             <View style={styles.protectHeader}>
               <Text style={styles.protectIcon}>🛡️</Text>
               <Text style={[styles.protectLabel, { color: colors.text }]}>
-                Bu Günü Koru
+                {t('dayEdit:protectThisDay')}
               </Text>
             </View>
             <Text style={[styles.protectHint, { color: colors.textMuted }]}>
-              Plan oluştururken bu gün otomatik değişmesin
+              {t('dayEdit:protectHint')}
             </Text>
           </View>
           <View style={[styles.toggle, isProtected && styles.toggleActive]}>
@@ -382,7 +385,7 @@ export default function DayEditScreen() {
         {/* Note Section */}
         <View style={[styles.noteSection, { backgroundColor: colors.surface }]}>
           <Text style={[styles.noteSectionTitle, { color: colors.text }]}>
-            📝 Not
+            {t('dayEdit:note')}
           </Text>
           <TextInput
             style={[
@@ -391,7 +394,7 @@ export default function DayEditScreen() {
             ]}
             value={note}
             onChangeText={setNote}
-            placeholder="Bugüne özel not ekle..."
+            placeholder={t('dayEdit:notePlaceholder')}
             placeholderTextColor={colors.textMuted}
             multiline
             numberOfLines={3}
@@ -405,7 +408,7 @@ export default function DayEditScreen() {
             }}
           />
           <Text style={[styles.noteHint, { color: colors.textMuted }]}>
-            Örn: İzin değişti, nöbet kaydırıldı...
+            {t('dayEdit:noteHint')}
           </Text>
         </View>
 
@@ -420,7 +423,7 @@ export default function DayEditScreen() {
             onPress={() => router.back()}
           >
             <Text style={[styles.cancelButtonText, { color: colors.textSecondary }]}>
-              İptal
+              {t('common:cancel')}
             </Text>
           </Pressable>
           <Pressable
@@ -430,7 +433,7 @@ export default function DayEditScreen() {
             ]}
             onPress={handleSave}
           >
-            <Text style={styles.saveButtonText}>Kaydet</Text>
+            <Text style={styles.saveButtonText}>{t('common:save')}</Text>
           </Pressable>
         </View>
 
@@ -443,7 +446,7 @@ export default function DayEditScreen() {
             ]}
             onPress={handleClear}
           >
-            <Text style={styles.clearButtonText}>Günü Temizle</Text>
+            <Text style={styles.clearButtonText}>{t('dayEdit:clearDay')}</Text>
           </Pressable>
         )}
 
@@ -480,6 +483,7 @@ function DurationCard({
   onMinutesChange,
   colors,
 }: DurationCardProps) {
+  const { t } = useTranslation(['dayEdit', 'common']);
   // Saat: rakam, en fazla 3 hane (sıkı sınır yok ama 999 saat kafi)
   const handleHours = (v: string) => {
     const cleaned = v.replace(/[^0-9]/g, '').slice(0, 3);
@@ -509,7 +513,7 @@ function DurationCard({
       <View style={styles.durationInputs}>
         <View style={styles.durationInputGroup}>
           <Text style={[styles.durationLabel, { color: colors.textSecondary }]}>
-            Saat
+            {t('dayEdit:hours')}
           </Text>
           <View
             style={[
@@ -534,7 +538,7 @@ function DurationCard({
         </View>
         <View style={styles.durationInputGroup}>
           <Text style={[styles.durationLabel, { color: colors.textSecondary }]}>
-            Dakika
+            {t('dayEdit:minutes')}
           </Text>
           <View
             style={[
@@ -567,7 +571,7 @@ function DurationCard({
             hitSlop={8}
           >
             <Text style={[styles.durationResetText, { color: colors.primary }]}>
-              Sıfırla
+              {t('common:reset')}
             </Text>
           </Pressable>
         )}

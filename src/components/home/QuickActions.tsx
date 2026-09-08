@@ -6,6 +6,7 @@
  */
 
 import { View, Text, StyleSheet, Platform } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { PressableScale } from '../ui';
 
@@ -23,11 +24,12 @@ interface QuickActionsProps {
 
 export function QuickActions({ actions }: QuickActionsProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation('home');
 
   return (
     <View style={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-        Hızlı İşlemler
+        {t('home:quickActions')}
       </Text>
       <View style={styles.row}>
         {actions.map((action) => (

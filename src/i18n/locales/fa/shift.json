@@ -1,0 +1,19 @@
+{
+  "morning": "صبح",
+  "afternoon": "عصر",
+  "evening": "غروب",
+  "night": "شب",
+  "off": "مرخصی",
+  "leave": "مرخصی",
+  "dayOff": "روز مرخصی",
+  "crossesMidnight": "از نیمه‌شب می‌گذرد",
+  "nextDayHint": "(روز بعد)",
+  "custom": "سفارشی",
+  "untilTime": "{{shift}} (تا {{time}})",
+  "defaultRangeFor": "بازه زمانی پیش‌فرض شیفت {{shift}}",
+  "systemTemplate": "الگوی سیستم",
+  "customTemplate": "الگوی سفارشی",
+  "customPattern": "الگوی سفارشی",
+  "customPatternNamed": "{{name}} (الگوی سفارشی)",
+  "standardCycle": "چرخه استاندارد {{count}} روزه"
+}

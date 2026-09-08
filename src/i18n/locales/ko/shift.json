@@ -1,0 +1,19 @@
+{
+  "morning": "오전",
+  "afternoon": "오후",
+  "evening": "저녁",
+  "night": "야간",
+  "off": "휴무",
+  "leave": "휴무",
+  "dayOff": "휴무일",
+  "crossesMidnight": "자정을 넘김",
+  "nextDayHint": "(다음 날)",
+  "custom": "사용자 지정",
+  "untilTime": "{{shift}} ({{time}}까지)",
+  "defaultRangeFor": "{{shift}} 근무의 기본 시간",
+  "systemTemplate": "시스템 템플릿",
+  "customTemplate": "사용자 지정 템플릿",
+  "customPattern": "사용자 지정 패턴",
+  "customPatternNamed": "{{name}} (사용자 지정 패턴)",
+  "standardCycle": "표준 {{count}}일 주기"
+}

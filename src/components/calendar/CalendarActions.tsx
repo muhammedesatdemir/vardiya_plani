@@ -7,6 +7,7 @@
 
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { PressableScale } from '../ui';
 
@@ -17,6 +18,7 @@ interface CalendarActionsProps {
 export function CalendarActions({ onGenerate }: CalendarActionsProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation('home');
 
   return (
     <View
@@ -40,7 +42,7 @@ export function CalendarActions({ onGenerate }: CalendarActionsProps) {
           <View style={styles.plusHorizontal} />
           <View style={styles.plusVertical} />
         </View>
-        <Text style={styles.buttonText}>Ay Oluştur</Text>
+        <Text style={styles.buttonText}>{t('home:generateAction')}</Text>
       </PressableScale>
     </View>
   );

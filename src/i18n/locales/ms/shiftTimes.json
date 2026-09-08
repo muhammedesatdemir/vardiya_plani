@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Waktu Syif",
+  "heroSubtitle": "Sesuaikan waktu syif pagi, tengah hari dan malam mengikut keperluan anda. Waktu ini akan digunakan secara automatik dalam semua jadual.",
+  "footerHint": "Jika waktu tersuai ditetapkan untuk sesuatu hari, waktu itu akan diutamakan.",
+  "editorSubtitle": "Edit waktu mula dan tamat",
+  "resetToDefault": "↺  Kembali ke lalai",
+  "errorInvalidTime": "Masukkan jam antara 00–23, minit antara 00–59.",
+  "errorSameTime": "Waktu mula dan tamat tidak boleh sama.",
+  "hourHint": "JJ",
+  "minuteHint": "MM"
+}

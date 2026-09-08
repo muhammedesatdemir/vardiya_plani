@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Oras ng Shift",
+  "heroSubtitle": "I-customize ang oras ng umaga, hapon, at gabing shift ayon sa iyong pangangailangan. Awtomatikong gagamitin ang mga oras na ito sa lahat ng plano.",
+  "footerHint": "Kung may custom na oras na naitakda para sa isang araw, ito ang mauunang gagamitin.",
+  "editorSubtitle": "I-edit ang oras ng simula at tapos",
+  "resetToDefault": "↺  Bumalik sa default",
+  "errorInvalidTime": "Maglagay ng oras sa 00–23, minuto sa 00–59.",
+  "errorSameTime": "Hindi maaaring magkapareho ang oras ng simula at tapos.",
+  "hourHint": "OO",
+  "minuteHint": "MM"
+}

@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Horarios de Turnos",
+  "heroSubtitle": "Personaliza los horarios de los turnos de mañana, tarde y noche. Estos horarios se usan automáticamente en todos los planes.",
+  "footerHint": "Si se establece un horario personalizado para un día específico, ese horario tiene prioridad ese día.",
+  "editorSubtitle": "Editar la hora de inicio y fin",
+  "resetToDefault": "↺  Restablecer al predeterminado",
+  "errorInvalidTime": "Ingresa horas entre 00–23 y minutos entre 00–59.",
+  "errorSameTime": "La hora de inicio y fin no pueden ser iguales.",
+  "hourHint": "HH",
+  "minuteHint": "MM"
+}

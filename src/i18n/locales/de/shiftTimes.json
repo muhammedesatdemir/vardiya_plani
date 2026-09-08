@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Schichtzeiten",
+  "heroSubtitle": "Passe die Zeiten für Früh-, Spät- und Nachtschicht individuell an. Diese Zeiten werden automatisch in allen Plänen verwendet.",
+  "footerHint": "Wenn für einen Tag eine individuelle Zeit festgelegt wurde, hat diese Vorrang.",
+  "editorSubtitle": "Start- und Endzeit bearbeiten",
+  "resetToDefault": "↺  Auf Standard zurücksetzen",
+  "errorInvalidTime": "Gib Stunden von 00–23 und Minuten von 00–59 ein.",
+  "errorSameTime": "Start- und Endzeit dürfen nicht gleich sein.",
+  "hourHint": "SS",
+  "minuteHint": "MM"
+}

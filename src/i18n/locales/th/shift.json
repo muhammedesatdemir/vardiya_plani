@@ -1,0 +1,19 @@
+{
+  "morning": "เช้า",
+  "afternoon": "บ่าย",
+  "evening": "เย็น",
+  "night": "ดึก",
+  "off": "วันหยุด",
+  "leave": "วันหยุด",
+  "dayOff": "วันหยุดงาน",
+  "crossesMidnight": "ข้ามเที่ยงคืน",
+  "nextDayHint": "(วันถัดไป)",
+  "custom": "กำหนดเอง",
+  "untilTime": "{{shift}} (ถึง {{time}})",
+  "defaultRangeFor": "ช่วงเวลาเริ่มต้นของกะ {{shift}}",
+  "systemTemplate": "เทมเพลตระบบ",
+  "customTemplate": "เทมเพลตกำหนดเอง",
+  "customPattern": "รูปแบบกำหนดเอง",
+  "customPatternNamed": "{{name}} (รูปแบบกำหนดเอง)",
+  "standardCycle": "รอบมาตรฐาน {{count}} วัน"
+}

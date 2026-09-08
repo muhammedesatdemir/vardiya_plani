@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Tetapan",
+  "appearance": "PAPARAN",
+  "theme": "Tema",
+  "themeLight": "Terang",
+  "themeDark": "Gelap",
+  "program": "PROGRAM",
+  "activeTemplate": "Templat Aktif",
+  "notSelected": "Tidak dipilih",
+  "shiftTimes": "Waktu Syif",
+  "shiftTimesSubtitle": "Sesuaikan waktu syif pagi, tengah hari dan malam",
+  "language": "Bahasa",
+  "data": "DATA",
+  "exporting": "Sedang menyediakan...",
+  "exportData": "Eksport Data",
+  "deleteAllData": "Padam Semua Data",
+  "about": "TENTANG",
+  "appName": "Vardiya Planı",
+  "version": "Versi {{version}}",
+  "madeBy": "Dibangunkan oleh Demrivo",
+  "footerSignature": "Perancangan praktikal untuk pekerja bersyif",
+  "exportReadyTitle": "Eksport Sedia",
+  "exportReadyMessage": "Jadual syif anda telah disediakan sebagai fail serasi Excel. Anda boleh berkongsi atau menyimpannya ke peranti anda.",
+  "shareDialogTitle": "Kongsi Jadual Syif",
+  "exportErrorTitle": "Ralat",
+  "exportErrorMessage": "Ralat berlaku semasa membuat fail.",
+  "shareNotSupported": "Perkongsian tidak disokong pada peranti ini.",
+  "deleteAllConfirmTitle": "Padam semua data?",
+  "deleteAllConfirmBody": "Tindakan ini tidak boleh dibuat asal. Semua jadual syif, nota dan tetapan anda akan dipadam secara kekal.",
+  "csv": {
+    "header": "Tarikh,Hari,Syif,Waktu Mula,Waktu Tamat,Nota,Dikunci"
+  }
+}

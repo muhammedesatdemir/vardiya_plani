@@ -1,0 +1,19 @@
+{
+  "morning": "Rano",
+  "afternoon": "Popołudnie",
+  "evening": "Wieczór",
+  "night": "Noc",
+  "off": "Wolne",
+  "leave": "Wolne",
+  "dayOff": "Dzień wolny",
+  "crossesMidnight": "Przechodzi przez północ",
+  "nextDayHint": "(następny dzień)",
+  "custom": "niestandardowa",
+  "untilTime": "{{shift}} (do {{time}})",
+  "defaultRangeFor": "Domyślne godziny dla zmiany {{shift}}",
+  "systemTemplate": "Szablon systemowy",
+  "customTemplate": "Szablon niestandardowy",
+  "customPattern": "Niestandardowy wzorzec",
+  "customPatternNamed": "{{name}} (niestandardowy wzorzec)",
+  "standardCycle": "Standardowy cykl {{count}}-dniowy"
+}

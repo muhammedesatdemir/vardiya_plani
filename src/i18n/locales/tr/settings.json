@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Ayarlar",
+  "appearance": "GÖRÜNÜM",
+  "theme": "Tema",
+  "themeLight": "Açık",
+  "themeDark": "Koyu",
+  "program": "PROGRAM",
+  "activeTemplate": "Aktif Şablon",
+  "notSelected": "Seçilmedi",
+  "shiftTimes": "Vardiya Saatleri",
+  "shiftTimesSubtitle": "Sabah, öğle ve gece saatlerini özelleştir",
+  "language": "Dil",
+  "data": "VERİ",
+  "exporting": "Hazırlanıyor...",
+  "exportData": "Verileri Dışa Aktar",
+  "deleteAllData": "Tüm Verileri Sil",
+  "about": "HAKKINDA",
+  "appName": "Vardiya Planı",
+  "version": "Sürüm {{version}}",
+  "madeBy": "Demrivo tarafından geliştirildi",
+  "footerSignature": "Vardiyalı çalışanlar için pratik planlama",
+  "exportReadyTitle": "Dışa Aktarma Hazır",
+  "exportReadyMessage": "Vardiya planınız Excel uyumlu dosya olarak hazırlandı. Dosyayı paylaşabilir veya cihazınıza kaydedebilirsiniz.",
+  "shareDialogTitle": "Vardiya Planını Paylaş",
+  "exportErrorTitle": "Hata",
+  "exportErrorMessage": "Dosya oluşturulurken bir hata oluştu.",
+  "shareNotSupported": "Paylaşım bu cihazda desteklenmiyor.",
+  "deleteAllConfirmTitle": "Tüm veriler silinsin mi?",
+  "deleteAllConfirmBody": "Bu işlem geri alınamaz. Tüm vardiya planlarınız, notlarınız ve ayarlarınız kalıcı olarak silinecektir.",
+  "csv": {
+    "header": "Tarih,Gün,Vardiya,Saat Başlangıç,Saat Bitiş,Not,Korumalı"
+  }
+}

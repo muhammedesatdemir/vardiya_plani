@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Takvim",
+  "today": "Bugün",
+  "tomorrow": "Yarın",
+  "weekdays": {
+    "monday_short3": "Pzt",
+    "tuesday_short3": "Sal",
+    "wednesday_short3": "Çar",
+    "thursday_short3": "Per",
+    "friday_short3": "Cum",
+    "saturday_short3": "Cmt",
+    "sunday_short3": "Paz",
+    "monday_short2": "Pt",
+    "tuesday_short2": "Sa",
+    "wednesday_short2": "Ça",
+    "thursday_short2": "Pe",
+    "friday_short2": "Cu",
+    "saturday_short2": "Ct",
+    "sunday_short2": "Pz",
+    "sunday_full": "Pazar",
+    "monday_full": "Pazartesi",
+    "tuesday_full": "Salı",
+    "wednesday_full": "Çarşamba",
+    "thursday_full": "Perşembe",
+    "friday_full": "Cuma",
+    "saturday_full": "Cumartesi"
+  },
+  "holidayOfficial": "🇹🇷 Resmi Tatil — {{name}}",
+  "months": {
+    "january": "Ocak",
+    "february": "Şubat",
+    "march": "Mart",
+    "april": "Nisan",
+    "may": "Mayıs",
+    "june": "Haziran",
+    "july": "Temmuz",
+    "august": "Ağustos",
+    "september": "Eylül",
+    "october": "Ekim",
+    "november": "Kasım",
+    "december": "Aralık"
+  }
+}

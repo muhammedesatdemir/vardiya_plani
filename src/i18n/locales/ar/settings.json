@@ -1,0 +1,33 @@
+{
+  "tabTitle": "الإعدادات",
+  "appearance": "المظهر",
+  "theme": "السمة",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "program": "البرنامج",
+  "activeTemplate": "القالب النشط",
+  "notSelected": "غير محدد",
+  "shiftTimes": "أوقات الورديات",
+  "shiftTimesSubtitle": "خصّص أوقات الصباح والعصر والليل",
+  "language": "اللغة",
+  "data": "البيانات",
+  "exporting": "جارٍ التجهيز...",
+  "exportData": "تصدير البيانات",
+  "deleteAllData": "حذف جميع البيانات",
+  "about": "حول التطبيق",
+  "appName": "Vardiya Planı",
+  "version": "الإصدار {{version}}",
+  "madeBy": "تم التطوير بواسطة Demrivo",
+  "footerSignature": "تخطيط عملي للعاملين بنظام الورديات",
+  "exportReadyTitle": "التصدير جاهز",
+  "exportReadyMessage": "خطة الورديات جاهزة كملف متوافق مع Excel. يمكنك مشاركتها أو حفظها على جهازك.",
+  "shareDialogTitle": "مشاركة خطة الورديات",
+  "exportErrorTitle": "خطأ",
+  "exportErrorMessage": "حدث خطأ أثناء إنشاء الملف.",
+  "shareNotSupported": "المشاركة غير مدعومة على هذا الجهاز.",
+  "deleteAllConfirmTitle": "هل تريد حذف جميع البيانات؟",
+  "deleteAllConfirmBody": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف جميع خطط الورديات والملاحظات والإعدادات نهائيًا.",
+  "csv": {
+    "header": "التاريخ,اليوم,الوردية,وقت البدء,وقت الانتهاء,ملاحظة,مقفل"
+  }
+}

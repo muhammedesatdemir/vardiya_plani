@@ -1,0 +1,20 @@
+{
+  "screenTitle": "दिन संपादित करें",
+  "invalidDate": "अमान्य तिथि",
+  "selectShift": "शिफ्ट चुनें",
+  "customTimeForDay": "इस दिन के लिए कस्टम समय",
+  "customTimeHint": "केवल इस दिन के लिए लागू",
+  "start": "शुरुआत",
+  "end": "समाप्ति",
+  "resetToDefault": "डिफ़ॉल्ट पर वापस लाएं",
+  "overtime": "ओवरटाइम",
+  "shortage": "कम घंटे",
+  "hours": "घंटे",
+  "minutes": "मिनट",
+  "protectThisDay": "इस दिन को सुरक्षित करें",
+  "protectHint": "प्लान बनाते समय इस दिन को अपने आप न बदलें",
+  "note": "📝 नोट",
+  "notePlaceholder": "इस दिन के लिए नोट जोड़ें...",
+  "noteHint": "उदाहरण: छुट्टी बदली, शिफ्ट स्वैप हुई...",
+  "clearDay": "दिन साफ़ करें"
+}

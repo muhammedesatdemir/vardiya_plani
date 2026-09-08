@@ -11,6 +11,7 @@
  */
 
 import { View, Text, StyleSheet, Platform } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { PressableScale } from '../ui';
 
@@ -24,6 +25,7 @@ export function HomeBottomActions({
   onPressNotes,
 }: HomeBottomActionsProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation('home');
 
   return (
     <View style={styles.row}>
@@ -38,9 +40,9 @@ export function HomeBottomActions({
           <Text style={[styles.icon, { color: colors.iconChipFg }]}>⏱</Text>
         </View>
         <View style={styles.textContainer}>
-          <Text style={[styles.label, { color: colors.text }]}>Mesai Özeti</Text>
+          <Text style={[styles.label, { color: colors.text }]}>{t('home:summaryAction')}</Text>
           <Text style={[styles.subtitle, { color: colors.textMuted }]}>
-            Fazla / eksik saat
+            {t('home:summaryActionSubtitle')}
           </Text>
         </View>
       </PressableScale>
@@ -56,9 +58,9 @@ export function HomeBottomActions({
           <Text style={[styles.icon, { color: colors.iconChipFg }]}>📝</Text>
         </View>
         <View style={styles.textContainer}>
-          <Text style={[styles.label, { color: colors.text }]}>Aylık Notlar</Text>
+          <Text style={[styles.label, { color: colors.text }]}>{t('home:notesAction')}</Text>
           <Text style={[styles.subtitle, { color: colors.textMuted }]}>
-            Bu ayın notları
+            {t('home:notesActionSubtitle')}
           </Text>
         </View>
       </PressableScale>

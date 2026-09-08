@@ -1,0 +1,20 @@
+{
+  "screenTitle": "日を編集",
+  "invalidDate": "無効な日付",
+  "selectShift": "シフトを選択",
+  "customTimeForDay": "この日専用の時間",
+  "customTimeHint": "この日にのみ適用されます",
+  "start": "開始",
+  "end": "終了",
+  "resetToDefault": "デフォルトに戻す",
+  "overtime": "残業",
+  "shortage": "不足時間",
+  "hours": "時間",
+  "minutes": "分",
+  "protectThisDay": "この日をロック",
+  "protectHint": "予定作成時にこの日を自動変更しない",
+  "note": "📝 メモ",
+  "notePlaceholder": "この日のメモを追加...",
+  "noteHint": "例：休みが変更、シフトが変更...",
+  "clearDay": "この日をクリア"
+}

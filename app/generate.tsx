@@ -19,12 +19,13 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore, selectActiveTemplate } from '../src/stores';
 import { PressableScale } from '../src/components/ui';
 import { getMonthNameTR } from '../src/utils/turkish';
 import { getCurrentYearMonth, getTodayISO } from '../src/utils/date';
 import { useTheme } from '../src/context';
-import { isOffCode } from '../src/constants/shifts';
+import { getTemplateDisplayInfo } from '../src/utils/shiftDisplay';
 
 type StartPoint = 'month_start' | 'today';
 type RangePreset = 'this_month' | 'next_3_months' | 'next_6_months' | 'until_year_end';
@@ -37,73 +38,6 @@ interface SuccessModalState {
   visible: boolean;
   generated: number;
   skipped: number;
-}
-
-// Şablon için kullanıcı dostu isim ve açıklama oluştur
-function getTemplateDisplayInfo(
-  template: { name: string; steps: string[]; cycleLength: number; isDefault?: boolean },
-  shiftTypes: any[]
-) {
-  const { name, steps, cycleLength } = template;
-
-  // İzin günü sayısını hesapla
-  const offDays = steps.filter(code => isOffCode(code)).length;
-  const workDays = cycleLength - offDays;
-
-  // Shift pattern'i analiz et
-  const getShiftName = (code: string): string => {
-    if (isOffCode(code)) return 'İzin';
-    const shift = shiftTypes.find(s => s.code === code);
-    if (!shift) return code;
-    // Türkçe karakter düzeltmeleri
-    const n = shift.name.toLowerCase();
-    if (n.includes('sabah') || n.includes('morning')) return 'Sabah';
-    if (n.includes('öğle') || n.includes('ogle') || n.includes('afternoon')) return 'Öğle';
-    if (n.includes('akşam') || n.includes('aksam') || n.includes('evening')) return 'Akşam';
-    if (n.includes('gece') || n.includes('night')) return 'Gece';
-    return shift.shortName || code;
-  };
-
-  // Grupla ve say
-  const groups: { name: string; count: number }[] = [];
-  let currentShift = '';
-  let currentCount = 0;
-
-  for (const code of steps) {
-    const shiftName = getShiftName(code);
-    if (shiftName === currentShift) {
-      currentCount++;
-    } else {
-      if (currentShift) {
-        groups.push({ name: currentShift, count: currentCount });
-      }
-      currentShift = shiftName;
-      currentCount = 1;
-    }
-  }
-  if (currentShift) {
-    groups.push({ name: currentShift, count: currentCount });
-  }
-
-  // Açıklama oluştur (örn: "2 izin → 2 sabah → 2 öğle → 2 gece")
-  const description = groups
-    .map(g => `${g.count} ${g.name.toLowerCase()}`)
-    .join(' → ');
-
-  // Kullanıcı dostu başlık
-  const trimmed = name.trim();
-  let friendlyName = trimmed;
-  if (trimmed.startsWith('BYG-') || /^[A-Z]+-[A-Z0-9]+$/.test(trimmed)) {
-    friendlyName = `Standart ${cycleLength} Gün Döngü`;
-  } else if (!template.isDefault && trimmed.length < 2) {
-    friendlyName = trimmed.length === 0 ? 'Özel Düzen' : `${trimmed} (Özel Düzen)`;
-  }
-
-  return {
-    title: friendlyName,
-    subtitle: `${cycleLength} günlük döngü • ${workDays} iş, ${offDays} izin`,
-    pattern: description,
-  };
 }
 
 // ============================================
@@ -119,6 +53,7 @@ interface SuccessModalProps {
 
 function SuccessModal({ visible, generated, skipped, onClose }: SuccessModalProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation(['generate', 'common']);
 
   return (
     <Modal
@@ -141,7 +76,7 @@ function SuccessModal({ visible, generated, skipped, onClose }: SuccessModalProp
 
           {/* Title */}
           <Text style={[successModalStyles.title, { color: colors.text }]}>
-            Plan Hazır
+            {t('generate:planReady')}
           </Text>
 
           {/* Stats */}
@@ -151,7 +86,7 @@ function SuccessModal({ visible, generated, skipped, onClose }: SuccessModalProp
                 {generated}
               </Text>
               <Text style={[successModalStyles.statLabel, { color: colors.textMuted }]}>
-                gün oluşturuldu
+                {t('generate:daysCreated', { count: generated })}
               </Text>
             </View>
 
@@ -161,7 +96,7 @@ function SuccessModal({ visible, generated, skipped, onClose }: SuccessModalProp
                   {skipped}
                 </Text>
                 <Text style={[successModalStyles.statLabel, { color: colors.textMuted }]}>
-                  gün korundu
+                  {t('generate:daysSkipped', { count: skipped })}
                 </Text>
               </View>
             )}
@@ -174,7 +109,7 @@ function SuccessModal({ visible, generated, skipped, onClose }: SuccessModalProp
             rippleColor="rgba(255,255,255,0.2)"
             borderRadius={14}
           >
-            <Text style={successModalStyles.buttonText}>Tamam</Text>
+            <Text style={successModalStyles.buttonText}>{t('common:ok')}</Text>
           </PressableScale>
         </View>
       </View>
@@ -281,6 +216,7 @@ const successModalStyles = StyleSheet.create({
 export default function GenerateScreen() {
   const router = useRouter();
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation(['generate', 'common']);
   const insets = useSafeAreaInsets();
 
   const templates = useScheduleStore((state) => state.templates);
@@ -432,10 +368,10 @@ export default function GenerateScreen() {
 
   // Dönem butonları için bilgi
   const rangeOptions: { key: RangePreset; label: string; subLabel?: string }[] = [
-    { key: 'this_month', label: 'Bu Ay' },
-    { key: 'next_3_months', label: '3 Ay' },
-    { key: 'next_6_months', label: '6 Ay' },
-    { key: 'until_year_end', label: 'Yıl Sonu' },
+    { key: 'this_month', label: t('generate:rangeThisMonth') },
+    { key: 'next_3_months', label: t('generate:range3Months') },
+    { key: 'next_6_months', label: t('generate:range6Months') },
+    { key: 'until_year_end', label: t('generate:rangeUntilYearEnd') },
   ];
   const rangeSelectedIndex = rangeOptions.findIndex(o => o.key === rangePreset);
 
@@ -443,13 +379,13 @@ export default function GenerateScreen() {
   const startOptions: { key: StartPoint; label: string; description: string }[] = [
     {
       key: 'month_start',
-      label: 'Ay Başından',
-      description: 'Önceki aydan devam eder'
+      label: t('generate:startFromMonthStart'),
+      description: t('generate:startFromMonthStartDescription')
     },
     {
       key: 'today',
-      label: 'Bugünden',
-      description: 'Bugünden itibaren doldurur'
+      label: t('generate:startFromToday'),
+      description: t('generate:startFromTodayDescription')
     },
   ];
   const startSelectedIndex = startOptions.findIndex(o => o.key === startPoint);
@@ -467,7 +403,7 @@ export default function GenerateScreen() {
         {/* ========== ŞABLON SEÇİMİ ========== */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>
-            Vardiya Şablonu
+            {t('generate:shiftTemplateSection')}
           </Text>
 
           <View style={styles.templateGrid}>
@@ -549,13 +485,13 @@ export default function GenerateScreen() {
                     styles.createTemplateTitle,
                     { color: isDark ? '#93C5FD' : '#3B82F6' }
                   ]}>
-                    Kendi Düzenini Oluştur
+                    {t('generate:createOwnPattern')}
                   </Text>
                   <Text style={[
                     styles.createTemplateSubtitle,
                     { color: isDark ? '#A5B4FC' : '#6366F1' }
                   ]}>
-                    Özel vardiya döngüsü tasarla
+                    {t('generate:createOwnPatternSubtitle')}
                   </Text>
                 </View>
                 <Text style={[
@@ -572,7 +508,7 @@ export default function GenerateScreen() {
         {/* ========== DÖNEM SEÇİMİ ========== */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>
-            Dönem
+            {t('generate:periodSection')}
           </Text>
 
           <View style={[styles.rangeCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
@@ -633,15 +569,19 @@ export default function GenerateScreen() {
                 {(() => {
                   const first = selectedMonths[0];
                   const last = selectedMonths[selectedMonths.length - 1];
-                  if (!first || !last) return 'Dönem seçilmedi';
+                  if (!first || !last) return t('generate:periodNotSelected');
                   if (first === last) {
-                    return `${getMonthNameTR(first.month)} ${first.year}`;
+                    return t('generate:periodSingle', { month: getMonthNameTR(first.month), year: first.year });
                   }
-                  return `${getMonthNameTR(first.month)} → ${getMonthNameTR(last.month)} ${last.year}`;
+                  return t('generate:periodRange', {
+                    startMonth: getMonthNameTR(first.month),
+                    endMonth: getMonthNameTR(last.month),
+                    year: last.year,
+                  });
                 })()}
               </Text>
               <Text style={[styles.rangeSummaryCount, { color: colors.primary }]}>
-                {selectedMonths.length} ay
+                {t('generate:monthsCount', { count: selectedMonths.length })}
               </Text>
             </View>
           </View>
@@ -650,7 +590,7 @@ export default function GenerateScreen() {
         {/* ========== BAŞLANGIÇ NOKTASI ========== */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>
-            Başlangıç Noktası
+            {t('generate:startPointSection')}
           </Text>
 
           <View style={[styles.startCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
@@ -714,7 +654,7 @@ export default function GenerateScreen() {
         {/* ========== SEÇENEKLER ========== */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>
-            Koruma Seçenekleri
+            {t('generate:protectionSection')}
           </Text>
 
           <View style={[styles.optionsCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
@@ -727,10 +667,10 @@ export default function GenerateScreen() {
             >
               <View style={styles.optionContent}>
                 <Text style={[styles.optionLabel, { color: colors.text }]}>
-                  Özel ayarladığım günleri koru
+                  {t('generate:preserveCustomDays')}
                 </Text>
                 <Text style={[styles.optionDescription, { color: colors.textMuted }]}>
-                  Elle değiştirdiğiniz veya sabitlediğiniz günler korunur
+                  {t('generate:preserveCustomDaysDescription')}
                 </Text>
               </View>
               <View style={[
@@ -750,7 +690,7 @@ export default function GenerateScreen() {
         <View style={[styles.warningBox, { backgroundColor: colors.warning }]}>
           <Text style={[styles.warningIcon]}>⚠️</Text>
           <Text style={[styles.warningText, { color: colors.warningText }]}>
-            Yeni plan, mevcut planların üzerine yazılır.
+            {t('generate:overwriteWarning')}
           </Text>
         </View>
 
@@ -763,7 +703,7 @@ export default function GenerateScreen() {
             pressedScale={0.98}
           >
             <Text style={[styles.cancelButtonText, { color: colors.textMuted }]}>
-              İptal
+              {t('common:cancel')}
             </Text>
           </PressableScale>
 
@@ -779,7 +719,7 @@ export default function GenerateScreen() {
             rippleColor="rgba(255,255,255,0.22)"
           >
             <Text style={styles.generateButtonText}>
-              {selectedMonths.length === 1 ? '1 Ay' : `${selectedMonths.length} Ay`} Oluştur
+              {t('generate:generateButton', { count: selectedMonths.length })}
             </Text>
           </PressableScale>
         </View>

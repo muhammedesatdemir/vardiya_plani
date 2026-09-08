@@ -19,9 +19,11 @@ import {
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../src/stores';
 import { useTheme } from '../../src/context';
 import { PressableScale } from '../../src/components/ui';
+import { getShiftDisplayName } from '../../src/utils/shiftDisplay';
 
 // ============================================
 // CUSTOM ALERT MODAL
@@ -230,6 +232,7 @@ export default function TemplateDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const isNew = id === 'new';
   const { colors } = useTheme();
+  const { t } = useTranslation(['templates', 'common']);
   const insets = useSafeAreaInsets();
 
   const templates = useScheduleStore((state) => state.templates);
@@ -269,7 +272,7 @@ export default function TemplateDetailScreen() {
   const showAlert = (
     title: string,
     message: string,
-    buttons: Array<{ text: string; style?: 'default' | 'cancel' | 'destructive'; onPress?: () => void }> = [{ text: 'Tamam' }]
+    buttons: Array<{ text: string; style?: 'default' | 'cancel' | 'destructive'; onPress?: () => void }> = [{ text: t('common:ok') }]
   ) => {
     setAlertConfig({ visible: true, title, message, buttons });
   };
@@ -280,8 +283,8 @@ export default function TemplateDetailScreen() {
 
   useEffect(() => {
     if (!isNew && !existingTemplate) {
-      showAlert('Hata', 'Şablon bulunamadı.', [
-        { text: 'Tamam', onPress: () => router.back() },
+      showAlert(t('templates:notFoundTitle'), t('templates:notFoundMessage'), [
+        { text: t('common:ok'), onPress: () => router.back() },
       ]);
     }
   }, [isNew, existingTemplate]);
@@ -301,7 +304,7 @@ export default function TemplateDetailScreen() {
 
   const removeStep = (index: number) => {
     if (steps.length <= 2) {
-      showAlert('Uyarı', 'Döngü en az 2 gün olmalıdır.');
+      showAlert(t('templates:cycleTooShortTitle'), t('templates:cycleTooShortMessage'));
       return;
     }
     const newSteps = steps.filter((_, i) => i !== index);
@@ -311,12 +314,12 @@ export default function TemplateDetailScreen() {
 
   const handleSave = () => {
     if (!name.trim()) {
-      showAlert('Eksik Bilgi', 'Lütfen şablon için bir isim girin.');
+      showAlert(t('templates:missingNameTitle'), t('templates:missingNameMessage'));
       return;
     }
 
     if (steps.length < 2) {
-      showAlert('Uyarı', 'Döngü en az 2 gün olmalıdır.');
+      showAlert(t('templates:cycleTooShortTitle'), t('templates:cycleTooShortMessage'));
       return;
     }
 
@@ -347,17 +350,17 @@ export default function TemplateDetailScreen() {
     if (!existingTemplate) return;
 
     if (existingTemplate.isDefault) {
-      showAlert('Uyarı', 'Sistem şablonları silinemez.');
+      showAlert(t('templates:systemTemplateCannotDeleteTitle'), t('templates:systemTemplateCannotDeleteMessage'));
       return;
     }
 
     showAlert(
-      'Şablonu Sil',
-      `"${existingTemplate.name}" şablonunu silmek istediğinize emin misiniz?`,
+      t('templates:deleteConfirmTitle'),
+      t('templates:deleteConfirmMessage', { name: existingTemplate.name }),
       [
-        { text: 'Vazgeç', style: 'cancel' },
+        { text: t('common:giveUp'), style: 'cancel' },
         {
-          text: 'Sil',
+          text: t('common:delete'),
           style: 'destructive',
           onPress: () => {
             deleteTemplate(existingTemplate.id);
@@ -390,7 +393,7 @@ export default function TemplateDetailScreen() {
         {/* ========== İSİM ALANI ========== */}
         <View style={styles.sectionContainer}>
           <Text style={[styles.sectionLabel, { color: colors.textMuted }]}>
-            Şablon İsmi
+            {t('templates:templateName')}
           </Text>
           <View
             style={[
@@ -403,7 +406,7 @@ export default function TemplateDetailScreen() {
               style={[styles.nameInput, { color: colors.text }]}
               value={name}
               onChangeText={setName}
-              placeholder="Örn: Sabah-Öğle Döngüsü"
+              placeholder={t('templates:templateNamePlaceholder')}
               placeholderTextColor={colors.textMuted}
               editable={isEditable}
               onFocus={() => setInputFocused(true)}
@@ -415,7 +418,7 @@ export default function TemplateDetailScreen() {
         {/* ========== DÖNGÜ GRID ========== */}
         <View style={styles.sectionContainer}>
           <Text style={[styles.sectionLabel, { color: colors.textMuted }]}>
-            Vardiya Döngüsü ({steps.length} gün)
+            {t('templates:cycleTitle', { count: steps.length })}
           </Text>
           <View style={[styles.gridCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
             <View style={styles.stepsGrid}>
@@ -469,14 +472,14 @@ export default function TemplateDetailScreen() {
                   <View style={[styles.addStepIcon, { backgroundColor: colors.primary }]}>
                     <Text style={styles.addStepPlus}>+</Text>
                   </View>
-                  <Text style={[styles.addStepLabel, { color: colors.textMuted }]}>Gün Ekle</Text>
+                  <Text style={[styles.addStepLabel, { color: colors.textMuted }]}>{t('templates:addDay')}</Text>
                 </PressableScale>
               )}
             </View>
 
             {isEditable && (
               <Text style={[styles.hint, { color: colors.textMuted }]}>
-                Değiştirmek için dokun, silmek için uzun bas
+                {t('templates:editHint')}
               </Text>
             )}
           </View>
@@ -486,7 +489,7 @@ export default function TemplateDetailScreen() {
         {selectedStepIndex !== null && (
           <View style={styles.sectionContainer}>
             <Text style={[styles.sectionLabel, { color: colors.textMuted }]}>
-              {selectedStepIndex + 1}. Gün İçin Vardiya Seç
+              {t('templates:selectShiftForDay', { day: selectedStepIndex + 1 })}
             </Text>
             <View style={[styles.shiftSelectorBar, { backgroundColor: colors.surface, borderColor: colors.border }]}>
               {shiftTypes.map((shift) => (
@@ -504,7 +507,7 @@ export default function TemplateDetailScreen() {
                   <View style={[styles.shiftBarBadge, { backgroundColor: shift.color }]}>
                     <Text style={styles.shiftBarCode}>{shift.shortName}</Text>
                   </View>
-                  <Text style={[styles.shiftBarName, { color: colors.text }]}>{shift.name}</Text>
+                  <Text style={[styles.shiftBarName, { color: colors.text }]}>{getShiftDisplayName(shift)}</Text>
                 </PressableScale>
               ))}
             </View>
@@ -514,7 +517,7 @@ export default function TemplateDetailScreen() {
         {/* ========== ÖNİZLEME ========== */}
         <View style={styles.sectionContainer}>
           <Text style={[styles.sectionLabel, { color: colors.textMuted }]}>
-            Döngü Önizleme
+            {t('templates:cyclePreview')}
           </Text>
           <View style={[styles.previewCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
             <View style={styles.previewGrid}>
@@ -532,7 +535,7 @@ export default function TemplateDetailScreen() {
               </View>
             </View>
             <Text style={[styles.previewHint, { color: colors.textMuted }]}>
-              Bu döngü sürekli tekrar eder
+              {t('templates:cycleRepeatsHint')}
             </Text>
           </View>
         </View>
@@ -546,7 +549,7 @@ export default function TemplateDetailScreen() {
             pressedScale={0.98}
             rippleColor="rgba(220, 38, 38, 0.12)"
           >
-            <Text style={styles.deleteButtonText}>Şablonu Sil</Text>
+            <Text style={styles.deleteButtonText}>{t('templates:deleteTemplate')}</Text>
           </PressableScale>
         )}
 
@@ -574,7 +577,7 @@ export default function TemplateDetailScreen() {
             borderRadius={14}
             pressedScale={0.98}
           >
-            <Text style={[styles.cancelButtonText, { color: colors.textMuted }]}>İptal</Text>
+            <Text style={[styles.cancelButtonText, { color: colors.textMuted }]}>{t('common:cancel')}</Text>
           </PressableScale>
           <PressableScale
             style={styles.saveButton}
@@ -583,7 +586,7 @@ export default function TemplateDetailScreen() {
             pressedScale={0.98}
             rippleColor="rgba(255,255,255,0.22)"
           >
-            <Text style={styles.saveButtonText}>{isNew ? 'Oluştur' : 'Kaydet'}</Text>
+            <Text style={styles.saveButtonText}>{isNew ? t('templates:createButton') : t('common:save')}</Text>
           </PressableScale>
         </View>
       )}

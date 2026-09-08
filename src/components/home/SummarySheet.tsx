@@ -21,6 +21,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../stores';
 import { useTheme } from '../../context';
 import { formatDurationTR, sumMonthDurations } from '../../utils/duration';
@@ -34,6 +35,7 @@ interface SummarySheetProps {
 
 export function SummarySheet({ visible, onClose }: SummarySheetProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation(['duration', 'common']);
   const insets = useSafeAreaInsets();
   const { height: windowHeight } = useWindowDimensions();
   const plannedDays = useScheduleStore((state) => state.plannedDays);
@@ -78,10 +80,11 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
   const sheetMaxHeight = windowHeight - insets.top - 64;
 
   const handleShare = async () => {
-    const message =
-      `${monthLabel} Mesai Özeti:\n` +
-      `Toplam fazla mesai: ${formatDurationTR(overtime)}\n` +
-      `Toplam eksik saat: ${formatDurationTR(shortage)}`;
+    const message = t('duration:monthlySummaryShare', {
+      month: monthLabel,
+      overtime: formatDurationTR(overtime),
+      shortage: formatDurationTR(shortage),
+    });
 
     try {
       await Share.share({ message });
@@ -119,7 +122,7 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
             bounces={false}
           >
             <Text style={[styles.title, { color: colors.text }]}>
-              Mesai Özeti
+              {t('duration:summaryTitle')}
             </Text>
 
             {/* Ortak MonthPicker — Aylık Notlar sheet'i de aynısını kullanır.
@@ -133,7 +136,7 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
               </View>
               <View style={styles.rowText}>
                 <Text style={[styles.rowLabel, { color: colors.textSecondary }]}>
-                  Toplam Fazla Mesai
+                  {t('duration:totalOvertime')}
                 </Text>
                 <Text style={[styles.rowValue, { color: colors.text }]}>
                   {formatDurationTR(overtime)}
@@ -149,7 +152,7 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
               </View>
               <View style={styles.rowText}>
                 <Text style={[styles.rowLabel, { color: colors.textSecondary }]}>
-                  Toplam Eksik Saat
+                  {t('duration:totalShortage')}
                 </Text>
                 <Text style={[styles.rowValue, { color: colors.text }]}>
                   {formatDurationTR(shortage)}
@@ -169,7 +172,7 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
                 pressedScale={0.98}
               >
                 <Text style={[styles.buttonText, { color: colors.text }]}>
-                  Kapat
+                  {t('common:close')}
                 </Text>
               </PressableScale>
               <PressableScale
@@ -180,7 +183,7 @@ export function SummarySheet({ visible, onClose }: SummarySheetProps) {
                 rippleColor="rgba(255,255,255,0.22)"
               >
                 <Text style={[styles.buttonText, styles.buttonTextPrimary]}>
-                  📤 Paylaş
+                  📤 {t('common:share')}
                 </Text>
               </PressableScale>
             </View>

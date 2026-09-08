@@ -1,0 +1,13 @@
+{
+  "zero": "0 minit",
+  "minutesOnly": "{{count}} minit",
+  "hoursOnly": "{{count}} jam",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Ringkasan Waktu",
+  "totalOvertime": "Jumlah Kerja Lebih Masa",
+  "totalShortage": "Jumlah Waktu Kurang",
+  "monthlyNotesTitle": "Nota {{month}}",
+  "noNotesForMonth": "Tiada nota disimpan untuk bulan ini.",
+  "monthlySummaryShare": "Ringkasan Waktu {{month}}:\nJumlah kerja lebih masa: {{overtime}}\nJumlah waktu kurang: {{shortage}}",
+  "monthlyNotesShare": "Nota {{month}}\n\n{{body}}"
+}

@@ -1,0 +1,15 @@
+{
+  "zero": "0 minuto",
+  "minutesOnly_one": "{{count}} minuto",
+  "minutesOnly_other": "{{count}} minuto",
+  "hoursOnly_one": "{{count}} oras",
+  "hoursOnly_other": "{{count}} oras",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Buod ng Oras",
+  "totalOvertime": "Kabuuang Overtime",
+  "totalShortage": "Kabuuang Kulang na Oras",
+  "monthlyNotesTitle": "Mga Tala sa {{month}}",
+  "noNotesForMonth": "Walang naitalang tala para sa buwang ito.",
+  "monthlySummaryShare": "Buod ng Oras sa {{month}}:\nKabuuang overtime: {{overtime}}\nKabuuang kulang na oras: {{shortage}}",
+  "monthlyNotesShare": "Mga Tala sa {{month}}\n\n{{body}}"
+}

@@ -1,0 +1,33 @@
+{
+  "tabTitle": "ตั้งค่า",
+  "appearance": "รูปลักษณ์",
+  "theme": "ธีม",
+  "themeLight": "สว่าง",
+  "themeDark": "มืด",
+  "program": "โปรแกรม",
+  "activeTemplate": "เทมเพลตที่ใช้งานอยู่",
+  "notSelected": "ยังไม่ได้เลือก",
+  "shiftTimes": "เวลากะงาน",
+  "shiftTimesSubtitle": "ปรับแต่งเวลากะเช้า บ่าย และดึก",
+  "language": "ภาษา",
+  "data": "ข้อมูล",
+  "exporting": "กำลังเตรียม...",
+  "exportData": "ส่งออกข้อมูล",
+  "deleteAllData": "ลบข้อมูลทั้งหมด",
+  "about": "เกี่ยวกับ",
+  "appName": "Vardiya Planı",
+  "version": "เวอร์ชัน {{version}}",
+  "madeBy": "พัฒนาโดย Demrivo",
+  "footerSignature": "การวางแผนที่ใช้งานง่ายสำหรับพนักงานกะ",
+  "exportReadyTitle": "การส่งออกพร้อมแล้ว",
+  "exportReadyMessage": "ตารางกะงานของคุณพร้อมแล้วในรูปแบบไฟล์ที่ใช้กับ Excel ได้ คุณสามารถแชร์หรือบันทึกลงในอุปกรณ์ของคุณ",
+  "shareDialogTitle": "แชร์ตารางกะงาน",
+  "exportErrorTitle": "ข้อผิดพลาด",
+  "exportErrorMessage": "เกิดข้อผิดพลาดขณะสร้างไฟล์",
+  "shareNotSupported": "อุปกรณ์นี้ไม่รองรับการแชร์",
+  "deleteAllConfirmTitle": "ลบข้อมูลทั้งหมดหรือไม่?",
+  "deleteAllConfirmBody": "การดำเนินการนี้ไม่สามารถย้อนกลับได้ ตารางกะงาน บันทึก และการตั้งค่าทั้งหมดของคุณจะถูกลบอย่างถาวร",
+  "csv": {
+    "header": "วันที่,วัน,กะ,เวลาเริ่ม,เวลาสิ้นสุด,บันทึก,ล็อก"
+  }
+}

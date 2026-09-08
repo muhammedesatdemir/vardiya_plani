@@ -1,0 +1,19 @@
+{
+  "morning": "Mañana",
+  "afternoon": "Tarde",
+  "evening": "Noche",
+  "night": "Madrugada",
+  "off": "Off",
+  "leave": "Libre",
+  "dayOff": "Día libre",
+  "crossesMidnight": "Cruza la medianoche",
+  "nextDayHint": "(día siguiente)",
+  "custom": "personalizado",
+  "untilTime": "{{shift}} (hasta las {{time}})",
+  "defaultRangeFor": "Horario predeterminado del turno {{shift}}",
+  "systemTemplate": "Plantilla del sistema",
+  "customTemplate": "Plantilla personalizada",
+  "customPattern": "Patrón Personalizado",
+  "customPatternNamed": "{{name}} (Patrón Personalizado)",
+  "standardCycle": "Ciclo Estándar de {{count}} Días"
+}

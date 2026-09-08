@@ -1,0 +1,15 @@
+{
+  "zero": "0 मिनट",
+  "minutesOnly_one": "{{count}} मिनट",
+  "minutesOnly_other": "{{count}} मिनट",
+  "hoursOnly_one": "{{count}} घंटा",
+  "hoursOnly_other": "{{count}} घंटे",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "घंटों का सारांश",
+  "totalOvertime": "कुल ओवरटाइम",
+  "totalShortage": "कुल कम घंटे",
+  "monthlyNotesTitle": "{{month}} के नोट्स",
+  "noNotesForMonth": "इस महीने के लिए कोई नोट सेव नहीं है।",
+  "monthlySummaryShare": "{{month}} घंटों का सारांश:\nकुल ओवरटाइम: {{overtime}}\nकुल कम घंटे: {{shortage}}",
+  "monthlyNotesShare": "{{month}} के नोट्स\n\n{{body}}"
+}

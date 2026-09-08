@@ -1,0 +1,11 @@
+{
+  "screenTitle": "シフト時間",
+  "heroSubtitle": "朝勤・昼勤・夜勤の時間を自分に合わせて調整できます。この時間はすべての予定で自動的に使用されます。",
+  "footerHint": "特定の日にカスタム時間が設定されている場合、その時間が優先されます。",
+  "editorSubtitle": "開始・終了時刻を編集",
+  "resetToDefault": "↺ デフォルトに戻す",
+  "errorInvalidTime": "時は00〜23、分は00〜59の範囲で入力してください。",
+  "errorSameTime": "開始時刻と終了時刻を同じにすることはできません。",
+  "hourHint": "HH",
+  "minuteHint": "MM"
+}

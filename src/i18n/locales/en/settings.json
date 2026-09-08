@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Settings",
+  "appearance": "APPEARANCE",
+  "theme": "Theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "program": "PROGRAM",
+  "activeTemplate": "Active Template",
+  "notSelected": "Not selected",
+  "shiftTimes": "Shift Times",
+  "shiftTimesSubtitle": "Customize morning, afternoon and night hours",
+  "language": "Language",
+  "data": "DATA",
+  "exporting": "Preparing...",
+  "exportData": "Export Data",
+  "deleteAllData": "Delete All Data",
+  "about": "ABOUT",
+  "appName": "Vardiya Planı",
+  "version": "Version {{version}}",
+  "madeBy": "Made by Demrivo",
+  "footerSignature": "Practical planning for shift workers",
+  "exportReadyTitle": "Export Ready",
+  "exportReadyMessage": "Your shift plan is ready as an Excel-compatible file. You can share it or save it to your device.",
+  "shareDialogTitle": "Share Shift Plan",
+  "exportErrorTitle": "Error",
+  "exportErrorMessage": "An error occurred while creating the file.",
+  "shareNotSupported": "Sharing is not supported on this device.",
+  "deleteAllConfirmTitle": "Delete all data?",
+  "deleteAllConfirmBody": "This action cannot be undone. All your shift plans, notes, and settings will be permanently deleted.",
+  "csv": {
+    "header": "Date,Day,Shift,Start Time,End Time,Note,Locked"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "zero": "0 phút",
+  "minutesOnly_one": "{{count}} phút",
+  "minutesOnly_other": "{{count}} phút",
+  "hoursOnly_one": "{{count}} giờ",
+  "hoursOnly_other": "{{count}} giờ",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Tổng Kết Giờ Làm",
+  "totalOvertime": "Tổng Giờ Tăng Ca",
+  "totalShortage": "Tổng Giờ Thiếu",
+  "monthlyNotesTitle": "Ghi Chú Tháng {{month}}",
+  "noNotesForMonth": "Chưa có ghi chú nào cho tháng này.",
+  "monthlySummaryShare": "Tổng Kết Giờ Làm Tháng {{month}}:\nTổng giờ tăng ca: {{overtime}}\nTổng giờ thiếu: {{shortage}}",
+  "monthlyNotesShare": "Ghi Chú Tháng {{month}}\n\n{{body}}"
+}

@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Lịch",
+  "today": "Hôm nay",
+  "tomorrow": "Ngày mai",
+  "weekdays": {
+    "monday_short3": "Th2",
+    "tuesday_short3": "Th3",
+    "wednesday_short3": "Th4",
+    "thursday_short3": "Th5",
+    "friday_short3": "Th6",
+    "saturday_short3": "Th7",
+    "sunday_short3": "CN",
+    "monday_short2": "T2",
+    "tuesday_short2": "T3",
+    "wednesday_short2": "T4",
+    "thursday_short2": "T5",
+    "friday_short2": "T6",
+    "saturday_short2": "T7",
+    "sunday_short2": "CN",
+    "sunday_full": "Chủ Nhật",
+    "monday_full": "Thứ Hai",
+    "tuesday_full": "Thứ Ba",
+    "wednesday_full": "Thứ Tư",
+    "thursday_full": "Thứ Năm",
+    "friday_full": "Thứ Sáu",
+    "saturday_full": "Thứ Bảy"
+  },
+  "holidayOfficial": "Ngày lễ chính thức — {{name}}",
+  "months": {
+    "january": "Tháng 1",
+    "february": "Tháng 2",
+    "march": "Tháng 3",
+    "april": "Tháng 4",
+    "may": "Tháng 5",
+    "june": "Tháng 6",
+    "july": "Tháng 7",
+    "august": "Tháng 8",
+    "september": "Tháng 9",
+    "october": "Tháng 10",
+    "november": "Tháng 11",
+    "december": "Tháng 12"
+  }
+}

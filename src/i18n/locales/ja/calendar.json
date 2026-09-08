@@ -1,0 +1,43 @@
+{
+  "tabTitle": "カレンダー",
+  "today": "今日",
+  "tomorrow": "明日",
+  "weekdays": {
+    "monday_short3": "月",
+    "tuesday_short3": "火",
+    "wednesday_short3": "水",
+    "thursday_short3": "木",
+    "friday_short3": "金",
+    "saturday_short3": "土",
+    "sunday_short3": "日",
+    "monday_short2": "月",
+    "tuesday_short2": "火",
+    "wednesday_short2": "水",
+    "thursday_short2": "木",
+    "friday_short2": "金",
+    "saturday_short2": "土",
+    "sunday_short2": "日",
+    "sunday_full": "日曜日",
+    "monday_full": "月曜日",
+    "tuesday_full": "火曜日",
+    "wednesday_full": "水曜日",
+    "thursday_full": "木曜日",
+    "friday_full": "金曜日",
+    "saturday_full": "土曜日"
+  },
+  "holidayOfficial": "祝日 — {{name}}",
+  "months": {
+    "january": "1月",
+    "february": "2月",
+    "march": "3月",
+    "april": "4月",
+    "may": "5月",
+    "june": "6月",
+    "july": "7月",
+    "august": "8月",
+    "september": "9月",
+    "october": "10月",
+    "november": "11月",
+    "december": "12月"
+  }
+}

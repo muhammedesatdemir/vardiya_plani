@@ -1,0 +1,15 @@
+{
+  "zero": "۰ دقیقه",
+  "minutesOnly_one": "{{count}} دقیقه",
+  "minutesOnly_other": "{{count}} دقیقه",
+  "hoursOnly_one": "{{count}} ساعت",
+  "hoursOnly_other": "{{count}} ساعت",
+  "hoursAndMinutes": "{{hours}} و {{minutes}}",
+  "summaryTitle": "خلاصه ساعات کاری",
+  "totalOvertime": "مجموع اضافه‌کاری",
+  "totalShortage": "مجموع کسری ساعت",
+  "monthlyNotesTitle": "یادداشت‌های {{month}}",
+  "noNotesForMonth": "برای این ماه یادداشتی ثبت نشده است.",
+  "monthlySummaryShare": "خلاصه ساعات کاری {{month}}:\nمجموع اضافه‌کاری: {{overtime}}\nمجموع کسری ساعت: {{shortage}}",
+  "monthlyNotesShare": "یادداشت‌های {{month}}\n\n{{body}}"
+}

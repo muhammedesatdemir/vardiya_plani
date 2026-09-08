@@ -8,78 +8,16 @@
 import { View, Text, StyleSheet, ScrollView, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore, selectActiveTemplate } from '../../src/stores';
 import { useTheme } from '../../src/context';
-import { isOffCode } from '../../src/constants/shifts';
 import { PressableScale } from '../../src/components/ui';
-import type { ShiftType } from '../../src/types';
-
-// Friendly display info for a template (title, subtitle, pattern)
-function getTemplateDisplayInfo(
-  template: { name: string; steps: string[]; cycleLength: number; isDefault?: boolean },
-  shiftTypes: ShiftType[]
-) {
-  const { name, steps, cycleLength } = template;
-
-  const offDays = steps.filter((code) => isOffCode(code)).length;
-  const workDays = cycleLength - offDays;
-
-  const getShiftName = (code: string): string => {
-    if (isOffCode(code)) return 'İzin';
-    const shift = shiftTypes.find((s) => s.code === code);
-    if (!shift) return code;
-    const n = shift.name.toLowerCase();
-    if (n.includes('sabah') || n.includes('morning')) return 'Sabah';
-    if (n.includes('öğle') || n.includes('ogle') || n.includes('afternoon')) return 'Öğle';
-    if (n.includes('akşam') || n.includes('aksam') || n.includes('evening')) return 'Akşam';
-    if (n.includes('gece') || n.includes('night')) return 'Gece';
-    return shift.shortName || code;
-  };
-
-  const groups: { name: string; count: number }[] = [];
-  let currentShift = '';
-  let currentCount = 0;
-
-  for (const code of steps) {
-    const shiftName = getShiftName(code);
-    if (shiftName === currentShift) {
-      currentCount++;
-    } else {
-      if (currentShift) {
-        groups.push({ name: currentShift, count: currentCount });
-      }
-      currentShift = shiftName;
-      currentCount = 1;
-    }
-  }
-  if (currentShift) {
-    groups.push({ name: currentShift, count: currentCount });
-  }
-
-  const pattern = groups
-    .map((g) => `${g.count} ${g.name.toLowerCase()}`)
-    .join(' → ');
-
-  const trimmed = name.trim();
-  let friendlyName = trimmed;
-  if (trimmed.startsWith('BYG-') || /^[A-Z]+-[A-Z0-9]+$/.test(trimmed)) {
-    friendlyName = `Standart ${cycleLength} Gün Döngü`;
-  } else if (!template.isDefault && trimmed.length < 2) {
-    // Custom templates may end up with a 1-character name; show a readable
-    // fallback rather than letting the card collapse to a single letter.
-    friendlyName = trimmed.length === 0 ? 'Özel Düzen' : `${trimmed} (Özel Düzen)`;
-  }
-
-  return {
-    title: friendlyName,
-    subtitle: `${cycleLength} günlük döngü • ${workDays} iş, ${offDays} izin`,
-    pattern,
-  };
-}
+import { getTemplateDisplayInfo } from '../../src/utils/shiftDisplay';
 
 export default function TemplatesScreen() {
   const router = useRouter();
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation(['templates', 'shift', 'common']);
   const insets = useSafeAreaInsets();
 
   const templates = useScheduleStore((state) => state.templates);
@@ -108,11 +46,10 @@ export default function TemplatesScreen() {
         {/* Intro */}
         <View style={styles.introBlock}>
           <Text style={[styles.introTitle, { color: colors.text }]}>
-            Aktif Şablon
+            {t('templates:activeTemplate')}
           </Text>
           <Text style={[styles.introSubtitle, { color: colors.textMuted }]}>
-            Kullandığınız vardiya düzenini seçin. Bu seçim plan oluşturma ve
-            varsayılan akışta kullanılır.
+            {t('templates:introSubtitle')}
           </Text>
         </View>
 
@@ -210,7 +147,7 @@ export default function TemplatesScreen() {
                         },
                       ]}
                     >
-                      {isSystem ? 'Sistem şablonu' : 'Özel şablon'}
+                      {isSystem ? t('shift:systemTemplate') : t('shift:customTemplate')}
                     </Text>
                   </View>
 
@@ -228,7 +165,7 @@ export default function TemplatesScreen() {
                     <Text
                       style={[styles.editButtonText, { color: colors.textSecondary }]}
                     >
-                      {isSystem ? 'Görüntüle' : 'Düzenle'}
+                      {isSystem ? t('common:view') : t('common:edit')}
                     </Text>
                   </PressableScale>
                 </View>
@@ -256,7 +193,7 @@ export default function TemplatesScreen() {
           pressedScale={0.98}
           rippleColor="rgba(255,255,255,0.22)"
         >
-          <Text style={styles.addButtonText}>+ Yeni Şablon</Text>
+          <Text style={styles.addButtonText}>{t('templates:newTemplate')}</Text>
         </PressableScale>
       </View>
     </View>

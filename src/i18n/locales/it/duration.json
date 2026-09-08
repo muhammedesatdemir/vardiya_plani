@@ -1,0 +1,15 @@
+{
+  "zero": "0 minuti",
+  "minutesOnly_one": "{{count}} minuto",
+  "minutesOnly_other": "{{count}} minuti",
+  "hoursOnly_one": "{{count}} ora",
+  "hoursOnly_other": "{{count}} ore",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Riepilogo ore",
+  "totalOvertime": "Totale straordinari",
+  "totalShortage": "Totale ore mancanti",
+  "monthlyNotesTitle": "Note di {{month}}",
+  "noNotesForMonth": "Nessuna nota registrata per questo mese.",
+  "monthlySummaryShare": "Riepilogo ore di {{month}}:\nTotale straordinari: {{overtime}}\nTotale ore mancanti: {{shortage}}",
+  "monthlyNotesShare": "Note di {{month}}\n\n{{body}}"
+}

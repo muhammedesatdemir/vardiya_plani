@@ -1,0 +1,19 @@
+{
+  "zero": "0 minut",
+  "minutesOnly_one": "{{count}} minuta",
+  "minutesOnly_few": "{{count}} minuty",
+  "minutesOnly_many": "{{count}} minut",
+  "minutesOnly_other": "{{count}} minuty",
+  "hoursOnly_one": "{{count}} godzina",
+  "hoursOnly_few": "{{count}} godziny",
+  "hoursOnly_many": "{{count}} godzin",
+  "hoursOnly_other": "{{count}} godziny",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Podsumowanie godzin",
+  "totalOvertime": "Suma nadgodzin",
+  "totalShortage": "Suma niedogodzin",
+  "monthlyNotesTitle": "Notatki z {{month}}",
+  "noNotesForMonth": "Brak zapisanych notatek dla tego miesiąca.",
+  "monthlySummaryShare": "Podsumowanie godzin za {{month}}:\nSuma nadgodzin: {{overtime}}\nSuma niedogodzin: {{shortage}}",
+  "monthlyNotesShare": "Notatki z {{month}}\n\n{{body}}"
+}

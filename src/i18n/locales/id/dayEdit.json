@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Edit Hari",
+  "invalidDate": "Tanggal tidak valid",
+  "selectShift": "Pilih Shift",
+  "customTimeForDay": "Jam Khusus untuk Hari Ini",
+  "customTimeHint": "Hanya berlaku untuk hari ini",
+  "start": "Mulai",
+  "end": "Selesai",
+  "resetToDefault": "Atur ulang ke default",
+  "overtime": "Lembur",
+  "shortage": "Kekurangan Jam",
+  "hours": "Jam",
+  "minutes": "Menit",
+  "protectThisDay": "Lindungi Hari Ini",
+  "protectHint": "Jangan ubah hari ini secara otomatis saat membuat jadwal",
+  "note": "📝 Catatan",
+  "notePlaceholder": "Tambahkan catatan untuk hari ini...",
+  "noteHint": "Contoh: Izin berubah, shift ditukar...",
+  "clearDay": "Kosongkan Hari"
+}

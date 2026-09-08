@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Einstellungen",
+  "appearance": "DARSTELLUNG",
+  "theme": "Design",
+  "themeLight": "Hell",
+  "themeDark": "Dunkel",
+  "program": "PROGRAMM",
+  "activeTemplate": "Aktive Vorlage",
+  "notSelected": "Nicht ausgewählt",
+  "shiftTimes": "Schichtzeiten",
+  "shiftTimesSubtitle": "Passe die Zeiten für Früh-, Spät- und Nachtschicht an",
+  "language": "Sprache",
+  "data": "DATEN",
+  "exporting": "Wird vorbereitet...",
+  "exportData": "Daten exportieren",
+  "deleteAllData": "Alle Daten löschen",
+  "about": "ÜBER",
+  "appName": "Vardiya Planı",
+  "version": "Version {{version}}",
+  "madeBy": "Entwickelt von Demrivo",
+  "footerSignature": "Praktische Planung für Schichtarbeiter",
+  "exportReadyTitle": "Export bereit",
+  "exportReadyMessage": "Dein Schichtplan wurde als Excel-kompatible Datei erstellt. Du kannst sie teilen oder auf deinem Gerät speichern.",
+  "shareDialogTitle": "Schichtplan teilen",
+  "exportErrorTitle": "Fehler",
+  "exportErrorMessage": "Beim Erstellen der Datei ist ein Fehler aufgetreten.",
+  "shareNotSupported": "Teilen wird auf diesem Gerät nicht unterstützt.",
+  "deleteAllConfirmTitle": "Alle Daten löschen?",
+  "deleteAllConfirmBody": "Diese Aktion kann nicht rückgängig gemacht werden. Alle deine Schichtpläne, Notizen und Einstellungen werden dauerhaft gelöscht.",
+  "csv": {
+    "header": "Datum,Tag,Schicht,Startzeit,Endzeit,Notiz,Gesperrt"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Godziny zmian",
+  "heroSubtitle": "Dostosuj godziny zmiany porannej, popołudniowej i nocnej do swoich potrzeb. Te godziny będą automatycznie stosowane we wszystkich planach.",
+  "footerHint": "Jeśli dla danego dnia ustawiono niestandardową godzinę, ma ona pierwszeństwo.",
+  "editorSubtitle": "Edytuj godzinę rozpoczęcia i zakończenia",
+  "resetToDefault": "↺  Przywróć domyślne",
+  "errorInvalidTime": "Podaj godziny w zakresie 00–23, minuty w zakresie 00–59.",
+  "errorSameTime": "Godzina rozpoczęcia i zakończenia nie mogą być takie same.",
+  "hourHint": "GG",
+  "minuteHint": "MM"
+}

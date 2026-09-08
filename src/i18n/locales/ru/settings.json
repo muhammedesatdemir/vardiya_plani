@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Настройки",
+  "appearance": "ВНЕШНИЙ ВИД",
+  "theme": "Тема",
+  "themeLight": "Светлая",
+  "themeDark": "Тёмная",
+  "program": "ПРОГРАММА",
+  "activeTemplate": "Активный шаблон",
+  "notSelected": "Не выбрано",
+  "shiftTimes": "Время смен",
+  "shiftTimesSubtitle": "Настройте время утренней, дневной и ночной смен",
+  "language": "Язык",
+  "data": "ДАННЫЕ",
+  "exporting": "Подготовка...",
+  "exportData": "Экспортировать данные",
+  "deleteAllData": "Удалить все данные",
+  "about": "О ПРИЛОЖЕНИИ",
+  "appName": "Vardiya Planı",
+  "version": "Версия {{version}}",
+  "madeBy": "Разработано Demrivo",
+  "footerSignature": "Удобное планирование для сменных сотрудников",
+  "exportReadyTitle": "Экспорт готов",
+  "exportReadyMessage": "Ваш график смен подготовлен в формате, совместимом с Excel. Вы можете поделиться файлом или сохранить его на устройство.",
+  "shareDialogTitle": "Поделиться графиком смен",
+  "exportErrorTitle": "Ошибка",
+  "exportErrorMessage": "Произошла ошибка при создании файла.",
+  "shareNotSupported": "Обмен не поддерживается на этом устройстве.",
+  "deleteAllConfirmTitle": "Удалить все данные?",
+  "deleteAllConfirmBody": "Это действие необратимо. Все ваши графики смен, заметки и настройки будут удалены безвозвратно.",
+  "csv": {
+    "header": "Дата,День,Смена,Время начала,Время окончания,Заметка,Защищено"
+  }
+}

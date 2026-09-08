@@ -1,0 +1,15 @@
+{
+  "zero": "0 minute",
+  "minutesOnly_one": "{{count}} minute",
+  "minutesOnly_other": "{{count}} minutes",
+  "hoursOnly_one": "{{count}} heure",
+  "hoursOnly_other": "{{count}} heures",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Résumé des heures",
+  "totalOvertime": "Total heures sup.",
+  "totalShortage": "Total heures manquantes",
+  "monthlyNotesTitle": "Notes de {{month}}",
+  "noNotesForMonth": "Aucune note enregistrée pour ce mois.",
+  "monthlySummaryShare": "Résumé des heures de {{month}} :\nTotal heures sup. : {{overtime}}\nTotal heures manquantes : {{shortage}}",
+  "monthlyNotesShare": "Notes de {{month}}\n\n{{body}}"
+}

@@ -20,6 +20,7 @@ import type {
   ShiftType,
 } from '../types';
 import { getDaysInRange, getPreviousMonthLastDay } from '../utils/date';
+import i18n from '../i18n';
 
 // ============================================
 // GENERATE DAYS
@@ -451,11 +452,17 @@ export function isOvernightShiftByTime(
 
 /**
  * Format overnight shift display text.
- * e.g., "Gece (07:00'ye kadar)"
+ * e.g., "Gece (07:00'ye kadar)" (tr) / "Night (until 07:00)" (en)
+ *
+ * NOTE: this is a display-string helper only — it does not affect scheduling
+ * calculations. It lives alongside the engine because it's exported from the
+ * same module (see README), but the string itself is resolved through i18next
+ * so it stays in sync with the active UI language instead of being hardcoded
+ * to Turkish.
  */
 export function formatOvernightShiftDisplay(
   shiftName: string,
   endTime: string
 ): string {
-  return `${shiftName} (${endTime}'e kadar)`;
+  return i18n.t('shift:untilTime', { shift: shiftName, time: endTime });
 }

@@ -1,0 +1,19 @@
+{
+  "morning": "صباح",
+  "afternoon": "عصر",
+  "evening": "مساء",
+  "night": "ليل",
+  "off": "إجازة",
+  "leave": "إجازة",
+  "dayOff": "يوم إجازة",
+  "crossesMidnight": "يمتد بعد منتصف الليل",
+  "nextDayHint": "(اليوم التالي)",
+  "custom": "مخصص",
+  "untilTime": "{{shift}} (حتى {{time}})",
+  "defaultRangeFor": "الوقت الافتراضي لوردية {{shift}}",
+  "systemTemplate": "قالب النظام",
+  "customTemplate": "قالب مخصص",
+  "customPattern": "نمط مخصص",
+  "customPatternNamed": "{{name}} (نمط مخصص)",
+  "standardCycle": "دورة قياسية مدتها {{count}} يوم"
+}

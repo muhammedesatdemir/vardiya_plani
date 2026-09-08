@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Modifica giorno",
+  "invalidDate": "Data non valida",
+  "selectShift": "Seleziona turno",
+  "customTimeForDay": "Orario personalizzato per questo giorno",
+  "customTimeHint": "Valido solo per questo giorno",
+  "start": "Inizio",
+  "end": "Fine",
+  "resetToDefault": "Ripristina predefinito",
+  "overtime": "Straordinario",
+  "shortage": "Ore mancanti",
+  "hours": "Ore",
+  "minutes": "Minuti",
+  "protectThisDay": "Blocca questo giorno",
+  "protectHint": "Questo giorno non verrà modificato automaticamente durante la creazione del piano",
+  "note": "📝 Nota",
+  "notePlaceholder": "Aggiungi una nota per questo giorno...",
+  "noteHint": "Es.: riposo cambiato, turno spostato...",
+  "clearDay": "Cancella giorno"
+}

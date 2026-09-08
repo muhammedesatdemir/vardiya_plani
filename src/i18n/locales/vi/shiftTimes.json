@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Giờ Ca Làm",
+  "heroSubtitle": "Tùy chỉnh giờ ca sáng, chiều và đêm theo ý bạn. Các giờ này sẽ tự động áp dụng cho mọi lịch làm việc.",
+  "footerHint": "Nếu một ngày có giờ riêng, giờ riêng đó sẽ được ưu tiên sử dụng.",
+  "editorSubtitle": "Chỉnh sửa giờ bắt đầu và kết thúc",
+  "resetToDefault": "↺  Về mặc định",
+  "errorInvalidTime": "Nhập giờ trong khoảng 00–23, phút trong khoảng 00–59.",
+  "errorSameTime": "Giờ bắt đầu và kết thúc không được trùng nhau.",
+  "hourHint": "GG",
+  "minuteHint": "PP"
+}

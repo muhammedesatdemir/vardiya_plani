@@ -1,0 +1,23 @@
+{
+  "screenTitle": "変更",
+  "dateRangeSection": "日付範囲",
+  "selectDate": "日付を選択",
+  "changeTypeSection": "変更の種類",
+  "assignSingleShift": "単一のシフトを割り当てる",
+  "createFromTemplate": "テンプレートから作成",
+  "shiftSection": "シフト",
+  "templateSection": "テンプレート",
+  "cycleLength": "{{count}}日サイクル",
+  "addNewTemplate": "+ 新しいテンプレートを作成",
+  "optionsSection": "オプション",
+  "overrideLocked": "ロックされた日を上書き",
+  "overrideManual": "手動編集した日を上書き",
+  "overwriteWarning": "選択範囲内の既存の予定は{{lockedNote}}上書きされます",
+  "overwriteWarningLockedNote": "（ロックされたものを除き）",
+  "errorSelectDateRange": "日付範囲を選択してください。",
+  "errorSelectShift": "シフトを選択してください。",
+  "errorSelectTemplate": "テンプレートを選択してください。",
+  "resultTitle": "完了",
+  "resultRevised": "{{count}}日更新されました",
+  "resultSkipped": "、{{count}}日スキップされました"
+}

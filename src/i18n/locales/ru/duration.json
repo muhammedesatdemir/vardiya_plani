@@ -1,0 +1,19 @@
+{
+  "zero": "0 минут",
+  "minutesOnly_one": "{{count}} минута",
+  "minutesOnly_few": "{{count}} минуты",
+  "minutesOnly_many": "{{count}} минут",
+  "minutesOnly_other": "{{count}} минуты",
+  "hoursOnly_one": "{{count}} час",
+  "hoursOnly_few": "{{count}} часа",
+  "hoursOnly_many": "{{count}} часов",
+  "hoursOnly_other": "{{count}} часа",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Сводка часов",
+  "totalOvertime": "Всего переработка",
+  "totalShortage": "Всего недоработка",
+  "monthlyNotesTitle": "Заметки за {{month}}",
+  "noNotesForMonth": "За этот месяц заметок нет.",
+  "monthlySummaryShare": "Сводка часов за {{month}}:\nВсего переработка: {{overtime}}\nВсего недоработка: {{shortage}}",
+  "monthlyNotesShare": "Заметки за {{month}}\n\n{{body}}"
+}

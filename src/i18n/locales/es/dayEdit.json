@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Editar Día",
+  "invalidDate": "Fecha inválida",
+  "selectShift": "Seleccionar Turno",
+  "customTimeForDay": "Horario Personalizado para Este Día",
+  "customTimeHint": "Se aplica solo a este día",
+  "start": "Inicio",
+  "end": "Fin",
+  "resetToDefault": "Restablecer al predeterminado",
+  "overtime": "Horas Extra",
+  "shortage": "Horas Faltantes",
+  "hours": "Horas",
+  "minutes": "Minutos",
+  "protectThisDay": "Proteger Este Día",
+  "protectHint": "No cambiar este día automáticamente al generar un plan",
+  "note": "📝 Nota",
+  "notePlaceholder": "Agrega una nota para este día...",
+  "noteHint": "Ej.: Permiso cambiado, turno intercambiado...",
+  "clearDay": "Borrar Día"
+}

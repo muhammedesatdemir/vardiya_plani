@@ -25,17 +25,20 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../src/stores';
 import { useTheme } from '../src/context';
 import { PressableScale, TimeInput } from '../src/components/ui';
 import { DEFAULT_SHIFT_TYPES } from '../src/constants/shifts';
 import { formatHM, isOvernightFromHM, parseHM } from '../src/utils/shiftTime';
+import { getShiftDisplayName } from '../src/utils/shiftDisplay';
 import type { ShiftType } from '../src/types';
 
 const OFF_CODES = new Set(['OFF', 'OFF1', 'OFF2']);
 
 export default function ShiftTimesScreen() {
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation('shiftTimes');
   const insets = useSafeAreaInsets();
 
   const shiftTypes = useScheduleStore((state) => state.shiftTypes);
@@ -65,11 +68,10 @@ export default function ShiftTimesScreen() {
         {/* Hero header */}
         <View style={styles.hero}>
           <Text style={[styles.heroTitle, { color: colors.text }]}>
-            Vardiya Saatleri
+            {t('shiftTimes:screenTitle')}
           </Text>
           <Text style={[styles.heroSubtitle, { color: colors.textSecondary }]}>
-            Sabah, öğle ve gece vardiyalarının saatlerini kendine göre düzenle.
-            Bu saatler tüm planlarda otomatik kullanılır.
+            {t('shiftTimes:heroSubtitle')}
           </Text>
         </View>
 
@@ -97,8 +99,7 @@ export default function ShiftTimesScreen() {
           <Text
             style={[styles.footerHintText, { color: colors.textMuted }]}
           >
-            Bir güne özel saat girilmişse, o gün için özel saat öncelikli
-            kullanılır.
+            {t('shiftTimes:footerHint')}
           </Text>
         </View>
       </ScrollView>
@@ -127,8 +128,10 @@ interface ShiftTimeCardProps {
 }
 
 function ShiftTimeCard({ shift, colors, isDark, onPress }: ShiftTimeCardProps) {
+  const { t } = useTranslation(['shiftTimes', 'shift']);
   const tintBg = isDark ? `${shift.color}26` : `${shift.color}1A`;
   const isOvernight = shift.isOvernight;
+  const displayName = getShiftDisplayName(shift);
 
   return (
     <PressableScale
@@ -154,7 +157,7 @@ function ShiftTimeCard({ shift, colors, isDark, onPress }: ShiftTimeCardProps) {
       <View style={styles.cardBody}>
         <View style={styles.cardTitleRow}>
           <Text style={[styles.cardTitle, { color: colors.text }]}>
-            {shift.name}
+            {displayName}
           </Text>
           {isOvernight && (
             <View
@@ -164,7 +167,7 @@ function ShiftTimeCard({ shift, colors, isDark, onPress }: ShiftTimeCardProps) {
               ]}
             >
               <Text style={[styles.overnightChipText, { color: shift.color }]}>
-                Gece geçer
+                {t('shift:crossesMidnight')}
               </Text>
             </View>
           )}
@@ -181,7 +184,7 @@ function ShiftTimeCard({ shift, colors, isDark, onPress }: ShiftTimeCardProps) {
         </View>
 
         <Text style={[styles.cardCaption, { color: colors.textMuted }]}>
-          {shift.name} vardiyası için varsayılan saat aralığı
+          {t('shift:defaultRangeFor', { shift: displayName })}
         </Text>
       </View>
 
@@ -212,6 +215,7 @@ interface ShiftTimeEditorProps {
 
 function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
   const { colors, isDark } = useTheme();
+  const { t } = useTranslation(['shiftTimes', 'common', 'dayEdit']);
   const insets = useSafeAreaInsets();
 
   const visible = shift !== null;
@@ -313,11 +317,11 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
     const endStr = buildHM(end);
 
     if (!startStr || !endStr) {
-      setError('Saatleri 00–23, dakikaları 00–59 aralığında girin.');
+      setError(t('shiftTimes:errorInvalidTime'));
       return;
     }
     if (startStr === endStr) {
-      setError('Başlangıç ve bitiş aynı olamaz.');
+      setError(t('shiftTimes:errorSameTime'));
       return;
     }
 
@@ -411,7 +415,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
                 <Text
                   style={[editorStyles.headerTitle, { color: colors.text }]}
                 >
-                  {shift.name}
+                  {getShiftDisplayName(shift)}
                 </Text>
                 <Text
                   style={[
@@ -419,7 +423,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
                     { color: colors.textMuted },
                   ]}
                 >
-                  Başlangıç ve bitiş saatini düzenle
+                  {t('shiftTimes:editorSubtitle')}
                 </Text>
               </View>
             </View>
@@ -427,7 +431,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
             {/* Time inputs */}
             <View style={editorStyles.inputsRow}>
               <TimeField
-                label="Başlangıç"
+                label={t('dayEdit:start')}
                 accentColor={shift.color}
                 value={start}
                 onChangeValue={(v) => {
@@ -453,7 +457,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
               </View>
 
               <TimeField
-                label="Bitiş"
+                label={t('dayEdit:end')}
                 accentColor={shift.color}
                 value={end}
                 onChangeValue={(v) => {
@@ -494,7 +498,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
               <Text
                 style={[editorStyles.resetText, { color: colors.primary }]}
               >
-                ↺  Varsayılana dön
+                {t('shiftTimes:resetToDefault')}
               </Text>
             </PressableScale>
 
@@ -518,7 +522,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
                     { color: colors.textSecondary },
                   ]}
                 >
-                  İptal
+                  {t('common:cancel')}
                 </Text>
               </PressableScale>
               <PressableScale
@@ -531,7 +535,7 @@ function ShiftTimeEditor({ shift, onClose, onSave }: ShiftTimeEditorProps) {
                 pressedScale={0.98}
                 rippleColor="rgba(255,255,255,0.22)"
               >
-                <Text style={editorStyles.saveText}>Kaydet</Text>
+                <Text style={editorStyles.saveText}>{t('common:save')}</Text>
               </PressableScale>
             </View>
           </Animated.View>
@@ -560,6 +564,7 @@ function TimeField({
   onChangeValue,
   colors,
 }: TimeFieldProps) {
+  const { t } = useTranslation('shiftTimes');
   return (
     <View style={editorStyles.field}>
       <Text style={[editorStyles.fieldLabel, { color: colors.textMuted }]}>
@@ -573,10 +578,10 @@ function TimeField({
       />
       <View style={editorStyles.fieldHintRow}>
         <Text style={[editorStyles.fieldHint, { color: colors.textMuted }]}>
-          SS
+          {t('shiftTimes:hourHint')}
         </Text>
         <Text style={[editorStyles.fieldHint, { color: colors.textMuted }]}>
-          DD
+          {t('shiftTimes:minuteHint')}
         </Text>
       </View>
     </View>

@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Tag bearbeiten",
+  "invalidDate": "Ungültiges Datum",
+  "selectShift": "Schicht auswählen",
+  "customTimeForDay": "Individuelle Zeit für diesen Tag",
+  "customTimeHint": "Gilt nur für diesen Tag",
+  "start": "Beginn",
+  "end": "Ende",
+  "resetToDefault": "Auf Standard zurücksetzen",
+  "overtime": "Überstunden",
+  "shortage": "Fehlstunden",
+  "hours": "Stunden",
+  "minutes": "Minuten",
+  "protectThisDay": "Diesen Tag sperren",
+  "protectHint": "Dieser Tag wird bei der Planerstellung nicht automatisch geändert",
+  "note": "📝 Notiz",
+  "notePlaceholder": "Notiz für diesen Tag hinzufügen...",
+  "noteHint": "Z. B.: Frei getauscht, Dienst verschoben...",
+  "clearDay": "Tag zurücksetzen"
+}

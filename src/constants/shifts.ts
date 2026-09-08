@@ -142,6 +142,7 @@ export const DEFAULT_SETTINGS = {
   theme: 'light' as const,
   showOffVariants: false,
   onboardingDone: false,
+  language: 'tr' as const,
 };
 
 // ============================================

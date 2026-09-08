@@ -1,0 +1,19 @@
+{
+  "morning": "朝勤",
+  "afternoon": "昼勤",
+  "evening": "夕勤",
+  "night": "夜勤",
+  "off": "休み",
+  "leave": "休み",
+  "dayOff": "休日",
+  "crossesMidnight": "日をまたぐ",
+  "nextDayHint": "（翌日）",
+  "custom": "カスタム",
+  "untilTime": "{{shift}}（{{time}}まで）",
+  "defaultRangeFor": "{{shift}}シフトの標準時間",
+  "systemTemplate": "システムテンプレート",
+  "customTemplate": "カスタムテンプレート",
+  "customPattern": "カスタムパターン",
+  "customPatternNamed": "{{name}}（カスタムパターン）",
+  "standardCycle": "標準{{count}}日サイクル"
+}

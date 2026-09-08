@@ -1,0 +1,19 @@
+{
+  "morning": "Sáng",
+  "afternoon": "Chiều",
+  "evening": "Tối",
+  "night": "Đêm",
+  "off": "Nghỉ",
+  "leave": "Nghỉ",
+  "dayOff": "Ngày nghỉ",
+  "crossesMidnight": "Qua nửa đêm",
+  "nextDayHint": "(ngày hôm sau)",
+  "custom": "tùy chỉnh",
+  "untilTime": "{{shift}} (đến {{time}})",
+  "defaultRangeFor": "Khung giờ mặc định cho ca {{shift}}",
+  "systemTemplate": "Mẫu hệ thống",
+  "customTemplate": "Mẫu tùy chỉnh",
+  "customPattern": "Chu Kỳ Tùy Chỉnh",
+  "customPatternNamed": "{{name}} (Chu Kỳ Tùy Chỉnh)",
+  "standardCycle": "Chu Kỳ Chuẩn {{count}} Ngày"
+}

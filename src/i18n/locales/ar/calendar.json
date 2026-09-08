@@ -1,0 +1,43 @@
+{
+  "tabTitle": "التقويم",
+  "today": "اليوم",
+  "tomorrow": "غدًا",
+  "weekdays": {
+    "monday_short3": "إثن",
+    "tuesday_short3": "ثلا",
+    "wednesday_short3": "أرب",
+    "thursday_short3": "خمي",
+    "friday_short3": "جمع",
+    "saturday_short3": "سبت",
+    "sunday_short3": "أحد",
+    "monday_short2": "إث",
+    "tuesday_short2": "ثل",
+    "wednesday_short2": "أر",
+    "thursday_short2": "خم",
+    "friday_short2": "جم",
+    "saturday_short2": "سب",
+    "sunday_short2": "أح",
+    "sunday_full": "الأحد",
+    "monday_full": "الإثنين",
+    "tuesday_full": "الثلاثاء",
+    "wednesday_full": "الأربعاء",
+    "thursday_full": "الخميس",
+    "friday_full": "الجمعة",
+    "saturday_full": "السبت"
+  },
+  "holidayOfficial": "🇹🇷 عطلة رسمية — {{name}}",
+  "months": {
+    "january": "يناير",
+    "february": "فبراير",
+    "march": "مارس",
+    "april": "أبريل",
+    "may": "مايو",
+    "june": "يونيو",
+    "july": "يوليو",
+    "august": "أغسطس",
+    "september": "سبتمبر",
+    "october": "أكتوبر",
+    "november": "نوفمبر",
+    "december": "ديسمبر"
+  }
+}

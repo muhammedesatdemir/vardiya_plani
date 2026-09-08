@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Edytuj dzień",
+  "invalidDate": "Nieprawidłowa data",
+  "selectShift": "Wybierz zmianę",
+  "customTimeForDay": "Niestandardowa godzina dla tego dnia",
+  "customTimeHint": "Dotyczy tylko tego dnia",
+  "start": "Początek",
+  "end": "Koniec",
+  "resetToDefault": "Przywróć domyślne",
+  "overtime": "Nadgodziny",
+  "shortage": "Niedogodziny",
+  "hours": "Godziny",
+  "minutes": "Minuty",
+  "protectThisDay": "Zablokuj ten dzień",
+  "protectHint": "Ten dzień nie zostanie automatycznie zmieniony podczas tworzenia planu",
+  "note": "📝 Notatka",
+  "notePlaceholder": "Dodaj notatkę do tego dnia...",
+  "noteHint": "Np.: zmiana wolnego, przesunięty dyżur...",
+  "clearDay": "Wyczyść dzień"
+}

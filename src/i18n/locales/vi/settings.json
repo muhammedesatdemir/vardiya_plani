@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Cài Đặt",
+  "appearance": "GIAO DIỆN",
+  "theme": "Chủ Đề",
+  "themeLight": "Sáng",
+  "themeDark": "Tối",
+  "program": "CHƯƠNG TRÌNH",
+  "activeTemplate": "Mẫu Đang Dùng",
+  "notSelected": "Chưa chọn",
+  "shiftTimes": "Giờ Ca Làm",
+  "shiftTimesSubtitle": "Tùy chỉnh giờ ca sáng, chiều và đêm",
+  "language": "Ngôn Ngữ",
+  "data": "DỮ LIỆU",
+  "exporting": "Đang chuẩn bị...",
+  "exportData": "Xuất Dữ Liệu",
+  "deleteAllData": "Xóa Toàn Bộ Dữ Liệu",
+  "about": "GIỚI THIỆU",
+  "appName": "Vardiya Planı",
+  "version": "Phiên bản {{version}}",
+  "madeBy": "Được phát triển bởi Demrivo",
+  "footerSignature": "Lập lịch tiện lợi cho nhân viên làm ca",
+  "exportReadyTitle": "Xuất Dữ Liệu Hoàn Tất",
+  "exportReadyMessage": "Lịch làm việc của bạn đã sẵn sàng dưới dạng tệp tương thích với Excel. Bạn có thể chia sẻ hoặc lưu vào thiết bị.",
+  "shareDialogTitle": "Chia Sẻ Lịch Làm Việc",
+  "exportErrorTitle": "Lỗi",
+  "exportErrorMessage": "Đã xảy ra lỗi khi tạo tệp.",
+  "shareNotSupported": "Thiết bị này không hỗ trợ chia sẻ.",
+  "deleteAllConfirmTitle": "Xóa toàn bộ dữ liệu?",
+  "deleteAllConfirmBody": "Hành động này không thể hoàn tác. Toàn bộ lịch làm việc, ghi chú và cài đặt của bạn sẽ bị xóa vĩnh viễn.",
+  "csv": {
+    "header": "Ngày,Thứ,Ca Làm,Giờ Bắt Đầu,Giờ Kết Thúc,Ghi Chú,Đã Khóa"
+  }
+}

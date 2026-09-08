@@ -1,0 +1,15 @@
+{
+  "zero": "0 menit",
+  "minutesOnly_one": "{{count}} menit",
+  "minutesOnly_other": "{{count}} menit",
+  "hoursOnly_one": "{{count}} jam",
+  "hoursOnly_other": "{{count}} jam",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Ringkasan Jam Kerja",
+  "totalOvertime": "Total Lembur",
+  "totalShortage": "Total Kekurangan Jam",
+  "monthlyNotesTitle": "Catatan {{month}}",
+  "noNotesForMonth": "Tidak ada catatan tersimpan untuk bulan ini.",
+  "monthlySummaryShare": "Ringkasan Jam Kerja {{month}}:\nTotal lembur: {{overtime}}\nTotal kekurangan jam: {{shortage}}",
+  "monthlyNotesShare": "Catatan {{month}}\n\n{{body}}"
+}

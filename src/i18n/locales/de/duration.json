@@ -1,0 +1,15 @@
+{
+  "zero": "0 Minuten",
+  "minutesOnly_one": "{{count}} Minute",
+  "minutesOnly_other": "{{count}} Minuten",
+  "hoursOnly_one": "{{count}} Stunde",
+  "hoursOnly_other": "{{count}} Stunden",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Stundenübersicht",
+  "totalOvertime": "Überstunden gesamt",
+  "totalShortage": "Fehlstunden gesamt",
+  "monthlyNotesTitle": "Notizen für {{month}}",
+  "noNotesForMonth": "Für diesen Monat sind keine Notizen vorhanden.",
+  "monthlySummaryShare": "Stundenübersicht {{month}}:\nÜberstunden gesamt: {{overtime}}\nFehlstunden gesamt: {{shortage}}",
+  "monthlyNotesShare": "Notizen für {{month}}\n\n{{body}}"
+}

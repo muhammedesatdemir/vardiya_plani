@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Jam Shift",
+  "heroSubtitle": "Sesuaikan jam untuk shift pagi, siang, dan malam. Jam ini digunakan secara otomatis di semua jadwal.",
+  "footerHint": "Jika jam khusus diatur untuk hari tertentu, jam tersebut akan diprioritaskan pada hari itu.",
+  "editorSubtitle": "Edit jam mulai dan selesai",
+  "resetToDefault": "↺  Atur ulang ke default",
+  "errorInvalidTime": "Masukkan jam antara 00–23 dan menit antara 00–59.",
+  "errorSameTime": "Jam mulai dan selesai tidak boleh sama.",
+  "hourHint": "JJ",
+  "minuteHint": "MM"
+}

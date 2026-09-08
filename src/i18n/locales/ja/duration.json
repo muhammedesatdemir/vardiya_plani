@@ -1,0 +1,13 @@
+{
+  "zero": "0分",
+  "minutesOnly": "{{count}}分",
+  "hoursOnly": "{{count}}時間",
+  "hoursAndMinutes": "{{hours}}{{minutes}}",
+  "summaryTitle": "勤務時間サマリー",
+  "totalOvertime": "総残業時間",
+  "totalShortage": "総不足時間",
+  "monthlyNotesTitle": "{{month}}のメモ",
+  "noNotesForMonth": "今月のメモはありません。",
+  "monthlySummaryShare": "{{month}}の勤務時間サマリー：\n総残業時間：{{overtime}}\n総不足時間：{{shortage}}",
+  "monthlyNotesShare": "{{month}}のメモ\n\n{{body}}"
+}

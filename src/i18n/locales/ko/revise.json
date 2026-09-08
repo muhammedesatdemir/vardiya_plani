@@ -1,0 +1,23 @@
+{
+  "screenTitle": "수정",
+  "dateRangeSection": "날짜 범위",
+  "selectDate": "날짜 선택",
+  "changeTypeSection": "변경 유형",
+  "assignSingleShift": "단일 근무 배정",
+  "createFromTemplate": "템플릿으로 생성",
+  "shiftSection": "근무",
+  "templateSection": "템플릿",
+  "cycleLength": "{{count}}일 주기",
+  "addNewTemplate": "+ 새 템플릿 만들기",
+  "optionsSection": "옵션",
+  "overrideLocked": "잠긴 날짜 덮어쓰기",
+  "overrideManual": "수동 편집 날짜 덮어쓰기",
+  "overwriteWarning": "선택한 범위의 기존 일정이 {{lockedNote}}덮어씌워집니다",
+  "overwriteWarningLockedNote": "(잠긴 날짜 제외) ",
+  "errorSelectDateRange": "날짜 범위를 선택해 주세요.",
+  "errorSelectShift": "근무를 선택해 주세요.",
+  "errorSelectTemplate": "템플릿을 선택해 주세요.",
+  "resultTitle": "완료",
+  "resultRevised": "{{count}}일 업데이트됨",
+  "resultSkipped": ", {{count}}일 건너뜀"
+}

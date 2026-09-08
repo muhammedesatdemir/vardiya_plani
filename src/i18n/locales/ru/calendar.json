@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Календарь",
+  "today": "Сегодня",
+  "tomorrow": "Завтра",
+  "weekdays": {
+    "monday_short3": "Пн",
+    "tuesday_short3": "Вт",
+    "wednesday_short3": "Ср",
+    "thursday_short3": "Чт",
+    "friday_short3": "Пт",
+    "saturday_short3": "Сб",
+    "sunday_short3": "Вс",
+    "monday_short2": "Пн",
+    "tuesday_short2": "Вт",
+    "wednesday_short2": "Ср",
+    "thursday_short2": "Чт",
+    "friday_short2": "Пт",
+    "saturday_short2": "Сб",
+    "sunday_short2": "Вс",
+    "sunday_full": "Воскресенье",
+    "monday_full": "Понедельник",
+    "tuesday_full": "Вторник",
+    "wednesday_full": "Среда",
+    "thursday_full": "Четверг",
+    "friday_full": "Пятница",
+    "saturday_full": "Суббота"
+  },
+  "holidayOfficial": "Официальный праздник — {{name}}",
+  "months": {
+    "january": "Январь",
+    "february": "Февраль",
+    "march": "Март",
+    "april": "Апрель",
+    "may": "Май",
+    "june": "Июнь",
+    "july": "Июль",
+    "august": "Август",
+    "september": "Сентябрь",
+    "october": "Октябрь",
+    "november": "Ноябрь",
+    "december": "Декабрь"
+  }
+}

@@ -19,11 +19,14 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../src/stores';
 import { useTheme } from '../../src/context';
 import { PressableScale } from '../../src/components/ui';
 import { File as ExpoFile, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
+import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '../../src/i18n';
+import { getShiftDisplayName } from '../../src/utils/shiftDisplay';
 
 type ModalType = 'export' | 'delete' | null;
 
@@ -31,6 +34,7 @@ export default function SettingsScreen() {
   const router = useRouter();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation(['settings', 'common', 'calendar']);
 
   const settings = useScheduleStore((state) => state.settings);
   const templates = useScheduleStore((state) => state.templates);
@@ -44,7 +48,7 @@ export default function SettingsScreen() {
   const [exportFilePath, setExportFilePath] = useState<string | null>(null);
 
   const activeTemplate = templates.find(
-    (t) => t.id === settings.activeTemplateId
+    (tpl) => tpl.id === settings.activeTemplateId
   );
 
   // Generate CSV content for Excel
@@ -53,13 +57,21 @@ export default function SettingsScreen() {
     const BOM = '\uFEFF';
 
     // Header
-    let csv = BOM + 'Tarih,Gün,Vardiya,Saat Başlangıç,Saat Bitiş,Not,Korumalı\n';
+    let csv = BOM + t('settings:csv.header') + '\n';
 
     // Sort dates
     const sortedDates = Object.keys(plannedDays).sort();
 
-    // Get day names in Turkish
-    const dayNames = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+    // Get day names in the active UI language (Date.getDay() is Sunday-first)
+    const dayNames = [
+      t('calendar:weekdays.sunday_full'),
+      t('calendar:weekdays.monday_full'),
+      t('calendar:weekdays.tuesday_full'),
+      t('calendar:weekdays.wednesday_full'),
+      t('calendar:weekdays.thursday_full'),
+      t('calendar:weekdays.friday_full'),
+      t('calendar:weekdays.saturday_full'),
+    ];
 
     for (const dateStr of sortedDates) {
       const day = plannedDays[dateStr];
@@ -74,11 +86,11 @@ export default function SettingsScreen() {
       const row = [
         dateStr,
         dayName,
-        shift?.name || day.shiftCode,
+        (shift ? getShiftDisplayName(shift) : '') || day.shiftCode,
         shift?.startTime || '',
         shift?.endTime || '',
         day.note ? `"${day.note.replace(/"/g, '""')}"` : '',
-        day.isLocked ? 'Evet' : 'Hayır',
+        day.isLocked ? t('common:yes') : t('common:no'),
       ];
 
       csv += row.join(',') + '\n';
@@ -107,7 +119,7 @@ export default function SettingsScreen() {
       if (__DEV__) {
         console.error('Export failed:', error);
       }
-      Alert.alert('Hata', 'Dosya oluşturulurken bir hata oluştu.');
+      Alert.alert(t('settings:exportErrorTitle'), t('settings:exportErrorMessage'));
     } finally {
       setIsExporting(false);
     }
@@ -121,11 +133,11 @@ export default function SettingsScreen() {
       if (isAvailable) {
         await Sharing.shareAsync(exportFilePath, {
           mimeType: 'text/csv',
-          dialogTitle: 'Vardiya Planını Paylaş',
+          dialogTitle: t('settings:shareDialogTitle'),
           UTI: 'public.comma-separated-values-text',
         });
       } else {
-        Alert.alert('Hata', 'Paylaşım bu cihazda desteklenmiyor.');
+        Alert.alert(t('settings:exportErrorTitle'), t('settings:shareNotSupported'));
       }
     } catch (error) {
       if (__DEV__) {
@@ -171,7 +183,7 @@ export default function SettingsScreen() {
         {/* Görünüm Section */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-            GÖRÜNÜM
+            {t('settings:appearance')}
           </Text>
           <View style={[styles.card, { backgroundColor: colors.surface }]}>
             {/* Theme Selector */}
@@ -182,7 +194,7 @@ export default function SettingsScreen() {
                     <View style={[styles.sunCenter, { backgroundColor: '#3B82F6' }]} />
                   </View>
                 </View>
-                <Text style={[styles.rowLabel, { color: colors.text }]}>Tema</Text>
+                <Text style={[styles.rowLabel, { color: colors.text }]}>{t('settings:theme')}</Text>
               </View>
               <View style={[styles.segmentedControl, { backgroundColor: colors.surfaceSecondary }]}>
                 <PressableScale
@@ -205,7 +217,7 @@ export default function SettingsScreen() {
                       settings.theme === 'light' && styles.segmentTextActive,
                     ]}
                   >
-                    Açık
+                    {t('settings:themeLight')}
                   </Text>
                 </PressableScale>
                 <PressableScale
@@ -228,18 +240,69 @@ export default function SettingsScreen() {
                       settings.theme === 'dark' && styles.segmentTextActive,
                     ]}
                   >
-                    Koyu
+                    {t('settings:themeDark')}
                   </Text>
                 </PressableScale>
               </View>
             </View>
+
+            {/* Language Selector */}
+            <View style={[styles.divider, { backgroundColor: colors.border }]} />
+            <View style={styles.row}>
+              <View style={styles.rowLeft}>
+                <View style={[styles.iconContainer, { backgroundColor: '#8B5CF620' }]}>
+                  <Text style={{ fontSize: 16 }}>🌐</Text>
+                </View>
+                <Text style={[styles.rowLabel, { color: colors.text }]}>{t('settings:language')}</Text>
+              </View>
+            </View>
+            {/* Faz 2: 7 dil artık tek satır segmented control'e sığmıyor —
+                yatay kaydırmalı bir şerit olarak gösteriliyor. Buton stili,
+                seçim mantığı ve persistence akışı Faz 1'dekiyle birebir aynı. */}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={styles.languageScroll}
+              contentContainerStyle={[
+                styles.segmentedControl,
+                styles.languageScrollContent,
+                { backgroundColor: colors.surfaceSecondary },
+              ]}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <PressableScale
+                  key={lang}
+                  style={[
+                    styles.segment,
+                    settings.language === lang && [
+                      styles.segmentActive,
+                      { backgroundColor: colors.surface },
+                    ],
+                  ]}
+                  onPress={() => updateSettings({ language: lang as SupportedLanguage })}
+                  borderRadius={8}
+                  pressedScale={0.96}
+                  rippleColor="rgba(59,130,246,0.10)"
+                >
+                  <Text
+                    style={[
+                      styles.segmentText,
+                      { color: settings.language === lang ? colors.text : colors.textMuted },
+                      settings.language === lang && styles.segmentTextActive,
+                    ]}
+                  >
+                    {lang.toUpperCase()}
+                  </Text>
+                </PressableScale>
+              ))}
+            </ScrollView>
           </View>
         </View>
 
         {/* Program Section */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-            PROGRAM
+            {t('settings:program')}
           </Text>
           <View style={[styles.card, styles.cardClip, { backgroundColor: colors.surface }]}>
             <PressableScale
@@ -258,9 +321,9 @@ export default function SettingsScreen() {
                   </View>
                 </View>
                 <View>
-                  <Text style={[styles.rowLabel, { color: colors.text }]}>Aktif Şablon</Text>
+                  <Text style={[styles.rowLabel, { color: colors.text }]}>{t('settings:activeTemplate')}</Text>
                   <Text style={[styles.rowSubtext, { color: colors.textMuted }]}>
-                    {activeTemplate?.name ?? 'Seçilmedi'}
+                    {activeTemplate?.name ?? t('settings:notSelected')}
                   </Text>
                 </View>
               </View>
@@ -287,9 +350,9 @@ export default function SettingsScreen() {
                   </View>
                 </View>
                 <View>
-                  <Text style={[styles.rowLabel, { color: colors.text }]}>Vardiya Saatleri</Text>
+                  <Text style={[styles.rowLabel, { color: colors.text }]}>{t('settings:shiftTimes')}</Text>
                   <Text style={[styles.rowSubtext, { color: colors.textMuted }]}>
-                    Sabah, öğle ve gece saatlerini özelleştir
+                    {t('settings:shiftTimesSubtitle')}
                   </Text>
                 </View>
               </View>
@@ -303,7 +366,7 @@ export default function SettingsScreen() {
         {/* Veri Section */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-            VERİ
+            {t('settings:data')}
           </Text>
           <View style={[styles.card, styles.cardClip, { backgroundColor: colors.surface }]}>
             <PressableScale
@@ -322,7 +385,7 @@ export default function SettingsScreen() {
                   </View>
                 </View>
                 <Text style={[styles.rowLabel, { color: colors.text }]}>
-                  {isExporting ? 'Hazırlanıyor...' : 'Verileri Dışa Aktar'}
+                  {isExporting ? t('settings:exporting') : t('settings:exportData')}
                 </Text>
               </View>
               <View style={[styles.arrowContainer, { backgroundColor: colors.surfaceSecondary }]}>
@@ -346,7 +409,7 @@ export default function SettingsScreen() {
                     <View style={[styles.trashBody, { borderColor: '#EF4444' }]} />
                   </View>
                 </View>
-                <Text style={[styles.rowLabel, styles.dangerText]}>Tüm Verileri Sil</Text>
+                <Text style={[styles.rowLabel, styles.dangerText]}>{t('settings:deleteAllData')}</Text>
               </View>
             </PressableScale>
           </View>
@@ -355,19 +418,19 @@ export default function SettingsScreen() {
         {/* Hakkında Section */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-            HAKKINDA
+            {t('settings:about')}
           </Text>
           <View style={[styles.card, styles.aboutCard, { backgroundColor: colors.surface }]}>
             <View style={styles.aboutHeader}>
               <Text style={[styles.aboutBrand, { color: colors.text }]}>
-                Vardiya Planı
+                {t('settings:appName')}
               </Text>
               <Text style={[styles.aboutVersion, { color: colors.textSecondary }]}>
-                Sürüm 1.2.4
+                {t('settings:version', { version: '1.2.4' })}
               </Text>
             </View>
             <Text style={[styles.aboutMaker, { color: colors.textMuted }]}>
-              Demrivo tarafından geliştirildi
+              {t('settings:madeBy')}
             </Text>
           </View>
         </View>
@@ -375,7 +438,7 @@ export default function SettingsScreen() {
         {/* Footer — hafif imza */}
         <View style={styles.footer}>
           <Text style={[styles.footerSignature, { color: colors.textMuted }]}>
-            Vardiyalı çalışanlar için pratik planlama
+            {t('settings:footerSignature')}
           </Text>
         </View>
       </ScrollView>
@@ -396,10 +459,10 @@ export default function SettingsScreen() {
               </View>
             </View>
             <Text style={[styles.modalTitle, { color: colors.text }]}>
-              Dışa Aktarma Hazır
+              {t('settings:exportReadyTitle')}
             </Text>
             <Text style={[styles.modalMessage, { color: colors.textSecondary }]}>
-              Vardiya planınız Excel uyumlu dosya olarak hazırlandı. Dosyayı paylaşabilir veya cihazınıza kaydedebilirsiniz.
+              {t('settings:exportReadyMessage')}
             </Text>
             <View style={styles.modalActions}>
               <PressableScale
@@ -413,7 +476,7 @@ export default function SettingsScreen() {
                 pressedScale={0.98}
               >
                 <Text style={[styles.modalButtonText, { color: colors.text }]}>
-                  Kapat
+                  {t('common:close')}
                 </Text>
               </PressableScale>
               <PressableScale
@@ -424,7 +487,7 @@ export default function SettingsScreen() {
                 rippleColor="rgba(255,255,255,0.22)"
               >
                 <Text style={[styles.modalButtonText, styles.modalButtonTextPrimary]}>
-                  Paylaş
+                  {t('common:share')}
                 </Text>
               </PressableScale>
             </View>
@@ -448,10 +511,10 @@ export default function SettingsScreen() {
               </View>
             </View>
             <Text style={[styles.modalTitle, { color: colors.text }]}>
-              Tüm veriler silinsin mi?
+              {t('settings:deleteAllConfirmTitle')}
             </Text>
             <Text style={[styles.modalMessage, { color: colors.textSecondary }]}>
-              Bu işlem geri alınamaz. Tüm vardiya planlarınız, notlarınız ve ayarlarınız kalıcı olarak silinecektir.
+              {t('settings:deleteAllConfirmBody')}
             </Text>
             <View style={styles.modalActions}>
               <PressableScale
@@ -465,7 +528,7 @@ export default function SettingsScreen() {
                 pressedScale={0.98}
               >
                 <Text style={[styles.modalButtonText, { color: colors.text }]}>
-                  Vazgeç
+                  {t('common:giveUp')}
                 </Text>
               </PressableScale>
               <PressableScale
@@ -476,7 +539,7 @@ export default function SettingsScreen() {
                 rippleColor="rgba(255,255,255,0.22)"
               >
                 <Text style={[styles.modalButtonText, styles.modalButtonTextPrimary]}>
-                  Sil
+                  {t('common:delete')}
                 </Text>
               </PressableScale>
             </View>
@@ -696,6 +759,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 10,
     padding: 3,
+  },
+  languageScroll: {
+    marginTop: 10,
+    flexGrow: 0,
+  },
+  languageScrollContent: {
+    alignSelf: 'flex-start',
   },
   segment: {
     paddingHorizontal: 16,

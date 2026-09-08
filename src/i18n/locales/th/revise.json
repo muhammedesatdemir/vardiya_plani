@@ -1,0 +1,23 @@
+{
+  "screenTitle": "แก้ไข",
+  "dateRangeSection": "ช่วงวันที่",
+  "selectDate": "เลือกวันที่",
+  "changeTypeSection": "ประเภทการเปลี่ยนแปลง",
+  "assignSingleShift": "กำหนดกะเดียว",
+  "createFromTemplate": "สร้างจากเทมเพลต",
+  "shiftSection": "กะ",
+  "templateSection": "เทมเพลต",
+  "cycleLength": "รอบ {{count}} วัน",
+  "addNewTemplate": "+ สร้างเทมเพลตใหม่",
+  "optionsSection": "ตัวเลือก",
+  "overrideLocked": "เขียนทับวันที่ล็อกไว้",
+  "overrideManual": "เขียนทับวันที่แก้ไขด้วยตนเอง",
+  "overwriteWarning": "ตารางงานที่มีอยู่ในช่วงที่เลือก {{lockedNote}}จะถูกเขียนทับ",
+  "overwriteWarningLockedNote": "(ยกเว้นวันที่ล็อกไว้) ",
+  "errorSelectDateRange": "กรุณาเลือกช่วงวันที่",
+  "errorSelectShift": "กรุณาเลือกกะ",
+  "errorSelectTemplate": "กรุณาเลือกเทมเพลต",
+  "resultTitle": "เสร็จสิ้น",
+  "resultRevised": "อัปเดตแล้ว {{count}} วัน",
+  "resultSkipped": " ข้ามไป {{count}} วัน"
+}

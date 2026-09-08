@@ -1,0 +1,23 @@
+{
+  "screenTitle": "Semak Semula",
+  "dateRangeSection": "Julat Tarikh",
+  "selectDate": "Pilih tarikh",
+  "changeTypeSection": "Jenis Perubahan",
+  "assignSingleShift": "Tetapkan satu syif",
+  "createFromTemplate": "Buat daripada templat",
+  "shiftSection": "Syif",
+  "templateSection": "Templat",
+  "cycleLength": "kitaran {{count}} hari",
+  "addNewTemplate": "+ Buat Templat Baharu",
+  "optionsSection": "Pilihan",
+  "overrideLocked": "Tulis ganti hari yang dikunci",
+  "overrideManual": "Tulis ganti hari yang diubah secara manual",
+  "overwriteWarning": "Jadual sedia ada dalam julat yang dipilih {{lockedNote}}akan ditulis ganti",
+  "overwriteWarningLockedNote": "(kecuali yang dikunci) ",
+  "errorSelectDateRange": "Sila pilih julat tarikh.",
+  "errorSelectShift": "Sila pilih syif.",
+  "errorSelectTemplate": "Sila pilih templat.",
+  "resultTitle": "Selesai",
+  "resultRevised": "{{count}} hari dikemas kini",
+  "resultSkipped": ", {{count}} hari dilangkau"
+}

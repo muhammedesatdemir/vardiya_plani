@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Vardiya Saatleri",
+  "heroSubtitle": "Sabah, öğle ve gece vardiyalarının saatlerini kendine göre düzenle. Bu saatler tüm planlarda otomatik kullanılır.",
+  "footerHint": "Bir güne özel saat girilmişse, o gün için özel saat öncelikli kullanılır.",
+  "editorSubtitle": "Başlangıç ve bitiş saatini düzenle",
+  "resetToDefault": "↺  Varsayılana dön",
+  "errorInvalidTime": "Saatleri 00–23, dakikaları 00–59 aralığında girin.",
+  "errorSameTime": "Başlangıç ve bitiş aynı olamaz.",
+  "hourHint": "SS",
+  "minuteHint": "DD"
+}

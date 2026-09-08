@@ -1,0 +1,13 @@
+{
+  "zero": "0분",
+  "minutesOnly": "{{count}}분",
+  "hoursOnly": "{{count}}시간",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "근무 시간 요약",
+  "totalOvertime": "총 초과 근무",
+  "totalShortage": "총 부족 시간",
+  "monthlyNotesTitle": "{{month}} 메모",
+  "noNotesForMonth": "이번 달에 저장된 메모가 없습니다.",
+  "monthlySummaryShare": "{{month}} 근무 시간 요약:\n총 초과 근무: {{overtime}}\n총 부족 시간: {{shortage}}",
+  "monthlyNotesShare": "{{month}} 메모\n\n{{body}}"
+}

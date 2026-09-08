@@ -7,6 +7,7 @@
  */
 
 import { View, Text, StyleSheet, Platform, useWindowDimensions } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context';
 import { DayCell } from './DayCell';
 import type { PlannedDay, ShiftType } from '../../types';
@@ -26,12 +27,22 @@ interface CalendarGridProps {
   onDayPress: (dateStr: string) => void;
 }
 
-// Turkish weekday abbreviations - with proper Turkish characters
-const WEEKDAYS = ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'];
+// Weekday abbreviation keys (Monday-first, matching the grid's layout order)
+const WEEKDAY_KEYS = [
+  'monday_short3',
+  'tuesday_short3',
+  'wednesday_short3',
+  'thursday_short3',
+  'friday_short3',
+  'saturday_short3',
+  'sunday_short3',
+] as const;
 
 export function CalendarGrid({ days, selectedDate, onDayPress }: CalendarGridProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation('calendar');
   const { width: screenWidth } = useWindowDimensions();
+  const WEEKDAYS = WEEKDAY_KEYS.map((key) => t(`calendar:weekdays.${key}`));
 
   // Calculate cell size based on screen width
   // Grid padding: 12px each side = 24px total

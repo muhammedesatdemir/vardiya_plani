@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Settings",
+  "appearance": "PAKITANG-ANYO",
+  "theme": "Tema",
+  "themeLight": "Maliwanag",
+  "themeDark": "Madilim",
+  "program": "PROGRAM",
+  "activeTemplate": "Aktibong Template",
+  "notSelected": "Wala pang napili",
+  "shiftTimes": "Oras ng Shift",
+  "shiftTimesSubtitle": "I-customize ang oras ng umaga, hapon, at gabing shift",
+  "language": "Wika",
+  "data": "DATA",
+  "exporting": "Inihahanda...",
+  "exportData": "I-export ang Data",
+  "deleteAllData": "Tanggalin Lahat ng Data",
+  "about": "TUNGKOL DITO",
+  "appName": "Vardiya Planı",
+  "version": "Bersyon {{version}}",
+  "madeBy": "Ginawa ng Demrivo",
+  "footerSignature": "Praktikal na pagpaplano para sa mga shifting na empleyado",
+  "exportReadyTitle": "Handa na ang Export",
+  "exportReadyMessage": "Handa na ang iyong shift plan bilang isang Excel-compatible na file. Maaari mo itong ibahagi o i-save sa iyong device.",
+  "shareDialogTitle": "Ibahagi ang Shift Plan",
+  "exportErrorTitle": "Error",
+  "exportErrorMessage": "May naganap na error habang ginagawa ang file.",
+  "shareNotSupported": "Hindi suportado ang pagbabahagi sa device na ito.",
+  "deleteAllConfirmTitle": "Tanggalin ba ang lahat ng data?",
+  "deleteAllConfirmBody": "Hindi na maibabalik ang aksyong ito. Ang lahat ng iyong shift plans, tala, at settings ay permanenteng matatanggal.",
+  "csv": {
+    "header": "Petsa,Araw,Shift,Oras ng Simula,Oras ng Tapos,Tala,Naka-lock"
+  }
+}

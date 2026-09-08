@@ -1,0 +1,19 @@
+{
+  "morning": "Umaga",
+  "afternoon": "Hapon",
+  "evening": "Takipsilim",
+  "night": "Gabi",
+  "off": "Day Off",
+  "leave": "Day Off",
+  "dayOff": "Araw ng Pahinga",
+  "crossesMidnight": "Tumatawid sa hatinggabi",
+  "nextDayHint": "(kinabukasan)",
+  "custom": "custom",
+  "untilTime": "{{shift}} (hanggang {{time}})",
+  "defaultRangeFor": "Default na oras para sa shift na {{shift}}",
+  "systemTemplate": "System na template",
+  "customTemplate": "Custom na template",
+  "customPattern": "Custom na Pattern",
+  "customPatternNamed": "{{name}} (Custom na Pattern)",
+  "standardCycle": "Standard na {{count}}-Araw na Cycle"
+}

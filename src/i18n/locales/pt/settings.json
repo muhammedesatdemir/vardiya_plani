@@ -1,0 +1,33 @@
+{
+  "tabTitle": "Configurações",
+  "appearance": "APARÊNCIA",
+  "theme": "Tema",
+  "themeLight": "Claro",
+  "themeDark": "Escuro",
+  "program": "PROGRAMA",
+  "activeTemplate": "Modelo Ativo",
+  "notSelected": "Não selecionado",
+  "shiftTimes": "Horários dos Turnos",
+  "shiftTimesSubtitle": "Personalize os horários da manhã, tarde e noite",
+  "language": "Idioma",
+  "data": "DADOS",
+  "exporting": "Preparando...",
+  "exportData": "Exportar Dados",
+  "deleteAllData": "Excluir Todos os Dados",
+  "about": "SOBRE",
+  "appName": "Vardiya Planı",
+  "version": "Versão {{version}}",
+  "madeBy": "Desenvolvido por Demrivo",
+  "footerSignature": "Planejamento prático para trabalhadores em turnos",
+  "exportReadyTitle": "Exportação Pronta",
+  "exportReadyMessage": "Seu plano de turnos está pronto como um arquivo compatível com Excel. Você pode compartilhá-lo ou salvá-lo no seu dispositivo.",
+  "shareDialogTitle": "Compartilhar Plano de Turnos",
+  "exportErrorTitle": "Erro",
+  "exportErrorMessage": "Ocorreu um erro ao criar o arquivo.",
+  "shareNotSupported": "O compartilhamento não é suportado neste dispositivo.",
+  "deleteAllConfirmTitle": "Excluir todos os dados?",
+  "deleteAllConfirmBody": "Esta ação não pode ser desfeita. Todos os seus planos de turnos, notas e configurações serão excluídos permanentemente.",
+  "csv": {
+    "header": "Data,Dia,Turno,Hora de Início,Hora de Término,Nota,Travado"
+  }
+}

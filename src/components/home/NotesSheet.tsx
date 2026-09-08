@@ -24,6 +24,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../stores';
 import { useTheme } from '../../context';
 import { formatDateTR, parseISODate } from '../../utils/date';
@@ -43,6 +44,7 @@ interface MonthlyNote {
 
 export function NotesSheet({ visible, onClose }: NotesSheetProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation(['duration', 'common']);
   const insets = useSafeAreaInsets();
   const { height: windowHeight } = useWindowDimensions();
   const plannedDays = useScheduleStore((state) => state.plannedDays);
@@ -108,7 +110,7 @@ export function NotesSheet({ visible, onClose }: NotesSheetProps) {
         return `${d}.${m}.${y}\n${n.note}`;
       })
       .join('\n\n');
-    const message = `${monthLabel} Notları\n\n${body}`;
+    const message = t('duration:monthlyNotesShare', { month: monthLabel, body });
     try {
       await Share.share({ message });
     } catch (error) {
@@ -141,7 +143,7 @@ export function NotesSheet({ visible, onClose }: NotesSheetProps) {
           <View style={[styles.handle, { backgroundColor: colors.border }]} />
 
           <Text style={[styles.title, { color: colors.text }]}>
-            {monthLabel} Notları
+            {t('duration:monthlyNotesTitle', { month: monthLabel })}
           </Text>
 
           <MonthPicker />
@@ -179,7 +181,7 @@ export function NotesSheet({ visible, onClose }: NotesSheetProps) {
             <View style={styles.emptyState}>
               <Text style={styles.emptyIcon}>📝</Text>
               <Text style={[styles.emptyText, { color: colors.textMuted }]}>
-                Bu ay için kayıtlı not bulunmuyor.
+                {t('duration:noNotesForMonth')}
               </Text>
             </View>
           )}
@@ -195,7 +197,7 @@ export function NotesSheet({ visible, onClose }: NotesSheetProps) {
               pressedScale={0.98}
             >
               <Text style={[styles.buttonText, { color: colors.text }]}>
-                Kapat
+                {t('common:close')}
               </Text>
             </PressableScale>
             <PressableScale
@@ -211,7 +213,7 @@ export function NotesSheet({ visible, onClose }: NotesSheetProps) {
               disabled={!hasNotes}
             >
               <Text style={[styles.buttonText, styles.buttonTextPrimary]}>
-                📤 Paylaş
+                📤 {t('common:share')}
               </Text>
             </PressableScale>
           </View>

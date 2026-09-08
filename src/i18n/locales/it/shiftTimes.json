@@ -1,0 +1,11 @@
+{
+  "screenTitle": "Orari dei turni",
+  "heroSubtitle": "Personalizza a tuo piacimento gli orari dei turni di mattina, pomeriggio e notte. Questi orari verranno usati automaticamente in tutti i piani.",
+  "footerHint": "Se per un giorno è stato impostato un orario personalizzato, questo ha la priorità.",
+  "editorSubtitle": "Modifica orario di inizio e fine",
+  "resetToDefault": "↺  Ripristina predefinito",
+  "errorInvalidTime": "Inserisci le ore tra 00 e 23, i minuti tra 00 e 59.",
+  "errorSameTime": "L'orario di inizio e fine non possono coincidere.",
+  "hourHint": "OO",
+  "minuteHint": "MM"
+}

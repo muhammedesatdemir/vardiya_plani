@@ -1,0 +1,15 @@
+{
+  "zero": "0 dakika",
+  "minutesOnly_one": "{{count}} dakika",
+  "minutesOnly_other": "{{count}} dakika",
+  "hoursOnly_one": "{{count}} saat",
+  "hoursOnly_other": "{{count}} saat",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Mesai Özeti",
+  "totalOvertime": "Toplam Fazla Mesai",
+  "totalShortage": "Toplam Eksik Saat",
+  "monthlyNotesTitle": "{{month}} Notları",
+  "noNotesForMonth": "Bu ay için kayıtlı not bulunmuyor.",
+  "monthlySummaryShare": "{{month}} Mesai Özeti:\nToplam fazla mesai: {{overtime}}\nToplam eksik saat: {{shortage}}",
+  "monthlyNotesShare": "{{month}} Notları\n\n{{body}}"
+}

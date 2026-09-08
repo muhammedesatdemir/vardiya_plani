@@ -1,0 +1,43 @@
+{
+  "tabTitle": "Kalendaryo",
+  "today": "Ngayon",
+  "tomorrow": "Bukas",
+  "weekdays": {
+    "monday_short3": "Lun",
+    "tuesday_short3": "Mar",
+    "wednesday_short3": "Miy",
+    "thursday_short3": "Huw",
+    "friday_short3": "Biy",
+    "saturday_short3": "Sab",
+    "sunday_short3": "Lin",
+    "monday_short2": "Lu",
+    "tuesday_short2": "Ma",
+    "wednesday_short2": "Mi",
+    "thursday_short2": "Hu",
+    "friday_short2": "Bi",
+    "saturday_short2": "Sa",
+    "sunday_short2": "Li",
+    "sunday_full": "Linggo",
+    "monday_full": "Lunes",
+    "tuesday_full": "Martes",
+    "wednesday_full": "Miyerkules",
+    "thursday_full": "Huwebes",
+    "friday_full": "Biyernes",
+    "saturday_full": "Sabado"
+  },
+  "holidayOfficial": "Opisyal na Bakasyon — {{name}}",
+  "months": {
+    "january": "Enero",
+    "february": "Pebrero",
+    "march": "Marso",
+    "april": "Abril",
+    "may": "Mayo",
+    "june": "Hunyo",
+    "july": "Hulyo",
+    "august": "Agosto",
+    "september": "Setyembre",
+    "october": "Oktubre",
+    "november": "Nobyembre",
+    "december": "Disyembre"
+  }
+}

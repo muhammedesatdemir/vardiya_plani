@@ -1,0 +1,20 @@
+{
+  "screenTitle": "Modifier le jour",
+  "invalidDate": "Date invalide",
+  "selectShift": "Sélectionner une équipe",
+  "customTimeForDay": "Horaire spécifique pour ce jour",
+  "customTimeHint": "Ne s'applique qu'à ce jour",
+  "start": "Début",
+  "end": "Fin",
+  "resetToDefault": "Réinitialiser par défaut",
+  "overtime": "Heures supplémentaires",
+  "shortage": "Heures manquantes",
+  "hours": "Heures",
+  "minutes": "Minutes",
+  "protectThisDay": "Verrouiller ce jour",
+  "protectHint": "Ce jour ne sera pas modifié automatiquement lors de la création d'un planning",
+  "note": "📝 Note",
+  "notePlaceholder": "Ajouter une note pour ce jour...",
+  "noteHint": "Ex : Repos échangé, service décalé...",
+  "clearDay": "Effacer le jour"
+}

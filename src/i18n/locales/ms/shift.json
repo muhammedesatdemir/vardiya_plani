@@ -1,0 +1,19 @@
+{
+  "morning": "Pagi",
+  "afternoon": "Tengah Hari",
+  "evening": "Petang",
+  "night": "Malam",
+  "off": "Cuti",
+  "leave": "Cuti",
+  "dayOff": "Hari Cuti",
+  "crossesMidnight": "Melangkaui tengah malam",
+  "nextDayHint": "(hari berikutnya)",
+  "custom": "tersuai",
+  "untilTime": "{{shift}} (sehingga {{time}})",
+  "defaultRangeFor": "Waktu lalai untuk syif {{shift}}",
+  "systemTemplate": "Templat sistem",
+  "customTemplate": "Templat tersuai",
+  "customPattern": "Corak Tersuai",
+  "customPatternNamed": "{{name}} (Corak Tersuai)",
+  "standardCycle": "Kitaran Piawai {{count}} Hari"
+}

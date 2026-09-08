@@ -1,0 +1,19 @@
+{
+  "zero": "0 хвилин",
+  "minutesOnly_one": "{{count}} хвилина",
+  "minutesOnly_few": "{{count}} хвилини",
+  "minutesOnly_many": "{{count}} хвилин",
+  "minutesOnly_other": "{{count}} хвилини",
+  "hoursOnly_one": "{{count}} година",
+  "hoursOnly_few": "{{count}} години",
+  "hoursOnly_many": "{{count}} годин",
+  "hoursOnly_other": "{{count}} години",
+  "hoursAndMinutes": "{{hours}} {{minutes}}",
+  "summaryTitle": "Зведення годин",
+  "totalOvertime": "Всього переробіток",
+  "totalShortage": "Всього недоробіток",
+  "monthlyNotesTitle": "Нотатки за {{month}}",
+  "noNotesForMonth": "За цей місяць нотаток немає.",
+  "monthlySummaryShare": "Зведення годин за {{month}}:\nВсього переробіток: {{overtime}}\nВсього недоробіток: {{shortage}}",
+  "monthlyNotesShare": "Нотатки за {{month}}\n\n{{body}}"
+}
