@@ -25,7 +25,26 @@
     "friday_full": "शुक्रवार",
     "saturday_full": "शनिवार"
   },
-  "holidayOfficial": "🇹🇷 आधिकारिक अवकाश — {{name}}",
+  "holidayOfficial": "आधिकारिक अवकाश — {{name}}",
+  "holidays": {
+    "newYear": "नव वर्ष",
+    "ramadanEve": "ईद-उल-फ़ित्र की पूर्व संध्या",
+    "ramadanDay1": "ईद-उल-फ़ित्र (पहला दिन)",
+    "ramadanDay2": "ईद-उल-फ़ित्र (दूसरा दिन)",
+    "ramadanDay3": "ईद-उल-फ़ित्र (तीसरा दिन)",
+    "nationalSovereigntyChildrensDay": "राष्ट्रीय संप्रभुता और बाल दिवस",
+    "labourDay": "श्रम और एकता दिवस",
+    "commemorationYouthSportsDay": "अतातुर्क स्मृति, युवा एवं खेल दिवस",
+    "sacrificeEve": "ईद-उल-अज़हा की पूर्व संध्या",
+    "sacrificeDay1": "ईद-उल-अज़हा (पहला दिन)",
+    "sacrificeDay2": "ईद-उल-अज़हा (दूसरा दिन)",
+    "sacrificeDay3": "ईद-उल-अज़हा (तीसरा दिन)",
+    "sacrificeDay4": "ईद-उल-अज़हा (चौथा दिन)",
+    "democracyNationalUnityDay": "लोकतंत्र और राष्ट्रीय एकता दिवस",
+    "victoryDay": "विजय दिवस",
+    "republicDayEve": "गणतंत्र दिवस की पूर्व संध्या",
+    "republicDay": "गणतंत्र दिवस"
+  },
   "months": {
     "january": "जनवरी",
     "february": "फ़रवरी",

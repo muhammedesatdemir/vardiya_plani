@@ -26,6 +26,25 @@
     "saturday_full": "Суббота"
   },
   "holidayOfficial": "Официальный праздник — {{name}}",
+  "holidays": {
+    "newYear": "Новый год",
+    "ramadanEve": "Канун Ураза-байрама",
+    "ramadanDay1": "Ураза-байрам (1-й день)",
+    "ramadanDay2": "Ураза-байрам (2-й день)",
+    "ramadanDay3": "Ураза-байрам (3-й день)",
+    "nationalSovereigntyChildrensDay": "День национального суверенитета и детей",
+    "labourDay": "День труда и солидарности",
+    "commemorationYouthSportsDay": "День памяти Ататюрка, молодёжи и спорта",
+    "sacrificeEve": "Канун Курбан-байрама",
+    "sacrificeDay1": "Курбан-байрам (1-й день)",
+    "sacrificeDay2": "Курбан-байрам (2-й день)",
+    "sacrificeDay3": "Курбан-байрам (3-й день)",
+    "sacrificeDay4": "Курбан-байрам (4-й день)",
+    "democracyNationalUnityDay": "День демократии и национального единства",
+    "victoryDay": "День победы",
+    "republicDayEve": "Канун Дня Республики",
+    "republicDay": "День Республики"
+  },
   "months": {
     "january": "Январь",
     "february": "Февраль",

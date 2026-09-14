@@ -25,7 +25,26 @@
     "friday_full": "Sexta-feira",
     "saturday_full": "Sábado"
   },
-  "holidayOfficial": "🇹🇷 Feriado Oficial — {{name}}",
+  "holidayOfficial": "Feriado Oficial — {{name}}",
+  "holidays": {
+    "newYear": "Ano Novo",
+    "ramadanEve": "Véspera do Eid al-Fitr",
+    "ramadanDay1": "Eid al-Fitr (1º Dia)",
+    "ramadanDay2": "Eid al-Fitr (2º Dia)",
+    "ramadanDay3": "Eid al-Fitr (3º Dia)",
+    "nationalSovereigntyChildrensDay": "Dia da Soberania Nacional e da Criança",
+    "labourDay": "Dia do Trabalho",
+    "commemorationYouthSportsDay": "Dia em Memória de Atatürk, da Juventude e do Desporto",
+    "sacrificeEve": "Véspera do Eid al-Adha",
+    "sacrificeDay1": "Eid al-Adha (1º Dia)",
+    "sacrificeDay2": "Eid al-Adha (2º Dia)",
+    "sacrificeDay3": "Eid al-Adha (3º Dia)",
+    "sacrificeDay4": "Eid al-Adha (4º Dia)",
+    "democracyNationalUnityDay": "Dia da Democracia e da Unidade Nacional",
+    "victoryDay": "Dia da Vitória",
+    "republicDayEve": "Véspera do Dia da República",
+    "republicDay": "Dia da República"
+  },
   "months": {
     "january": "Janeiro",
     "february": "Fevereiro",

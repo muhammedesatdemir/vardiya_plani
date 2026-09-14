@@ -26,6 +26,25 @@
     "saturday_full": "شنبه"
   },
   "holidayOfficial": "تعطیل رسمی — {{name}}",
+  "holidays": {
+    "newYear": "سال نو میلادی",
+    "ramadanEve": "شب عید فطر",
+    "ramadanDay1": "عید فطر (روز اول)",
+    "ramadanDay2": "عید فطر (روز دوم)",
+    "ramadanDay3": "عید فطر (روز سوم)",
+    "nationalSovereigntyChildrensDay": "روز حاکمیت ملی و کودک",
+    "labourDay": "روز کار و همبستگی",
+    "commemorationYouthSportsDay": "روز یادبود آتاتورک، جوانان و ورزش",
+    "sacrificeEve": "شب عید قربان",
+    "sacrificeDay1": "عید قربان (روز اول)",
+    "sacrificeDay2": "عید قربان (روز دوم)",
+    "sacrificeDay3": "عید قربان (روز سوم)",
+    "sacrificeDay4": "عید قربان (روز چهارم)",
+    "democracyNationalUnityDay": "روز دموکراسی و اتحاد ملی",
+    "victoryDay": "روز پیروزی",
+    "republicDayEve": "شب روز جمهوریت",
+    "republicDay": "روز جمهوریت"
+  },
   "months": {
     "january": "ژانویه",
     "february": "فوریه",

@@ -26,6 +26,25 @@
     "saturday_full": "Thứ Bảy"
   },
   "holidayOfficial": "Ngày lễ chính thức — {{name}}",
+  "holidays": {
+    "newYear": "Tết Dương lịch",
+    "ramadanEve": "Đêm trước Lễ Eid al-Fitr",
+    "ramadanDay1": "Lễ Eid al-Fitr (Ngày 1)",
+    "ramadanDay2": "Lễ Eid al-Fitr (Ngày 2)",
+    "ramadanDay3": "Lễ Eid al-Fitr (Ngày 3)",
+    "nationalSovereigntyChildrensDay": "Ngày Chủ quyền Quốc gia và Thiếu nhi",
+    "labourDay": "Ngày Lao động và Đoàn kết",
+    "commemorationYouthSportsDay": "Ngày Tưởng niệm Atatürk, Thanh niên và Thể thao",
+    "sacrificeEve": "Đêm trước Lễ Eid al-Adha",
+    "sacrificeDay1": "Lễ Eid al-Adha (Ngày 1)",
+    "sacrificeDay2": "Lễ Eid al-Adha (Ngày 2)",
+    "sacrificeDay3": "Lễ Eid al-Adha (Ngày 3)",
+    "sacrificeDay4": "Lễ Eid al-Adha (Ngày 4)",
+    "democracyNationalUnityDay": "Ngày Dân chủ và Đoàn kết Dân tộc",
+    "victoryDay": "Ngày Chiến thắng",
+    "republicDayEve": "Đêm trước Ngày Cộng hòa",
+    "republicDay": "Ngày Cộng hòa"
+  },
   "months": {
     "january": "Tháng 1",
     "february": "Tháng 2",

@@ -25,7 +25,26 @@
     "friday_full": "Jumat",
     "saturday_full": "Sabtu"
   },
-  "holidayOfficial": "🇹🇷 Hari Libur Resmi — {{name}}",
+  "holidayOfficial": "Hari Libur Resmi — {{name}}",
+  "holidays": {
+    "newYear": "Tahun Baru",
+    "ramadanEve": "Malam Idulfitri",
+    "ramadanDay1": "Idulfitri (Hari 1)",
+    "ramadanDay2": "Idulfitri (Hari 2)",
+    "ramadanDay3": "Idulfitri (Hari 3)",
+    "nationalSovereigntyChildrensDay": "Hari Kedaulatan Nasional dan Anak-Anak",
+    "labourDay": "Hari Buruh",
+    "commemorationYouthSportsDay": "Hari Peringatan Atatürk, Pemuda dan Olahraga",
+    "sacrificeEve": "Malam Iduladha",
+    "sacrificeDay1": "Iduladha (Hari 1)",
+    "sacrificeDay2": "Iduladha (Hari 2)",
+    "sacrificeDay3": "Iduladha (Hari 3)",
+    "sacrificeDay4": "Iduladha (Hari 4)",
+    "democracyNationalUnityDay": "Hari Demokrasi dan Persatuan Nasional",
+    "victoryDay": "Hari Kemenangan",
+    "republicDayEve": "Malam Hari Republik",
+    "republicDay": "Hari Republik"
+  },
   "months": {
     "january": "Januari",
     "february": "Februari",

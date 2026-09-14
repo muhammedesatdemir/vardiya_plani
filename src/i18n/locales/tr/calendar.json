@@ -25,7 +25,26 @@
     "friday_full": "Cuma",
     "saturday_full": "Cumartesi"
   },
-  "holidayOfficial": "🇹🇷 Resmi Tatil — {{name}}",
+  "holidayOfficial": "Resmi Tatil — {{name}}",
+  "holidays": {
+    "newYear": "Yılbaşı",
+    "ramadanEve": "Ramazan Bayramı Arifesi",
+    "ramadanDay1": "Ramazan Bayramı 1. Gün",
+    "ramadanDay2": "Ramazan Bayramı 2. Gün",
+    "ramadanDay3": "Ramazan Bayramı 3. Gün",
+    "nationalSovereigntyChildrensDay": "Ulusal Egemenlik ve Çocuk Bayramı",
+    "labourDay": "Emek ve Dayanışma Günü",
+    "commemorationYouthSportsDay": "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+    "sacrificeEve": "Kurban Bayramı Arifesi",
+    "sacrificeDay1": "Kurban Bayramı 1. Gün",
+    "sacrificeDay2": "Kurban Bayramı 2. Gün",
+    "sacrificeDay3": "Kurban Bayramı 3. Gün",
+    "sacrificeDay4": "Kurban Bayramı 4. Gün",
+    "democracyNationalUnityDay": "Demokrasi ve Millî Birlik Günü",
+    "victoryDay": "Zafer Bayramı",
+    "republicDayEve": "Cumhuriyet Bayramı Arifesi",
+    "republicDay": "Cumhuriyet Bayramı"
+  },
   "months": {
     "january": "Ocak",
     "february": "Şubat",

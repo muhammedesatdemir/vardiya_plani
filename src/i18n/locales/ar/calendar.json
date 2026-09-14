@@ -25,7 +25,26 @@
     "friday_full": "الجمعة",
     "saturday_full": "السبت"
   },
-  "holidayOfficial": "🇹🇷 عطلة رسمية — {{name}}",
+  "holidayOfficial": "عطلة رسمية — {{name}}",
+  "holidays": {
+    "newYear": "رأس السنة الميلادية",
+    "ramadanEve": "ليلة عيد الفطر",
+    "ramadanDay1": "عيد الفطر (اليوم الأول)",
+    "ramadanDay2": "عيد الفطر (اليوم الثاني)",
+    "ramadanDay3": "عيد الفطر (اليوم الثالث)",
+    "nationalSovereigntyChildrensDay": "يوم السيادة الوطنية والطفل",
+    "labourDay": "عيد العمال والتضامن",
+    "commemorationYouthSportsDay": "يوم إحياء ذكرى أتاتورك والشباب والرياضة",
+    "sacrificeEve": "ليلة عيد الأضحى",
+    "sacrificeDay1": "عيد الأضحى (اليوم الأول)",
+    "sacrificeDay2": "عيد الأضحى (اليوم الثاني)",
+    "sacrificeDay3": "عيد الأضحى (اليوم الثالث)",
+    "sacrificeDay4": "عيد الأضحى (اليوم الرابع)",
+    "democracyNationalUnityDay": "يوم الديمقراطية والوحدة الوطنية",
+    "victoryDay": "يوم النصر",
+    "republicDayEve": "ليلة عيد الجمهورية",
+    "republicDay": "عيد الجمهورية"
+  },
   "months": {
     "january": "يناير",
     "february": "فبراير",

@@ -26,6 +26,25 @@
     "saturday_full": "Sabado"
   },
   "holidayOfficial": "Opisyal na Bakasyon — {{name}}",
+  "holidays": {
+    "newYear": "Bagong Taon",
+    "ramadanEve": "Bisperas ng Eid al-Fitr",
+    "ramadanDay1": "Eid al-Fitr (Araw 1)",
+    "ramadanDay2": "Eid al-Fitr (Araw 2)",
+    "ramadanDay3": "Eid al-Fitr (Araw 3)",
+    "nationalSovereigntyChildrensDay": "Pambansang Soberanya at Araw ng mga Bata",
+    "labourDay": "Araw ng Paggawa at Pagkakaisa",
+    "commemorationYouthSportsDay": "Araw ng Pag-alaala kay Atatürk, Kabataan at Palakasan",
+    "sacrificeEve": "Bisperas ng Eid al-Adha",
+    "sacrificeDay1": "Eid al-Adha (Araw 1)",
+    "sacrificeDay2": "Eid al-Adha (Araw 2)",
+    "sacrificeDay3": "Eid al-Adha (Araw 3)",
+    "sacrificeDay4": "Eid al-Adha (Araw 4)",
+    "democracyNationalUnityDay": "Araw ng Demokrasya at Pambansang Pagkakaisa",
+    "victoryDay": "Araw ng Tagumpay",
+    "republicDayEve": "Bisperas ng Araw ng Republika",
+    "republicDay": "Araw ng Republika"
+  },
   "months": {
     "january": "Enero",
     "february": "Pebrero",

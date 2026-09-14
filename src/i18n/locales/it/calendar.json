@@ -26,6 +26,25 @@
     "saturday_full": "Sabato"
   },
   "holidayOfficial": "Festività ufficiale — {{name}}",
+  "holidays": {
+    "newYear": "Capodanno",
+    "ramadanEve": "Vigilia dell'Eid al-Fitr",
+    "ramadanDay1": "Eid al-Fitr (1° giorno)",
+    "ramadanDay2": "Eid al-Fitr (2° giorno)",
+    "ramadanDay3": "Eid al-Fitr (3° giorno)",
+    "nationalSovereigntyChildrensDay": "Giorno della Sovranità Nazionale e dei Bambini",
+    "labourDay": "Festa del Lavoro",
+    "commemorationYouthSportsDay": "Giorno in Memoria di Atatürk, della Gioventù e dello Sport",
+    "sacrificeEve": "Vigilia dell'Eid al-Adha",
+    "sacrificeDay1": "Eid al-Adha (1° giorno)",
+    "sacrificeDay2": "Eid al-Adha (2° giorno)",
+    "sacrificeDay3": "Eid al-Adha (3° giorno)",
+    "sacrificeDay4": "Eid al-Adha (4° giorno)",
+    "democracyNationalUnityDay": "Giorno della Democrazia e dell'Unità Nazionale",
+    "victoryDay": "Giorno della Vittoria",
+    "republicDayEve": "Vigilia della Festa della Repubblica",
+    "republicDay": "Festa della Repubblica"
+  },
   "months": {
     "january": "Gennaio",
     "february": "Febbraio",

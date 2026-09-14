@@ -26,6 +26,25 @@
     "saturday_full": "Sobota"
   },
   "holidayOfficial": "Święto państwowe — {{name}}",
+  "holidays": {
+    "newYear": "Nowy Rok",
+    "ramadanEve": "Wigilia Święta Ramadanu",
+    "ramadanDay1": "Święto Ramadanu (1. dzień)",
+    "ramadanDay2": "Święto Ramadanu (2. dzień)",
+    "ramadanDay3": "Święto Ramadanu (3. dzień)",
+    "nationalSovereigntyChildrensDay": "Dzień Suwerenności Narodowej i Dziecka",
+    "labourDay": "Święto Pracy i Solidarności",
+    "commemorationYouthSportsDay": "Dzień Pamięci Atatürka, Młodzieży i Sportu",
+    "sacrificeEve": "Wigilia Święta Ofiarowania",
+    "sacrificeDay1": "Święto Ofiarowania (1. dzień)",
+    "sacrificeDay2": "Święto Ofiarowania (2. dzień)",
+    "sacrificeDay3": "Święto Ofiarowania (3. dzień)",
+    "sacrificeDay4": "Święto Ofiarowania (4. dzień)",
+    "democracyNationalUnityDay": "Dzień Demokracji i Jedności Narodowej",
+    "victoryDay": "Dzień Zwycięstwa",
+    "republicDayEve": "Wigilia Dnia Republiki",
+    "republicDay": "Dzień Republiki"
+  },
   "months": {
     "january": "Styczeń",
     "february": "Luty",

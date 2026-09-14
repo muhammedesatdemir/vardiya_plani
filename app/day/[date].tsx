@@ -21,7 +21,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useScheduleStore } from '../../src/stores';
 import { formatDateTR, formatWeekdayTR, parseISODate, isValidISODate } from '../../src/utils/date';
-import { getHolidayName } from '../../src/constants/holidays';
+import { getHolidayDisplayName } from '../../src/constants/holidays';
 import { normalizeCustomTime } from '../../src/utils/shiftTime';
 import { hmToMinutes, minutesToHM } from '../../src/utils/duration';
 import { useTheme } from '../../src/context';
@@ -86,7 +86,7 @@ export default function DayEditScreen() {
   const dateObj = date ? parseISODate(date) : new Date();
   const formattedDate = date ? formatDateTR(dateObj) : '';
   const dayName = formatWeekdayTR(dateObj);
-  const holidayName = date ? getHolidayName(date) : null;
+  const holidayName = date ? getHolidayDisplayName(date) : null;
 
   // Get existing shift type for summary
   const existingShiftType = existingDay

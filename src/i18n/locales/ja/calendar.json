@@ -26,6 +26,25 @@
     "saturday_full": "土曜日"
   },
   "holidayOfficial": "祝日 — {{name}}",
+  "holidays": {
+    "newYear": "元日",
+    "ramadanEve": "ラマダン明けの祭り前夜",
+    "ramadanDay1": "ラマダン明けの祭り（1日目）",
+    "ramadanDay2": "ラマダン明けの祭り（2日目）",
+    "ramadanDay3": "ラマダン明けの祭り（3日目）",
+    "nationalSovereigntyChildrensDay": "国家主権と子供の日",
+    "labourDay": "労働と連帯の日",
+    "commemorationYouthSportsDay": "アタテュルクを偲ぶ青少年とスポーツの日",
+    "sacrificeEve": "犠牲祭前夜",
+    "sacrificeDay1": "犠牲祭（1日目）",
+    "sacrificeDay2": "犠牲祭（2日目）",
+    "sacrificeDay3": "犠牲祭（3日目）",
+    "sacrificeDay4": "犠牲祭（4日目）",
+    "democracyNationalUnityDay": "民主主義と国民団結の日",
+    "victoryDay": "戦勝記念日",
+    "republicDayEve": "共和国記念日前夜",
+    "republicDay": "共和国記念日"
+  },
   "months": {
     "january": "1月",
     "february": "2月",

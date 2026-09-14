@@ -26,6 +26,25 @@
     "saturday_full": "토요일"
   },
   "holidayOfficial": "공휴일 — {{name}}",
+  "holidays": {
+    "newYear": "신정",
+    "ramadanEve": "라마단 축제 전야",
+    "ramadanDay1": "라마단 축제 (1일차)",
+    "ramadanDay2": "라마단 축제 (2일차)",
+    "ramadanDay3": "라마단 축제 (3일차)",
+    "nationalSovereigntyChildrensDay": "국가주권 및 어린이날",
+    "labourDay": "노동절",
+    "commemorationYouthSportsDay": "아타튀르크 추모 및 청소년 스포츠의 날",
+    "sacrificeEve": "희생절 전야",
+    "sacrificeDay1": "희생절 (1일차)",
+    "sacrificeDay2": "희생절 (2일차)",
+    "sacrificeDay3": "희생절 (3일차)",
+    "sacrificeDay4": "희생절 (4일차)",
+    "democracyNationalUnityDay": "민주주의 및 국민 단결의 날",
+    "victoryDay": "전승기념일",
+    "republicDayEve": "공화국 선포 기념일 전야",
+    "republicDay": "공화국 선포 기념일"
+  },
   "months": {
     "january": "1월",
     "february": "2월",
